@@ -123,7 +123,7 @@ function level0(){
     	}
     }
 	function beginGame(){ // Loads info for level 1.
-		actp = new player("puchuu",1,"N")
+		actp = new player("unnamed",1,"N")
 		var nl = document.createElement("script");
         nl.src = "level1.js";
         document.head.appendChild(nl);
