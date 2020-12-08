@@ -282,13 +282,15 @@ function level1(){
     // c1 - "Click for your password" button
     // c2 - Password
     // c3 - Warning
-    // c4 - To Level 2
+    // c4 - Load level 2
+    // c5 - Go to level 2
     var l1s13c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
     var l1s13c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
     var l1s13c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
     var l1s13c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it!",["15px Arial","#ffffff"])
-    var l1s13c4 = new cuadro(550,300,150,200,"#804040","#ff4040",u,false,[goToLev2],u,"Next",["30px Arial Black","#408080"])
-    l1s13cs.push(l1s13c0, l1s13c1, l1s13c2, l1s13c3, l1s13c4)
+    var l1s13c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev2],u,"Next",["30px Arial Black","#408080"])
+    var l1s13c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev2],u,"Go!",["30px Arial Black","#000000"])
+    l1s13cs.push(l1s13c0, l1s13c1, l1s13c2, l1s13c3, l1s13c4, l1s13c5)
     l1s13 = new screen("#000000", l1s13cs, false)
     // 14 - WIP Screen...Hopely to be deleted
     // c0 - WIP text
@@ -325,13 +327,8 @@ function level1(){
     }
     function goToLev2(){ // Level clear function. Sends to level 2 (Room N1).
         actp.route = "R"
-        var nl = document.createElement("script");
-        nl.src = "level2.js";
-        document.head.appendChild(nl);
-        setTimeout(function(){
-            currlev = new level(2, level2)
-            currscr = 0
-        },30)
+        currlev = new level(2, level2)
+        currscr = 0
     }
     function lbsPlace(){ // Places the dark lightbulb in the socket, or the regular lightbulb back.
     	if (inve.sack.some(par => par[0] == 1.01) == true){
@@ -349,6 +346,12 @@ function level1(){
     	quickTurn([3],[1]) //s12
     	l1s12c1.think = ["It won't turn on without a lightbulb."]
 
+    }
+    function loadLev2(){ // Loads information for level 2.
+    	var nl = document.createElement("script");
+        nl.src = "level2.js";
+        document.head.appendChild(nl);
+        quickTurn([5],[4])
     }
     function moveSuitcase(){ // Moves the suitcase out of under the bed.
     	animate = true
@@ -433,10 +436,12 @@ function level1(){
 		if (curpartl.length == 2){
 			if (actnum == 1){
 				curpart = curpartl[1]
-			} else
+			} else {
 			    curpart = curpartl[0]
-		} else
+			}
+		} else {
 		    curpart = curpartl[0]
+		}
 		moved.c = newcolor
 		moved.high = newhigh
 		moved.think = ["It shows the ".concat(curpart).concat(" of a ").concat(newshape)]
@@ -477,6 +482,7 @@ function level1(){
 				l1s12c2.c = "#FFFFC0"
 				l1s12c2.think = ["The light is on."]
 				l1s12c2.isClick = false
+				l1s12c1.think = ["This button should turn the lamp off."]
 				setTimeout(function(){
     		        currscr = 4
     	        },500)
@@ -489,11 +495,13 @@ function level1(){
     	        setTimeout(function(){
     		        animate = false
     	        },1502)    	
-			} else
+			} else {
                 l1s12c2.c = "#C0C000"
                 l1s12c2.isClick = true
                 l1s12c2.think = ["There's a lightbulb connected."]
+                l1s12c1.think = ["This button should turn the lamp on."]
                 l1s4c3.isVis = false
+            }
 		} else if (l1s12c4.isVis == true){
 			l1s12c4.c = "#40A0FF"
 			l1s4c4.isVis = true
