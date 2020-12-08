@@ -1,0 +1,11 @@
+var drama = {
+"Texto":["Oh, my head, it hurts....",
+	"Where am I?",
+	"Why am I here?",
+	"Wait...... I...... Don't know my name.",
+	"Who am I?",
+	"I.....feel....that.....",
+	"I.....have to escape......",
+	"I'd better move.",
+	"I don't know why, but I'd move."]
+}
