@@ -156,7 +156,7 @@ function level1(){
     // c2 - Lower part of toy
     // c3 - Back to wall 3
     var l1s8c0 = new cuadro(50,50,500,500,"#FF8000");
-    var l1s8c1 = new cuadro(100,150,200,300,"#C000C0","#FF80FF",u,u,u,["It's a book.", "Suzette the ornithocephalic", "mermaid."]);
+    var l1s8c1 = new cuadro(100,150,200,300,"#a000a0","#FF80FF",u,u,u,["It's a book.", "Suzette the ornithocephalic", "mermaid."]);
     var l1s8c2 = new cuadro(350,200,150,200,"#808080","#C0C0C0",true,u,[simpleItemTake,[2,1.06,"Toy Piece (legs)"]],["Looks like some kind of toy."]);
     var l1s8c3 = new cuadro(0,550,599,50,"#000000","#808080",true,u,[changescr, 3],u,"Back",["20px Arial Black","#FFFFFF"]);
     l1s8cs.push(l1s8c0,l1s8c1,l1s8c2,l1s8c3);
@@ -287,7 +287,7 @@ function level1(){
     var l1s13c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
     var l1s13c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
     var l1s13c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
-    var l1s13c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it!",["15px Arial","#ffffff"])
+    var l1s13c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
     var l1s13c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev2],u,"Next",["30px Arial Black","#408080"])
     var l1s13c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev2],u,"Go!",["30px Arial Black","#000000"])
     l1s13cs.push(l1s13c0, l1s13c1, l1s13c2, l1s13c3, l1s13c4, l1s13c5)
