@@ -6,7 +6,8 @@ function level2(){
 	// 2.03 - Medium step
 	// 2.04 - Small step
 	// 2.05 - Tiny key
-	// 2.06
+	// 2.06 - Brick shard (large)
+	// 2.07 - Lever
 
 
 	var l2s0cs = Array()
@@ -86,7 +87,30 @@ function level2(){
 	l2s1cs.push(l2s1c0,l2s1c1,l2s1c2,l2s1c3,l2s1c4,l2s1c5,l2s1c6,l2s1c7,l2s1c8,l2s1c9,
 		l2s1c10,l2s1c11)
 	l2s1 = new screen(cb, l2s1cs)
-	l2ss.push(l2s0,l2s1)
+	// 2 - Room N1 - Wall 3
+	// c0 - Red door
+	// c1 - Miniature writing
+	// c2 - Transdimensional machine
+	// c3 - Large brick shard
+	// c4 - Box
+	// c5 - Tiny key (before falling)
+	// c6 - Gap for lever
+	// c7 - Lever
+	// c8 - To wall 2
+	// c9 - To wall 4
+	var l2s2c0 = new cuadro(250,200,100,200,"#800000","#ff8080",u,u,u,["The red door is closed again", "I can't go back now."])
+	var l2s2c1 = new cuadro(310,360,40,40,"#800000","#808080",true,u,[changescr,8],["There's something there."])
+	var l2s2c2 = new cuadro(400,250,100,150,"#404040","#c0c0c0",true,u,[changescr,9],["What's this?"])
+	var l2s2c3 = new cuadro(50,500,50,50,"#ff8000","#ffc080",true,u,[simpleItemTake,[3,2.06,"Brick shard (large)"]],["Is that a broken brick?"])
+	var l2s2c4 = new cuadro(50,50,100,100,"#808080","#c0c0c0",u,u,[changescr,10],["Theres a box hanging from a", "chain. I can't reach it."])
+	var l2s2c5 = new cuadro(130,30,20,20,"#c0c040","#ffff80",u,u,u,["There's something over the box"])
+	var l2s2c6 = new cuadro(160,260,30,30,"#000000","#404040",true,u,[simpleItemUse,[2.07,putLever]],["There's a gap on the wall.", "It looks like something","should fit there."])
+	var l2s2c7 = new cuadro(150,200,50,150,"#ffc000","#ffff40",u,false,[workLever],["The lever fits perfectly."])
+	var l2s2c8 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,1])
+	var l2s2c9 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,3])
+	l2s2cs.push(l2s2c0,l2s2c1,l2s2c2,l2s2c3,l2s2c4,l2s2c5,l2s2c6,l2s2c7,l2s2c8,l2s2c9)
+	l2s2 = new screen(cb,l2s2cs)
+	l2ss.push(l2s0,l2s1,l2s2)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		console.log("holi")
@@ -98,6 +122,12 @@ function level2(){
 		console.log("holi")
 	}
 	function pushWardrobe(){ // Pushes the wardrobe to the right, and removes one cheat block.
+		console.log("holi")
+	}
+	function putLever(){ // Puts lever in place.
+		console.log("holi")
+	}
+	function workLever(){ // Moves lever, moves box down, and moves tiny key to its final place.
 		console.log("holi")
 	}
 
