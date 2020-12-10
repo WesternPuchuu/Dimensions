@@ -6,7 +6,7 @@ function level2(){
 	// 2.03 - Medium step
 	// 2.04 - Small step
 	// 2.05 - Tiny key
-	// 2.06 - 
+	// 2.06
 
 
 	var l2s0cs = Array()
