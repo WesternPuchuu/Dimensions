@@ -274,7 +274,7 @@ function level2(){
 	// c4 - Opened door
 	// c5 - Medium step
 	// c6 - Back
-	// var l2s10c = new cuadro(50,50,500,500), (128,128,128), (128,128,128), True, False, None,
+	// var l2s10c = new cuadro(50,50,500,500, (128,128,128), (128,128,128), True, False, None,
     //             None, None)
 	// var l2s10c = new cuadro(100,100,400,400), (128,128,128), (192,192,192), True, False,
     //             None, None, "Luckily, the door is open.")
