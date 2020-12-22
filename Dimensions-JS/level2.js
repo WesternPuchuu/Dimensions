@@ -40,11 +40,11 @@ function level2(){
 	// c0 - Big thanks
 	// c1 - More levels soon
 	// c2 - Feel free to
-	var l2s0c0 = new cuadro(20,20,760,40,"#000000",u,u,u,u,u,"Thanks for playing!!",["38px Arial","#00ff00"])
-	var l2s0c1 = new cuadro(0,80,800,20,cb,u,u,u,u,u,"More levels coming soon!",["20px Times New Roman","#ffffff"])
-	var l2s0c2 = new cuadro(0,120,800,20,cb,u,u,u,u,u,"If you liked the game, feel free to check the code and suggest optimizations :D",["20px Arial","#ffffff"])
-	l2s0cs.push(l2s0c0,l2s0c1,l2s0c2)
-	l2s0 = new screen(cb, l2s0cs, false)
+	// var l2s0c0 = new cuadro(20,20,760,40,"#000000",u,u,u,u,u,"Thanks for playing!!",["38px Arial","#00ff00"])
+	// var l2s0c1 = new cuadro(0,80,800,20,cb,u,u,u,u,u,"More levels coming soon!",["20px Times New Roman","#ffffff"])
+	// var l2s0c2 = new cuadro(0,120,800,20,cb,u,u,u,u,u,"If you liked the game, feel free to check the code and suggest optimizations :D",["20px Arial","#ffffff"])
+	// l2s0cs.push(l2s0c0,l2s0c1,l2s0c2)
+	// l2s0 = new screen(cb, l2s0cs, false)
 
 	// 0 - Room N1 - Wall 1
 	//#region 
@@ -59,19 +59,19 @@ function level2(){
 	// c8 - Button for seeing above the wardrobe
 	// c9 - To wall 4
 	// c10 - To wall 2
-	// var l2s0c0 = new cuadro(100,100,250,300,"#c0c040","#ffff40",true,u,[changescr,4],["It's a wardrobe."])
-	// var l2s0c1 = new cuadro(100,400,40,15,cb,"#808080",true,u,[changescr,5],["There's something in the", "corner of the wardrobe."])
-	// var l2s0c2 = new cuadro(400,450,100,50,"#ff8000","#ffc080",true,u,[simpleItemTake,[2,2.01,"Hammer"]],["It's a hammer."])
-	// var l2s0c3 = new cuadro(100,200,100,100,cb,u,u,false,u,["There's something written", "in the wall."],"5",["100px Arial Black", "#00ff80"])
-	// var l2s0c4 = new cuadro(50,100,50,300,cb,"#808080",u,u,[pushWardrobe],["Is there something behind", "the wardrobe? I Can't move it."])
-	// var l2s0c5 = new cuadro(350,350,100,50,cb,"#402020",true,u,[simpleItemUse,[2.02,activateL]])
-	// var l2s0c6 = new cuadro(350,300,75,50,cb,"#402020",u,false,[simpleItemUse,[2.03,activateM]])
-	// var l2s0c7 = new cuadro(350,250,50,50,cb,"#402020",u,false,[simpleItemUse,[2.04,activateS]])
-	// var l2s0c8 = new cuadro(100,50,250,50,cb,"#808080",u,u,[changescr,6],["I could see what's above the", "wardrobe if I had a ladder."])              
-	// var l2s0c9 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,3])
-	// var l2s0c10 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,1])
-	// l2s0cs.push(l2s0c0,l2s0c1,l2s0c2,l2s0c3,l2s0c4,l2s0c5,l2s0c6,l2s0c7,l2s0c8,l2s0c9,l2s0c10)
-	// l2s0 = new screen(cb, l2s0cs)
+	var l2s0c0 = new cuadro(100,100,250,300,"#c0c040","#ffff40",true,u,[changescr,4],["It's a wardrobe."])
+	var l2s0c1 = new cuadro(100,400,40,15,cb,"#808080",true,u,[changescr,5],["There's something in the", "corner of the wardrobe."])
+	var l2s0c2 = new cuadro(400,450,100,50,"#ff8000","#ffc080",true,u,[simpleItemTake,[2,2.01,"Hammer"]],["It's a hammer."])
+	var l2s0c3 = new cuadro(100,200,100,100,cb,u,u,false,u,["There's something written", "in the wall."],"5",["100px Arial Black", "#00ff80"])
+	var l2s0c4 = new cuadro(50,100,50,300,cb,"#808080",u,u,[pushWardrobe],["Is there something behind", "the wardrobe? I Can't move it."])
+	var l2s0c5 = new cuadro(350,350,100,50,cb,"#402020",true,u,[simpleItemUse,[2.02,activateL]])
+	var l2s0c6 = new cuadro(350,300,75,50,cb,"#402020",u,false,[simpleItemUse,[2.03,activateM]])
+	var l2s0c7 = new cuadro(350,250,50,50,cb,"#402020",u,false,[simpleItemUse,[2.04,activateS]])
+	var l2s0c8 = new cuadro(100,50,250,50,cb,"#808080",u,u,[changescr,6],["I could see what's above the", "wardrobe if I had a ladder."])              
+	var l2s0c9 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,3])
+	var l2s0c10 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,1])
+	l2s0cs.push(l2s0c0,l2s0c1,l2s0c2,l2s0c3,l2s0c4,l2s0c5,l2s0c6,l2s0c7,l2s0c8,l2s0c9,l2s0c10)
+	l2s0 = new screen(cb, l2s0cs)
 	//#endregion
 	// 1 - Room N1 - Wall 2
 	//#region 
@@ -103,7 +103,7 @@ function level2(){
 	//#region 
 	// c0 - Red door
 	// c1 - Miniature writing
-	// c2 - Transdimensional machine
+	// c2 - TD machine
 	// c3 - Large brick shard
 	// c4 - Box
 	// c5 - Tiny key (before falling)
@@ -238,7 +238,50 @@ function level2(){
 	l2s7cs.push(l2s7c0,l2s7c1,l2s7c2,l2s7c3,l2s7c4,l2s7c5,l2s7c6,l2s7c7)
 	l2s7 = new screen(cb,l2s7cs)
 	//#endregion
-	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7)
+	// 8 - Door corner close-up
+	//#region 
+	// c0 - Door
+	// c1 - Tiny writing
+	// c2 - Big writing
+	// c3 - Back
+	var l2s8c0 = new cuadro(0,0,300,300,"#800000")
+	var l2s8c1 = new cuadro(250,250,50,50,"#800000","#ff0000",true,u,[simpleItemUse,[2.09,magnify]],["I can't read it."],"3", ["4px Arial","#80ff00"])
+	var l2s8c2 = new cuadro(250,250,100,100,"#800000",u,u,false,u,["Now I can read it."],"3",["100px Arial Black", "#80ff00"])
+	var l2s8c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
+	l2s8cs.push(l2s8c0,l2s8c1,l2s8c2,l2s8c3)
+	l2s8 = new screen(cb,l2s8cs)
+	//#endregion
+	// 9 - TD machine
+	//#region 
+	// c0 - Machine body
+	// c1 - Screen (Part 1)
+	// c2 - Screen (Part 2)
+	// c3 - Badge reader
+	// c4 - Back
+	var l2s9c0 = new cuadro(50,50,500,500,"#808080",u,u,u,u,["What is this machine for?"])
+	var l2s9c1 = new cuadro(100,100,400,100,"#000000",u,u,u,u,["Dark red badge? What's that?"],"Please show a",["40px Courier New","#ffffff"])
+	var l2s9c2 = new cuadro(100,200,400,100,"#000000",u,u,u,u,["Dark red badge? What's that?"],"dark red badge",["40px Courier New","#ffffff"])
+	var l2s9c3 = new cuadro(250,400,100,100,"#000000","#404040",true,u,[showBadge],["I suppose I have to show it here."])
+	var l2s9c4 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
+	l2s9cs.push(l2s9c0,l2s9c1,l2s9c2,l2s9c3,l2s9c4)
+	l2s9 = new screen(cb,l2s9cs)
+	//#endregion
+	// 10 - Box
+	// var l2s10c = new cuadro(50,50,500,500), (128,128,128), (128,128,128), True, False, None,
+    //             None, None)
+	// var l2s10c = new cuadro(100,100,400,400), (128,128,128), (192,192,192), True, False,
+    //             None, None, "Luckily, the door is open.")
+	// var l2s10c = new cuadro(200,250,100,100), (224,224,224), (255,255,255), True, True, None,
+    //             -2.28, "This is the handle of the box.")
+	// var l2s10c = new cuadro(100,100,400,400), (64,64,64), (64,64,64), False, False, None,
+    //            None, None)
+	// var l2s10c = new cuadro(500,100,99,400), (128,128,128), (128,128,128), False, False, None,
+    //            None, None)
+	// var l2s10c = new cuadro(150,350,300,50), (128,128,128), (192,192,192), False, True, None,
+    //            -0.23, "Looks like some kind of step.")
+	// var l2s10c = new cuadro(0,550,599,50), (32,0,0), (128,128,128), True, True, "Back", 2,
+    //           None, ["Arial Black", 20, (255,255,255)])
+	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		console.log("holi")
@@ -250,6 +293,9 @@ function level2(){
 		console.log("holi")
 	}
 	function brickCode(){ // Takes the brick order, and activates the white brick if the code is ok.
+		console.log("holi")
+	}
+	function magnify(){ // Uses the magnifying glass, and removes one cheat block
 		console.log("holi")
 	}
 	function openLockShelf(){ // Opens the locked shelf.
@@ -276,6 +322,9 @@ function level2(){
 		console.log("holi")
 	}
 	function screwsOff(){ // Removes the screws.
+		console.log("holi")
+	}
+	function showBadge(){ // Activates TD machine.
 		console.log("holi")
 	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
