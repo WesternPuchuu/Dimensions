@@ -276,7 +276,7 @@ function level2(){
 	// c6 - Back
 	// var l2s10c = new cuadro(50,50,500,500, (128,128,128), (128,128,128), True, False, None,
     //             None, None)
-	// var l2s10c = new cuadro(100,100,400,400), (128,128,128), (192,192,192), True, False,
+	// var l2s10c = new cuadro(100,100,400,400, (128,128,128), (192,192,192), True, False,
     //             None, None, "Luckily, the door is open.")
 	// var l2s10c = new cuadro(200,250,100,100), (224,224,224), (255,255,255), True, True, None,
     //             -2.28, "This is the handle of the box.")
