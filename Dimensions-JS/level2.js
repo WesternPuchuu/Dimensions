@@ -267,6 +267,7 @@ function level2(){
 	l2s9 = new screen(cb,l2s9cs)
 	//#endregion
 	// 10 - Box
+	//#region 
 	// c0 - Box body
 	// c1 - Closed door
 	// c2 - Door handle
@@ -274,21 +275,63 @@ function level2(){
 	// c4 - Opened door
 	// c5 - Medium step
 	// c6 - Back
-	// var l2s10c = new cuadro(50,50,500,500, (128,128,128), (128,128,128), True, False, None,
-    //             None, None)
-	// var l2s10c = new cuadro(100,100,400,400, (128,128,128), (192,192,192), True, False,
-    //             None, None, "Luckily, the door is open.")
-	// var l2s10c = new cuadro(200,250,100,100, (224,224,224), (255,255,255), True, True, None,
-    //             -2.28, "This is the handle of the box.")
-	// var l2s10c = new cuadro(100,100,400,400, (64,64,64), (64,64,64), False, False, None,
-    //            None, None)
-	// var l2s10c = new cuadro(500,100,99,400), (128,128,128), (128,128,128), False, False, None,
-    //            None, None)
-	// var l2s10c = new cuadro(150,350,300,50), (128,128,128), (192,192,192), False, True, None,
-    //            -0.23, "Looks like some kind of step.")
-	// var l2s10c = new cuadro(0,550,599,50), (32,0,0), (128,128,128), True, True, "Back", 2,
-    //           None, ["Arial Black", 20, (255,255,255)])
-	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9)
+	var l2s10c0 = new cuadro(50,50,500,500,"#808080")
+	var l2s10c1 = new cuadro(100,100,400,400,"#808080","#c0c0c0",u,u,u,["Luckily, the door is open."])
+	var l2s10c2 = new cuadro(200,250,100,100,"#e0e0e0","#ffffff",true,u,[openBox],["This is the handle of the box."])
+	var l2s10c3 = new cuadro(100,100,400,400,"#404040",u,u,false)
+	var l2s10c4 = new cuadro(500,100,99,400,"#808080",u,u,false,)
+	var l2s10c5 = new cuadro(150,350,300,50,"#808080","#c0c0c0",u,false,[simpleItemTake,[5,2.03,"Medium step"]],["Looks like some kind of step."])
+	var l2s10c6 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
+	l2s10cs.push(l2s10c0,l2s10c1,l2s10c2,l2s10c3,l2s10c4,l2s10c5,l2s10c6)
+	l2s10 = new screen(cb,l2s10cs)
+	//#endregion
+	// 11 - Crafting table
+	// c0 - Table body
+	// c1 - Working area (left)
+	// c2 - Working area (right)
+	// c3 - Working area (gap)
+	// c4 - Big brick shard (main)
+	// c5 - Big brick shard (over gap)
+	// c6 - Small brick shard (main)
+	// c7 - Small brick shard (over gap)
+	// c8 - Gap in brick
+	// c9 - Fixed gap
+	// c10 - Working area (for white brick)
+	// c11 - White brick
+	// c12 - Hole in white brick
+	// c13 - Dark red badge
+// 	mcraf = Button((50,100,500,400), (255,192,0), (255,192,0), True, False, None,
+//                None, None)
+// Ospac1 = Button((100,200,280,200), (128,64,0), (128,64,0), True, True, None,
+//                 -1.25, "The table has a rectangular space.")
+// Ospac2 = Button((400,200,100,200), (128,64,0), (128,64,0), True, True, None,
+//                 -1.29, "The table has a rectangular space.")
+// Bshard = Button((100,200,280,200), (255,128,0), (255,128,0), False, False, None,
+//                 -2.29, "The orange brick is broken.")
+// Bgap = Button((380,200,20,90), (255,128,0), (255,128,0), False, False, None,
+//                 None, "The orange brick is broken.")
+// Sshard = Button((400,200,100,200), (255,128,0), (255,128,0), False, False, None,
+//                 -2.29, "The orange brick is broken.")
+// Sgap = Button((380,310,20,90), (255,128,0), (255,128,0), False, False, None,
+//                 None, "The orange brick is broken.")
+// misgap = Button((380,290,20,20), (128,64,0), (128,64,0), False, True, None,
+//                 -1.214, ["There should be a way to fix", "the brick."])
+// fixgap = Button((380,200,20,200), (255,255,255), (255,255,255), False, True, None,
+//                 -2.29, "The orange brick is fixed!")
+// Bspac = Button((100,200,400,200), (128,64,0), (128,64,0), False, True, None,
+//                -1.216, "The table has a rectangular space.")
+// Bplace = Button((100,200,400,200), (255,255,255), (255,255,255), False, True,
+//                 None, -1.21, "The white brick is in the table.")
+// within = Button((200,250,200,100), (0,0,0), (0,0,0), False, False, None, None,
+//                 "There was something inside the brick!")
+// badge1 = Button((260,260,80,80), (128,0,0), (128,0,0), False, True, None, -0.217,
+//                 "What's this?")
+// mismis = Button((380,200,20,200), (128,64,0), (128,64,0), True, False, None,
+//                 None, "The table has a rectangular space.")
+// bt4a = Button((0,550,599,50), (32,0,0), (128,128,128), True, True, "Back", 3,
+//               None, ["Arial Black", 20, (255,255,255)])
+	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
+		l2s10)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		console.log("holi")
@@ -303,6 +346,9 @@ function level2(){
 		console.log("holi")
 	}
 	function magnify(){ // Uses the magnifying glass, and removes one cheat block
+		console.log("holi")
+	}
+	function openBox(){ // Opens the box.
 		console.log("holi")
 	}
 	function openLockShelf(){ // Opens the locked shelf.
