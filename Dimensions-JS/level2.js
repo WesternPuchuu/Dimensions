@@ -16,6 +16,8 @@ function level2(){
 	// 2.13 - Azure brick
 	// 2.14 - Super glue
 	// 2.15 - Orange brick
+	// 2.16 - White brick
+	// 2.17 - Dark red badge
 
 
 	var l2s0cs = Array()
@@ -286,6 +288,7 @@ function level2(){
 	l2s10 = new screen(cb,l2s10cs)
 	//#endregion
 	// 11 - Crafting table
+	//#region 
 	// c0 - Table body
 	// c1 - Working area (left)
 	// c2 - Working area (right)
@@ -300,38 +303,29 @@ function level2(){
 	// c11 - White brick
 	// c12 - Hole in white brick
 	// c13 - Dark red badge
-// 	mcraf = Button((50,100,500,400), (255,192,0), (255,192,0), True, False, None,
-//                None, None)
-// Ospac1 = Button((100,200,280,200), (128,64,0), (128,64,0), True, True, None,
-//                 -1.25, "The table has a rectangular space.")
-// Ospac2 = Button((400,200,100,200), (128,64,0), (128,64,0), True, True, None,
-//                 -1.29, "The table has a rectangular space.")
-// Bshard = Button((100,200,280,200), (255,128,0), (255,128,0), False, False, None,
-//                 -2.29, "The orange brick is broken.")
-// Bgap = Button((380,200,20,90), (255,128,0), (255,128,0), False, False, None,
-//                 None, "The orange brick is broken.")
-// Sshard = Button((400,200,100,200), (255,128,0), (255,128,0), False, False, None,
-//                 -2.29, "The orange brick is broken.")
-// Sgap = Button((380,310,20,90), (255,128,0), (255,128,0), False, False, None,
-//                 None, "The orange brick is broken.")
-// misgap = Button((380,290,20,20), (128,64,0), (128,64,0), False, True, None,
-//                 -1.214, ["There should be a way to fix", "the brick."])
-// fixgap = Button((380,200,20,200), (255,255,255), (255,255,255), False, True, None,
-//                 -2.29, "The orange brick is fixed!")
-// Bspac = Button((100,200,400,200), (128,64,0), (128,64,0), False, True, None,
-//                -1.216, "The table has a rectangular space.")
-// Bplace = Button((100,200,400,200), (255,255,255), (255,255,255), False, True,
-//                 None, -1.21, "The white brick is in the table.")
-// within = Button((200,250,200,100), (0,0,0), (0,0,0), False, False, None, None,
-//                 "There was something inside the brick!")
-// badge1 = Button((260,260,80,80), (128,0,0), (128,0,0), False, True, None, -0.217,
-//                 "What's this?")
-// mismis = Button((380,200,20,200), (128,64,0), (128,64,0), True, False, None,
-//                 None, "The table has a rectangular space.")
-// bt4a = Button((0,550,599,50), (32,0,0), (128,128,128), True, True, "Back", 3,
-//               None, ["Arial Black", 20, (255,255,255)])
+	// c14 - Back
+	var l2s11c0 = new cuadro(50,100,500,400,"#ffc000")
+	var l2s11c1 = new cuadro(100,200,280,200,"#804000",u,true,u,[simpleItemUse,[2.06,brickCraft1]],["The table has a rectangular space."])
+	var l2s11c2 = new cuadro(400,200,100,200,"#804000",u,true,u,[simpleItemUse,[2.11,brickCraft2]],["The table has a rectangular space."])
+	var l2s11c3 = new cuadro(380,200,20,200,"#804000",u,u,u,u,["The table has a rectangular space."])
+	var l2s11c4 = new cuadro(100,200,280,200,"#ff8000",u,u,false,[grabAsWhole],["The orange brick is broken."])
+	var l2s11c5 = new cuadro(380,200,20,90,"#ff8000",u,u,false,[grabAsWhole],["The orange brick is broken."])
+	var l2s11c6 = new cuadro(400,200,100,200,"#ff8000",u,u,false,[grabAsWhole],["The orange brick is broken."])
+	var l2s11c7 = new cuadro(380,310,20,90,"#ff8000",u,u,false,[grabAsWhole],["The orange brick is broken."])
+	var l2s11c8 = new cuadro(380,290,20,20,"#804000",u,u,false,[simpleItemUse,[2.14,fixBrick]],["There should be a way to fix", "the brick."])
+	var l2s11c9 = new cuadro(380,200,20,200,"#ffffff",u,u,false,[grabAsWhole],["The orange brick is fixed!"])
+	var l2s11c10 = new cuadro(100,200,400,200,"#804000",u,u,false,[simpleItemUse,[2.16,placeWhite]],["The table has a rectangular space."])
+	var l2s11c11 = new cuadro(100,200,400,200,"#ffffff",u,u,false,[simpleItemUse,[2.01,smashBrick]],["The white brick is on the table."])
+	var l2s11c12 = new cuadro(200,250,200,100,"#000000",u,u,false,u,["There was something inside the brick!"])
+	var l2s11c13 = new cuadro(260,260,80,80,"#800000","#c00000",u,false,[simpleItemTake,[13,2.17,"Dark red badge"]],["What's this?"])
+	var l2s11c14 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
+	l2s11cs.push(l2s11c0,l2s11c1,l2s11c2,l2s11c3,l2s11c4,l2s11c5,l2s11c6,l2s11c7,l2s11c8,l2s11c9,
+		l2s11c10,l2s11c11,l2s11c12,l2s11c13,l2s11c14)
+	l2s11 = new screen(cb,l2s11cs)
+	//#endregion
+	// 12 - Plantpot
 	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
-		l2s10)
+		l2s10,l2s11)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		console.log("holi")
@@ -343,6 +337,23 @@ function level2(){
 		console.log("holi")
 	}
 	function brickCode(){ // Takes the brick order, and activates the white brick if the code is ok.
+		console.log("holi")
+	}
+	function brickCraft1(){ // Places the large brick shard on the crafting table.
+		console.log("holi")
+		checkShards()
+	}
+	function brickCraft2(){ // Places the small brick shard on the crafting table.
+		console.log("holi")
+		checkShards()
+	}
+	function checkShards(){ // Checks if both shards are in place. If so, activates the gap.
+		console.log("holi")
+	}
+	function fixBrick(){ // Fixes the orange brick and allows to take it from the table.
+		console.log("holi")
+	}
+	function grabAsWhole(){ // Takes the orange brick from the crafting table, regardless of the clicked rect.
 		console.log("holi")
 	}
 	function magnify(){ // Uses the magnifying glass, and removes one cheat block
@@ -362,6 +373,9 @@ function level2(){
 	function openTinyShelf(){ // Opens the gap in the shelf.
 		openShelf([8,7,9])
 	}
+	function placeWhite(){ // Places the white brick on the crafting table.
+		console.log("holi")
+	}
 	function pushWardrobe(){ // Pushes the wardrobe to the right, and removes one cheat block.
 		console.log("holi")
 	}
@@ -378,6 +392,9 @@ function level2(){
 		console.log("holi")
 	}
 	function showBadge(){ // Activates TD machine.
+		console.log("holi")
+	}
+	function smashBrick(){ // Breaks the white brick.
 		console.log("holi")
 	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
