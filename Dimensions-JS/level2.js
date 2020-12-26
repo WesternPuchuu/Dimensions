@@ -324,8 +324,53 @@ function level2(){
 	l2s11 = new screen(cb,l2s11cs)
 	//#endregion
 	// 12 - Plantpot
+	//#region 
+	// c0 - Plantpot body
+	// c1 - Pillar
+	// c2 - Dirt
+	// c3 - Back
+	var l2s12c0 = new cuadro(50,50,500,450,"#c04000")
+	var l2s12c1 = new cuadro(100,500,400,50,"#c0c0c0")
+	var l2s12c2 = new cuadro(100,100,400,50,"#804000","#c08040",true,u,[changescr,14],["The plantpot is full of dirt."])
+	var l2s12c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
+	l2s12cs.push(l2s12c0,l2s12c1,l2s12c2,l2s12c3)
+	l2s12 = new screen(cb,l2s12cs)
+	//#endregion
+	// 13 - Behind the pillar
+	//#region 
+	// c0 - Pillar background
+	// c1 - Buttons base
+	// c2-c17 - Code buttons
+	// c18 - Confirm button
+	// c19 - Light
+	// c20 - Back	
+	var l2s13c0 = new cuadro(50,0,500,550,"#c0c0c0")
+	var l2s13c1 = new cuadro(150,50,300,300,"#202020")
+	var l2s13c2 = new cuadro(154,54,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c3 = new cuadro(228,54,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c4 = new cuadro(302,54,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c5 = new cuadro(376,54,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c6 = new cuadro(154,128,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c7 = new cuadro(228,128,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c8 = new cuadro(302,128,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c9 = new cuadro(376,128,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c10 = new cuadro(154,202,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c11 = new cuadro(228,202,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c12 = new cuadro(302,202,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c13 = new cuadro(376,202,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c14 = new cuadro(154,276,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c15 = new cuadro(228,276,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c16 = new cuadro(302,276,70,70,"#80ffff",u,true,u,[pillarShape,-1],["It's a button."])
+	var l2s13c17 = new cuadro(376,276,70,70,"#80ffff",u,true,u,[pillarShape,1],["It's a button."])
+	var l2s13c18 = new cuadro(150,400,150,50,"#ffff00","#ffff80",true,u,[confirmShape],["That's a big button.","I wonder what it does."])
+	var l2s13c19 = new cuadro(400,400,50,50,"#ff0000",u,u,u,u,["It's a red light."])
+	var l2s13c20 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
+	l2s13cs.push(l2s13c0,l2s13c1,l2s13c2,l2s13c3,l2s13c4,l2s13c5,l2s13c6,l2s13c7,l2s13c8,l2s13c9,
+		l2s13c10,l2s13c11,l2s13c12,l2s13c13,l2s13c14,l2s13c15,l2s13c16,l2s13c17,l2s13c18,l2s13c19,l2s13c20)
+	l2s13 = new screen(cb,l2s13cs)
+	//#endregion
 	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
-		l2s10,l2s11)
+		l2s10,l2s11,l2s12,l2s13)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		console.log("holi")
@@ -348,6 +393,9 @@ function level2(){
 		checkShards()
 	}
 	function checkShards(){ // Checks if both shards are in place. If so, activates the gap.
+		console.log("holi")
+	}
+	function confirmShape(){ // Checks if the shape is correct, and opens the shelf.
 		console.log("holi")
 	}
 	function fixBrick(){ // Fixes the orange brick and allows to take it from the table.
@@ -398,6 +446,9 @@ function level2(){
 		console.log("holi")
 	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
+		console.log("holi")
+	}
+	function pillarShape(val){ // Changes the state of the pillar buttons.
 		console.log("holi")
 	}
 	function workLever(){ // Moves lever, moves box down, and moves tiny key to its final place.
