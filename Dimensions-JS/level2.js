@@ -72,7 +72,7 @@ function level2(){
 	var l2s0c5 = new cuadro(350,350,100,50,cb,"#402020",true,u,[simpleItemUse,[2.02,activateL]])
 	var l2s0c6 = new cuadro(350,300,75,50,cb,"#402020",u,false,[simpleItemUse,[2.03,activateM]])
 	var l2s0c7 = new cuadro(350,250,50,50,cb,"#402020",u,false,[simpleItemUse,[2.04,activateS]])
-	var l2s0c8 = new cuadro(100,50,250,50,cb,"#808080",u,u,[changescr,6],["I could see what's above the", "wardrobe if I had a ladder."])              
+	var l2s0c8 = new cuadro(100,75,250,25,cb,"#808080",u,u,[changescr,6],["I could see what's above the", "wardrobe if I had a ladder."])              
 	var l2s0c9 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,3])
 	var l2s0c10 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,1])
 	l2s0cs.push(l2s0c0,l2s0c1,l2s0c2,l2s0c3,l2s0c4,l2s0c5,l2s0c6,l2s0c7,l2s0c8,l2s0c9,l2s0c10)
@@ -383,7 +383,7 @@ function level2(){
 	var l2s14c0 = new cuadro(50,50,500,500,"#c04000")
 	var l2s14c1 = new cuadro(100,100,400,400,"#804000","#c08040",true,u,[removeDirt1],["There's a lot of dirt."])
 	var l2s14c2 = new cuadro(200,200,200,200,"#804000","#c08040",u,false,[simpleItemUse,[2.12,removeDirt2]],["There's still dirt in the pot."])
-	var l2s14c3 = new cuadro(220,240,60,20,"#808080","#c0c0c0",u,false,[simpleItemTake,[3,2.08,"Shelf key"]],["Is that a key?"])
+	var l2s14c3 = new cuadro(220,240,60,20,"#808080","#c0c0c0",u,false,[takeShelfKey],["Is that a key?"])
 	var l2s14c4 = new cuadro(250,250,100,100,"#a02000",u,u,false,u,["There's something written","in the bottom of the plantpot."],"2",["100px Arial Black","#8000ff"])
 	var l2s14c5 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,12],u,"Back",["20px Arial Black","#ffffff"])
 	l2s14cs.push(l2s14c0,l2s14c1,l2s14c2,l2s14c3,l2s14c4,l2s14c5)
@@ -404,43 +404,59 @@ function level2(){
     // c3 - Warning
     // c4 - Load level 2
     // c5 - Go to level 2
-    var l1s16c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
-    var l1s16c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
-    var l1s16c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
-    var l1s16c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l1s16c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev3],u,"Next",["30px Arial Black","#408080"])
-    var l1s16c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev3],u,"Go!",["30px Arial Black","#000000"])
-    l1s16cs.push(l1s16c0, l1s16c1, l1s16c2, l1s16c3, l1s16c4, l1s16c5)
-    l1s16 = new screen("#000000", l1s16cs, false)
+    var l2s16c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
+    var l2s16c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
+    var l2s16c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
+    var l2s16c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
+    var l2s16c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev3],u,"Next",["30px Arial Black","#408080"])
+    var l2s16c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev3],u,"Go!",["30px Arial Black","#000000"])
+    l2s16cs.push(l2s16c0, l2s16c1, l2s16c2, l2s16c3, l2s16c4, l2s16c5)
+    l2s16 = new screen("#000000", l2s16cs, false)
 	//#endregion
 	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
 		l2s10,l2s11,l2s12,l2s13,l2s14,l2s15,l2s16)
 
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
-		console.log("holi")
+		l2s0c5.c = "#808080"
+		l2s0c5.high = "#808080"
+		quickTurn([6]) // s0
 	}
 	function activateM(){ // Places the medium step, and allows the placement of the small one.
-		console.log("holi")
+		l2s0c6.c = "#808080"
+		l2s0c6.high = "#808080"
+		quickTurn([7]) // s0
 	}
 	function activateS(){ // Places the small step, and allows to see above the wardrobe.
-		console.log("holi")
+		l2s0c7.c = "#808080"
+		l2s0c7.high = "#808080"
+		l2s0c8.think = ["Now I can see above!"]
+		quickTurn(u,[8]) // s0
 	}
 	function brickCode(){ // Takes the brick order, and activates the white brick if the code is ok.
 		console.log("holi")
 	}
 	function brickCraft1(){ // Places the large brick shard on the crafting table.
-		console.log("holi")
+		quickTurn(u,u,[4,5]) // s11
 		checkShards()
 	}
 	function brickCraft2(){ // Places the small brick shard on the crafting table.
-		console.log("holi")
+		quickTurn(u,u,[6,7]) // s11
 		checkShards()
 	}
 	function checkShards(){ // Checks if both shards are in place. If so, activates the gap.
 		console.log("holi")
 	}
 	function confirmShape(){ // Checks if the shape is correct, and opens the shelf.
-		console.log("holi")
+		if (this.currlev.cheatblock[3] == 10){
+			quickTurn(u,[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]) // s13
+			l2s13c19.c = "#00ff00"
+			l2s13c19.high = "#00ff00"
+			l2s13c19.think = ["The light turned green!"]
+			l2s4c3.isClick = true
+			l2s4c15.c = "#00ff00"
+			l2s4c15.high = "#00ff00"
+			l2s4c15.think = ["This light is also green now."]
+		}
 	}
 	function fixBrick(){ // Fixes the orange brick and allows to take it from the table.
 		console.log("holi")
@@ -479,7 +495,14 @@ function level2(){
 		console.log("holi")
 	}
 	function pushWardrobe(){ // Pushes the wardrobe to the right, and removes one cheat block.
-		console.log("holi")
+		quickTurn([4],u,[3])
+		var tomove = [0,1,5,6,7,8]
+		tomove.forEach(val => {
+			this.buts[val].x0 += 100
+			this.buts[val].xmin += 100
+			this.buts[val].xmax += 100
+		})
+		this.currlev.cheatblock[1] = false
 	}
 	function putAzure(){ // Places the azure brick.
 		console.log("holi")
@@ -491,29 +514,51 @@ function level2(){
 		console.log("holi")
 	}
 	function removeDirt1(){ // Removes the first layer of dirt, keeping the trowel.
-		console.log("holi")
+		if (inve.sack.some(par => par[0] == 2.12) == true){
+			quickTurn([1,3],u,[2]) // s14
+			l2s12c2.c = "#a02000"
+			l2s12c2.think = ["There's some dirt in the","plantpot."]
+		}
 	}
-	function removeDirt2(){ // Removes the secodn layer of dirt, consuming the trowel.
-		console.log("holi")
+	function removeDirt2(){ // Removes the second layer of dirt, consuming the trowel.
+		quickTurn([2],u,[4])
+		this.currlev.cheatblock[0] = false
+		l2s12c2.think = ["The plantpot is empty."]
 	}
 	function screwsOff(){ // Removes the screws.
-		console.log("holi")
+		quickTurn([2,3]) // s5
+		l2s5c1.think = ["This is loose now."]
+		l2s0c4.isClick = true
+		l2s0c4.think = ["Now I can push the wardrobe."]
 	}
 	function showBadge(){ // Activates TD machine.
 		console.log("holi")
 	}
 	function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l1s16c2.text = actp.crPass("4950b",[1,0,2,3,4])
+        l2s16c2.text = actp.crPass("4950b",[1,0,2,3,4])
         quickTurn([4],[1],[2,3]) //s16
     }
 	function smashBrick(){ // Breaks the white brick.
 		console.log("holi")
 	}
+	function takeShelfKey(){ // Picks the shelf key from the plantpot, and allows to dig further.
+		simpleItemTake([3,2.08,"Shelf key"])
+		quickTurn(u,[2]) // s14
+	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
 		console.log("holi")
 	}
 	function pillarShape(val){ // Changes the state of the pillar buttons.
-		console.log("holi")
+		var placa = this.buts[currb]
+		if (placa.c == "#80ffff"){
+			placa.c = "#800000"
+			placa.high = "#800000"
+			this.currlev.cheatblock[3] += val
+		} else {
+			placa.c = "#80ffff"
+			placa.high = "#80ffff"
+			this.currlev.cheatblock[3] -= val
+		}
 	}
 	function workLever(){ // Moves lever, moves box down, and moves tiny key to its final place.
 		console.log("holi")
@@ -521,7 +566,7 @@ function level2(){
 
 	return{
 		screens:l2ss,
-		cheatblock:[]
+		cheatblock:[true,true,true,0,0]
 	}
 
 }
