@@ -1,5 +1,6 @@
 function level2(){
 	var cb = "#200000"
+	var gen = this
 	// ITEM LIST
 	// 2.01 - Hammer
 	// 2.02 - Large step
@@ -124,7 +125,7 @@ function level2(){
 	var l2s2c4 = new cuadro(50,50,100,100,"#808080","#c0c0c0",u,u,[changescr,10],["Theres a box hanging from a", "chain. I can't reach it."])
 	var l2s2c5 = new cuadro(130,30,20,20,"#c0c040","#ffff80",u,u,u,["There's something over the box"])
 	var l2s2c6 = new cuadro(160,260,30,30,"#000000","#404040",true,u,[simpleItemUse,[2.07,putLever]],["There's a gap on the wall.", "It looks like something","should fit there."])
-	var l2s2c7 = new cuadro(150,200,50,150,"#ffc000","#ffff40",u,false,[workLever],["The lever fits perfectly."])
+	var l2s2c7 = new cuadro(155,200,40,150,"#ffc000","#ffff40",u,false,[workLever],["The lever fits perfectly."])
 	var l2s2c8 = new cuadro(90,0,20,50,"#404040")
 	var l2s2c9 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,1])
 	var l2s2c10 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,3])
@@ -495,7 +496,7 @@ function level2(){
 		console.log("holi")
 	}
 	function pushWardrobe(){ // Pushes the wardrobe to the right, and removes one cheat block.
-		quickTurn([4],u,[3])
+		quickTurn([4],u,[3]) // s0
 		var tomove = [0,1,5,6,7,8]
 		tomove.forEach(val => {
 			this.buts[val].x0 += 100
@@ -508,7 +509,7 @@ function level2(){
 		console.log("holi")
 	}
 	function putLever(){ // Puts lever in place.
-		console.log("holi")
+		quickTurn([6,7])
 	}
 	function putOrange(){ // Places the orange brick.
 		console.log("holi")
@@ -522,7 +523,7 @@ function level2(){
 	}
 	function removeDirt2(){ // Removes the second layer of dirt, consuming the trowel.
 		quickTurn([2],u,[4])
-		this.currlev.cheatblock[0] = false
+		gen.currlev.cheatblock[0] = false
 		l2s12c2.think = ["The plantpot is empty."]
 	}
 	function screwsOff(){ // Removes the screws.
@@ -561,6 +562,25 @@ function level2(){
 		}
 	}
 	function workLever(){ // Moves lever, moves box down, and moves tiny key to its final place.
+		animate = true
+		setTimeout(function(){
+			l2s2c7.x0 = 100
+			l2s2c7.y0 = 255
+			l2s2c7.wi = 150
+			l2s2c7.he = 40
+		},500)
+		setTimeout(function(){
+			l2s2c7.x0 = 155
+			l2s2c7.y0 = 200
+			l2s2c7.wi = 40
+			l2s2c7.he = 150
+		},1000)
+		for (let i = 0; i < 11; i++) {
+			setTimeout(function(){
+				l2s2c4.y0 = 50+2.5*(Math.pow(i,2))
+				console.log(l2s2c4.y0)
+			},1001+(50*i))			
+		}
 		console.log("holi")
 	}
 
