@@ -578,10 +578,22 @@ function level2(){
 		for (let i = 0; i < 11; i++) {
 			setTimeout(function(){
 				l2s2c4.y0 = 50+2.5*(Math.pow(i,2))
+				l2s2c5.y0 = 30+2.5*(Math.pow(i,2))
+				l2s2c8.he = 50+2.5*(Math.pow(i,2))
 				console.log(l2s2c4.y0)
 			},1001+(50*i))			
 		}
-		console.log("holi")
+		setTimeout(function(){
+			l2s2c5.c = cb
+			l2s2c5.high = "#402020"
+			l2s2c5.think = ["That thing over the box","flew off somewhere else!"]
+			l2s1c9.isClick = true
+			l2s1c9.isVis = true
+		},1251)
+		setTimeout(function(){
+			
+		})
+		setTimeout(function(){animate = false},2002)
 	}
 
 	return{
