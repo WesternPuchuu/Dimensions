@@ -17,6 +17,13 @@ function init_mouse(){
 	mmX = $("#canvas").offset().left;
 	mmY = $("#canvas").offset().top;
 	m.push(mmX,mmY)
+	console.log(m)
+}
+
+function update_mouse(){
+	console.log("jelou")
+	m = []
+	init_mouse()
 }
 
 function init(){
@@ -24,6 +31,7 @@ function init(){
   WIDTH = $("#canvas").width();
   HEIGHT = $("#canvas").height();
   $("#canvas")[0].addEventListener("mousedown", doMouse, false);
+  $("#canvas")[0].addEventListener("resize",update_mouse,false);
   inve = new inventory();
   currlev = new level(0, level0)
   id = setInterval(draw, 10);
