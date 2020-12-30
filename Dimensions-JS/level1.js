@@ -288,7 +288,7 @@ function level1(){
     var l1s13c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
     var l1s13c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
     var l1s13c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l1s13c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev2],u,"Next",["30px Arial Black","#408080"])
+    var l1s13c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev2],u,"Next",["30px Arial Black","#404040"])
     var l1s13c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev2],u,"Go!",["30px Arial Black","#000000"])
     l1s13cs.push(l1s13c0, l1s13c1, l1s13c2, l1s13c3, l1s13c4, l1s13c5)
     l1s13 = new screen("#000000", l1s13cs, false)

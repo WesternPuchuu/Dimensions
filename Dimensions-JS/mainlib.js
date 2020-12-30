@@ -19,11 +19,25 @@ function init_mouse(){
 	m.push(mmX,mmY)
 }
 
+function update_mouse(){
+	m = []
+	init_mouse()
+	currlev.screens.forEach(scr => {
+		scr.botones.forEach(but => {
+			but.xmin = m[0]+but.x0
+			but.xmax = m[0]+but.x0+but.wi
+			but.ymin = m[1]+but.y0
+			but.ymax = m[1]+but.y0+but.he
+		})		
+	})
+}
+
 function init(){
 	ctx = $("#canvas")[0].getContext("2d");
   WIDTH = $("#canvas").width();
   HEIGHT = $("#canvas").height();
   $("#canvas")[0].addEventListener("mousedown", doMouse, false);
+  this.addEventListener("resize",update_mouse,false);
   inve = new inventory();
   currlev = new level(0, level0)
   id = setInterval(draw, 10);
@@ -99,8 +113,8 @@ function draw(){
 				ctx.textBaseline = "middle"
 				ctx.font = buts[i].ti[0]
 				ctx.fillStyle = buts[i].ti[1]
-				var centerx = (buts[i].xmin + buts[i].xmax - 2*buts[i].mm[0])/2
-				var centery = (buts[i].ymin + buts[i].ymax - 2*buts[i].mm[1])/2
+				var centerx = (buts[i].xmin + buts[i].xmax - 2*m[0])/2
+				var centery = (buts[i].ymin + buts[i].ymax - 2*m[1])/2
 				ctx.fillText(buts[i].text,centerx,centery)
 			}
 		}

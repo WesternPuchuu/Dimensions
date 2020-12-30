@@ -126,10 +126,8 @@ function level0(){
 		actp = new player("unnamed",1,"N")
 		var nl = document.createElement("script");
 		nl.src = "level1.js";
-		//nl.src = "level2.js" // TEST LINE - DO NOT USE
         document.head.appendChild(nl);
 		this.currlev.cheatblock = [1, "level1"]
-		//this.currlev.cheatblock = [2,"level2"] // TEST LINE - DO NOT USE
 		currscr = 2
 	}
 	function eraseone(){ // Erases one character from password. Deactivates confirm button if necessary.
