@@ -1,6 +1,5 @@
 function level2(){
 	var cb = "#200000"
-	var gen = this
 	// ITEM LIST
 	// 2.01 - Hammer
 	// 2.02 - Large step
@@ -41,16 +40,6 @@ function level2(){
 	var l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
 	l2s10,l2s11,l2s12,l2s13,l2s14,l2s15,l2s16
 	var l2ss = Array()
-
-	// 0 - Temporary "Thank You" screen
-	// c0 - Big thanks
-	// c1 - More levels soon
-	// c2 - Feel free to
-	// var l2s0c0 = new cuadro(20,20,760,40,"#000000",u,u,u,u,u,"Thanks for playing!!",["38px Arial","#00ff00"])
-	// var l2s0c1 = new cuadro(0,80,800,20,cb,u,u,u,u,u,"More levels coming soon!",["20px Times New Roman","#ffffff"])
-	// var l2s0c2 = new cuadro(0,120,800,20,cb,u,u,u,u,u,"If you liked the game, feel free to check the code and suggest optimizations :D",["20px Arial","#ffffff"])
-	// l2s0cs.push(l2s0c0,l2s0c1,l2s0c2)
-	// l2s0 = new screen(cb, l2s0cs, false)
 
 	// 0 - Room N1 - Wall 1
 	//#region 
@@ -97,7 +86,7 @@ function level2(){
 	var l2s1c5 = new cuadro(200,300,100,50,"#8000ff",u,true,u,[changescr,7],["What are those colored", "bricks for?"])
 	var l2s1c6 = new cuadro(300,300,100,50,"#000000",u,true,u,[changescr,7],["What are those colored", "bricks for?"])
 	var l2s1c7 = new cuadro(350,450,150,50,"#808080","#c0c0c0",true,u,[simpleItemTake,[7,2.02,"Large step"]],["Looks like some kind of step."])
-	var l2s1c8 = new cuadro(450,50,100,100,cb,u,u,u,u,["There's something written", "in the wall"],"6",["100px Arial Black","#ff8000"])
+	var l2s1c8 = new cuadro(450,50,100,100,cb,u,u,u,u,["There's something written", "on the wall"],"6",["100px Arial Black","#ff8000"])
 	var l2s1c9 = new cuadro(150,470,20,20,"#c0c040","#ffff80",u,false,[simpleItemTake,[9,2.05,"Tiny key"]],["This little thing fell from","the box."])
 	var l2s1c10 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,0])
 	var l2s1c11 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,2])
@@ -234,11 +223,11 @@ function level2(){
 	// c6 - Azure brick (missing)
 	// c7 - Back
 	var l2s7c0 = new cuadro(100,150,200,100,"#000000",u,true,u,[simpleItemUse,[2.15,putOrange]],["There's a brick missing."])
-	var l2s7c1 = new cuadro(300,150,200,100,"#80ff00","#c0ff80",u,u,[brickCode,[6,8,1]],["It's a lime green brick."])
-	var l2s7c2 = new cuadro(0,250,200,100,"#ff0080","#ff80c0",u,u,[brickCode,[0,2,2]],["It's a fuchsia brick."])
+	var l2s7c1 = new cuadro(300,150,200,100,"#80ff00","#c0ff80",u,u,[brickCode,[3,4,1,"#408000"]],["It's a lime green brick."])
+	var l2s7c2 = new cuadro(0,250,200,100,"#ff0080","#ff80c0",u,u,[brickCode,[1,1,2,"#800040"]],["It's a fuchsia brick."])
 	var l2s7c3 = new cuadro(200,250,200,100,"#808080","#c0c0c0",u,u,[takeWhite],["There's something strange with","this brick."])
-	var l2s7c4 = new cuadro(400,250,199,100,"#00ff80","#80ffc0",u,u,[brickCode,[30,32,4]],["It's a turquoise brick."])
-	var l2s7c5 = new cuadro(100,350,200,100,"#8000ff","#c080ff",u,u,[brickCode,[2,4,5]],["It's a violet brick."])
+	var l2s7c4 = new cuadro(400,250,199,100,"#00ff80","#80ffc0",u,u,[brickCode,[5,11,4,"#008040"]],["It's a turquoise brick."])
+	var l2s7c5 = new cuadro(100,350,200,100,"#8000ff","#c080ff",u,u,[brickCode,[2,2,5,"#400080"]],["It's a violet brick."])
 	var l2s7c6 = new cuadro(300,350,200,100,"#000000",u,true,u,[simpleItemUse,[2.13,putAzure]],["There's a brick missing."])
 	var l2s7c7 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,1],u,"Back",["20px Arial Black","#ffffff"])
 	l2s7cs.push(l2s7c0,l2s7c1,l2s7c2,l2s7c3,l2s7c4,l2s7c5,l2s7c6,l2s7c7)
@@ -251,7 +240,7 @@ function level2(){
 	// c2 - Big writing
 	// c3 - Back
 	var l2s8c0 = new cuadro(0,0,300,300,"#800000")
-	var l2s8c1 = new cuadro(250,250,50,50,"#800000","#ff0000",true,u,[simpleItemUse,[2.09,magnify]],["I can't read it."],"3", ["4px Arial","#80ff00"])
+	var l2s8c1 = new cuadro(250,250,50,50,"#800000","#ff0000",true,u,[magnify],["I can't read it."],"3", ["4px Arial","#80ff00"])
 	var l2s8c2 = new cuadro(250,250,100,100,"#800000",u,u,false,u,["Now I can read it."],"3",["100px Arial Black", "#80ff00"])
 	var l2s8c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
 	l2s8cs.push(l2s8c0,l2s8c1,l2s8c2,l2s8c3)
@@ -283,7 +272,7 @@ function level2(){
 	// c6 - Back
 	var l2s10c0 = new cuadro(50,50,500,500,"#808080")
 	var l2s10c1 = new cuadro(100,100,400,400,"#808080","#c0c0c0",u,u,u,["Luckily, the door is open."])
-	var l2s10c2 = new cuadro(200,250,100,100,"#e0e0e0","#ffffff",true,u,[openBox],["This is the handle of the box."])
+	var l2s10c2 = new cuadro(150,250,100,100,"#e0e0e0","#ffffff",true,u,[openBox],["This is the handle of the box."])
 	var l2s10c3 = new cuadro(100,100,400,400,"#404040",u,u,false)
 	var l2s10c4 = new cuadro(500,100,99,400,"#808080",u,u,false,)
 	var l2s10c5 = new cuadro(150,350,300,50,"#808080","#c0c0c0",u,false,[simpleItemTake,[5,2.03,"Medium step"]],["Looks like some kind of step."])
@@ -383,7 +372,7 @@ function level2(){
 	// c5 - Back
 	var l2s14c0 = new cuadro(50,50,500,500,"#c04000")
 	var l2s14c1 = new cuadro(100,100,400,400,"#804000","#c08040",true,u,[removeDirt1],["There's a lot of dirt."])
-	var l2s14c2 = new cuadro(200,200,200,200,"#804000","#c08040",u,false,[simpleItemUse,[2.12,removeDirt2]],["There's still dirt in the pot."])
+	var l2s14c2 = new cuadro(200,200,200,200,"#804000","#c08040",u,false,[removeDirt2],["There's still dirt in the pot."])
 	var l2s14c3 = new cuadro(220,240,60,20,"#808080","#c0c0c0",u,false,[takeShelfKey],["Is that a key?"])
 	var l2s14c4 = new cuadro(250,250,100,100,"#a02000",u,u,false,u,["There's something written","in the bottom of the plantpot."],"2",["100px Arial Black","#8000ff"])
 	var l2s14c5 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,12],u,"Back",["20px Arial Black","#ffffff"])
@@ -409,7 +398,7 @@ function level2(){
     var l2s16c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
     var l2s16c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
     var l2s16c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l2s16c4 = new cuadro(550,300,150,100,"#a04040","#ff4040",u,false,[loadLev3],u,"Next",["30px Arial Black","#408080"])
+    var l2s16c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev3],u,"Next",["30px Arial Black","#404040"])
     var l2s16c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev3],u,"Go!",["30px Arial Black","#000000"])
     l2s16cs.push(l2s16c0, l2s16c1, l2s16c2, l2s16c3, l2s16c4, l2s16c5)
     l2s16 = new screen("#000000", l2s16cs, false)
@@ -417,6 +406,11 @@ function level2(){
 	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
 		l2s10,l2s11,l2s12,l2s13,l2s14,l2s15,l2s16)
 
+	function activateBricks(){ // Checks if the missing bricks are placed, and activates the bricks if so.
+		if (l2s7c0.c == "#ff8000" & l2s7c6.c == "#0080ff"){
+			quickTurn(u,[0,1,2,4,5,6]) // s7
+		}
+	}
 	function activateL(){ // Places the large step, and allows the placement of the medium one.
 		l2s0c5.c = "#808080"
 		l2s0c5.high = "#808080"
@@ -433,8 +427,33 @@ function level2(){
 		l2s0c8.think = ["Now I can see above!"]
 		quickTurn(u,[8]) // s0
 	}
-	function brickCode(){ // Takes the brick order, and activates the white brick if the code is ok.
-		console.log("holi")
+	function brickCode(cbd){ // Takes the brick order, and activates the white brick if the code is ok.
+		var tcc = this.currlev.cheatblock
+		this.buts[cbd[2]].isClick = false
+		this.buts[cbd[2]].c = cbd[3]
+		this.buts[cbd[2]].high = cbd[3]
+		if (tcc[4] < cbd[1] & tcc[4] >= 0){
+			this.currlev.cheatblock[4] += cbd[0]
+		} else {
+			this.currlev.cheatblock[4] = (Math.abs(tcc[4]) + cbd[0])*-1
+		}
+		if (Math.abs(tcc[4]) == 21){
+			if (tcc[4] == 21 & tcc[0] == false & tcc[1] == false & tcc[2] == false){
+				l2s7c3.isClick = true
+				l2s7c3.c = "#ffffff"
+				l2s7c3.think = ["The brick emerged from the wall!"]
+				l2s1c3.c = "#ffffff"
+				l2s1c3.high = "#ffffff"
+			} else {
+				this.currlev.cheatblock[4] = 0
+				resetBricks(0,"#ff8000","#ffc080")
+				resetBricks(1,"#80ff00","#c0ff80")
+				resetBricks(2,"#ff0080","#ff80c0")
+				resetBricks(4,"#00ff80","#80ffc0")
+				resetBricks(5,"#8000ff","#c080ff")
+				resetBricks(6,"#0080ff","#80c0ff")
+			}
+		}
 	}
 	function brickCraft1(){ // Places the large brick shard on the crafting table.
 		quickTurn(u,u,[4,5]) // s11
@@ -445,7 +464,9 @@ function level2(){
 		checkShards()
 	}
 	function checkShards(){ // Checks if both shards are in place. If so, activates the gap.
-		console.log("holi")
+		if (l2s11c4.isVis == true & l2s11c6.isVis == true){
+			quickTurn([8]) // s11
+		}
 	}
 	function confirmShape(){ // Checks if the shape is correct, and opens the shelf.
 		if (this.currlev.cheatblock[3] == 10){
@@ -460,14 +481,17 @@ function level2(){
 		}
 	}
 	function fixBrick(){ // Fixes the orange brick and allows to take it from the table.
-		console.log("holi")
+		quickTurn([8,9],[4,5,6,7]) // s11
+		l2s11c4.think = ["The orange brick is fixed!"]
+		l2s11c6.think = ["The orange brick is fixed!"]
 	}
 	function goToLev3(){ // Level clear function. Sends to level 3 (Room 1N).
-        //currlev = new level(3, level3)
+        currlev = new level(3, level3)
         currscr = 0
     }
 	function grabAsWhole(){ // Takes the orange brick from the crafting table, regardless of the clicked rect.
-		console.log("holi")
+		quickTurn([4,5,6,7,8,9,10]) // s11
+		inve.placeIn([2.15,"Orange brick"])
 	}
 	function loadLev3(){ // Loads information for level 3.
     	var nl = document.createElement("script");
@@ -476,10 +500,17 @@ function level2(){
         quickTurn([5],[4])
     }
 	function magnify(){ // Uses the magnifying glass, and removes one cheat block
-		console.log("holi")
+		var loccb = true
+		simpleItemUse([2.09,function(){
+			quickTurn([1],u,[2]) // s8
+			loccb = false
+		}])
+		if (loccb == false){
+			this.currlev.cheatblock[2] = false
+		}
 	}
 	function openBox(){ // Opens the box.
-		console.log("holi")
+		quickTurn([2,5],u,[1,3,4])
 	}
 	function openLockShelf(){ // Opens the locked shelf.
 		openShelf([5,2,13,14])
@@ -493,7 +524,7 @@ function level2(){
 		openShelf([8,7,9])
 	}
 	function placeWhite(){ // Places the white brick on the crafting table.
-		console.log("holi")
+		quickTurn([10,11]) // s11
 	}
 	function pushWardrobe(){ // Pushes the wardrobe to the right, and removes one cheat block.
 		quickTurn([4],u,[3]) // s0
@@ -506,13 +537,27 @@ function level2(){
 		this.currlev.cheatblock[1] = false
 	}
 	function putAzure(){ // Places the azure brick.
-		console.log("holi")
+		l2s7c6.c = "#0080ff"
+		l2s7c6.high = "#80c0ff"
+		l2s7c6.isClick = false
+		l2s7c6.think = ["It's an azure brick"]
+		l2s1c6.c = "#0080ff"
+		l2s1c6.high = "#0080ff"
+		l2s7c6.dofx = function(){brickCode([4,7,6,"#004080"])}
+		activateBricks()
 	}
 	function putLever(){ // Puts lever in place.
 		quickTurn([6,7])
 	}
 	function putOrange(){ // Places the orange brick.
-		console.log("holi")
+		l2s7c0.c = "#ff8000"
+		l2s7c0.high = "#ffc080"
+		l2s7c0.isClick = false
+		l2s7c0.think = ["It's an orange brick"]
+		l2s1c0.c = "#ff8000"
+		l2s1c0.high = "#ff8000"
+		l2s7c0.dofx = function(){brickCode([6,16,0,"#804000"])}
+		activateBricks()
 	}
 	function removeDirt1(){ // Removes the first layer of dirt, keeping the trowel.
 		if (inve.sack.some(par => par[0] == 2.12) == true){
@@ -522,9 +567,20 @@ function level2(){
 		}
 	}
 	function removeDirt2(){ // Removes the second layer of dirt, consuming the trowel.
-		quickTurn([2],u,[4])
-		gen.currlev.cheatblock[0] = false
-		l2s12c2.think = ["The plantpot is empty."]
+		var loccb = true
+		simpleItemUse([2.12,function(){
+			quickTurn([2],u,[4]) // s14
+			loccb = false
+			l2s12c2.think = ["The plantpot is empty."]
+		}])
+		if (loccb == false){
+			this.currlev.cheatblock[0] = false
+		}		
+	}
+	function resetBricks(val,c1,h1){ // Resets bricks when given a wrong combination.
+		this.buts[val].isClick = true
+		this.buts[val].c = c1
+		this.buts[val].high = h1
 	}
 	function screwsOff(){ // Removes the screws.
 		quickTurn([2,3]) // s5
@@ -533,21 +589,38 @@ function level2(){
 		l2s0c4.think = ["Now I can push the wardrobe."]
 	}
 	function showBadge(){ // Activates TD machine.
-		console.log("holi")
+		if (inve.sack.some(par => par[0] == 2.17) == true){
+			animate = true
+			for (let i = 0; i < 8; i++) {
+				setTimeout(function(){
+					l2s9.bgcolor = (i == 0 || i == 2 || i == 4 || i == 6) ? "#600000":cb
+					l2s9c4.c = (i == 0 || i == 2 || i == 4 || i == 6) ? "#600000":cb
+				},200*i)				
+			}
+			setTimeout(function(){
+				animate = false
+				changescr(15)
+			},1401)
+		}
 	}
 	function showPassword(){ // Creates and makes the password visible. Shows the next level button.
         l2s16c2.text = actp.crPass("4950b",[1,0,2,3,4])
         quickTurn([4],[1],[2,3]) //s16
     }
 	function smashBrick(){ // Breaks the white brick.
-		console.log("holi")
+		quickTurn([13],[11],[12]) // s11
 	}
 	function takeShelfKey(){ // Picks the shelf key from the plantpot, and allows to dig further.
 		simpleItemTake([3,2.08,"Shelf key"])
 		quickTurn(u,[2]) // s14
 	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
-		console.log("holi")
+		inve.placeIn([2.16,"White brick"])
+		l2s7c3.c = "#000000"
+		l2s7c3.high = "#000000"
+		l2s7c3.think = ["I already took the brick"]
+		l2s1c3.c = "#000000"
+		l2s1c3.high = "#000000"
 	}
 	function pillarShape(val){ // Changes the state of the pillar buttons.
 		var placa = this.buts[currb]
@@ -580,7 +653,6 @@ function level2(){
 				l2s2c4.y0 = 50+2.5*(Math.pow(i,2))
 				l2s2c5.y0 = 30+2.5*(Math.pow(i,2))
 				l2s2c8.he = 50+2.5*(Math.pow(i,2))
-				console.log(l2s2c4.y0)
 			},1001+(50*i))			
 		}
 		setTimeout(function(){
@@ -591,9 +663,16 @@ function level2(){
 			l2s1c9.isVis = true
 		},1251)
 		setTimeout(function(){
-			
-		})
-		setTimeout(function(){animate = false},2002)
+		l2s2c4.ymax += 250
+		l2s2c5.ymax += 250
+		l2s2c4.ymin += 250
+		l2s2c5.ymin += 250
+		l2s2c8.ymax += 250
+		l2s2c4.think = ["Now I can reach the box!"]
+		l2s2c4.isClick = true
+		l2s2c7.think = ["The lever worked well."]
+		},1501)
+		setTimeout(function(){animate = false},1502)
 	}
 
 	return{
