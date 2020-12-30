@@ -616,6 +616,7 @@ function level2(){
 	}
 	function takeWhite(){ // Takes the white brick, leaving a black hole behind.
 		inve.placeIn([2.16,"White brick"])
+		l2s7c3.isClick = false
 		l2s7c3.c = "#000000"
 		l2s7c3.high = "#000000"
 		l2s7c3.think = ["I already took the brick"]
@@ -671,6 +672,7 @@ function level2(){
 		l2s2c4.think = ["Now I can reach the box!"]
 		l2s2c4.isClick = true
 		l2s2c7.think = ["The lever worked well."]
+		l2s2c7.isClick = false
 		},1501)
 		setTimeout(function(){animate = false},1502)
 	}
