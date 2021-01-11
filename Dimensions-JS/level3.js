@@ -11,6 +11,9 @@ function level3(){
     // 3.03 - Grease
     // 3.04 - Spin! fertilizer
     // 3.05 - Acorn
+    // 3.06 - Magnet
+    // 3.07 - Door key
+    // 3.08 - Mailbox key
 
     // 0 - Temporary "Thank You" screen
 	// c0 - Big thanks
@@ -90,14 +93,91 @@ function level3(){
     var l3s2cs = [l3s2c0,l3s2c1,l3s2c2,l3s2c3,l3s2c4,l3s2c5,l3s2c6,l3s2c7,l3s2c8,l3s2c9]
     var l3s2 = new screen(cb,l3s2cs)
     //#endregion
-    
+    // 3 - Room 1N, wall 3
+    //#region 
+    // c0 - Wardrobe
+    // c1 - Wardrobe side
+    // c2 - Bottle
+    // c3 - Bottle neck
+    // c4 - Iron ball
+    // c5 - Place for magnet
+    // c6 - Magnet in place
+    // c7 - Red door
+    // c8 - To wall 2
+    // c9 - To wall 4
+    var l3s3c0 = new cuadro(100,100,250,300,"#c0c040","#ffff40",true,u,[changescr,8],["The wardrobe looks different."])
+    var l3s3c1 = new cuadro(350,100,30,300,cb,"#808080",true,u,[changescr,9],["There's something strange","by the wardrobe's side."])
+    var l3s3c2 = new cuadro(490,340,60,60,"#40ffff")
+    var l3s3c3 = new cuadro(505,280,30,60,"#40ffff",u,u,u,u,["It's a sturdy bottle."])
+    var l3s3c4 = new cuadro(505,370,30,30,"#80a0a0","#c0c0c0",u,u,u,["There's an iron ball inside","the bottle."])
+    var l3s3c5 = new cuadro(470,370,20,30,cb,"#802020",true,u,[simpleItemUse,[3.06,takeBall]])
+    var l3s3c6 = new cuadro(460,370,30,30,"#c0c0c0",u,u,false)
+    var l3s3c7 = new cuadro(250,200,100,200,"#a00000","#ff8080",u,false,[simpleItemUse,[3.07,openDoor]],["This door is locked."])
+    var l3s3c8 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,2])
+    var l3s3c9 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,4])
+    var l3s3cs = [l3s3c0,l3s3c1,l3s3c2,l3s3c3,l3s3c4,l3s3c5,l3s3c6,l3s3c7,l3s3c8,l3s3c9]
+    var l3s3 = new screen(cb,l3s3cs)
+    //#endregion
+    // 4 - Room 1N, wall 4
+    //#region 
+    // c0 - Orange mailbox
+    // c1 - Lime green mailbox
+    // c2 - Fuchsia mailbox
+    // c3 - Gypsum brick
+    // c4 - Turquoise mailbox
+    // c5 - Violet mailbox
+    // c6 - Azure mailbox
+    // c7 - To wall 3
+    // c8 - To wall 1
+    var l3s4c0 = new cuadro(200,200,100,50,"#ff8000",u,true,u,[changescr,10],["The bricks are now...","mailboxes?"])
+    var l3s4c1 = new cuadro(300,200,100,50,"#80ff00",u,true,u,[changescr,11],["The bricks are now...","mailboxes?"])
+    var l3s4c2 = new cuadro(150,250,100,50,"#ff0080",u,true,u,[changescr,12],["The bricks are now...","mailboxes?"])
+    var l3s4c3 = new cuadro(250,250,100,50,"#ffffff",u,true,u,[changescr,13],["The bricks are now...","mailboxes?"])
+    var l3s4c4 = new cuadro(350,250,100,50,"#00ff80",u,true,u,[changescr,14],["The bricks are now...","mailboxes?"])
+    var l3s4c5 = new cuadro(200,300,100,50,"#8000ff",u,true,u,[changescr,15],["The bricks are now...","mailboxes?"])
+    var l3s4c6 = new cuadro(300,300,100,50,"#0080ff",u,true,u,[changescr,16],["The bricks are now...","mailboxes?"])
+    var l3s4c7 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,3])
+    var l3s4c8 = new cuadro(550,0,49,600,cb,"#808080",true,u,[changescr,1])
+    var l3s4cs = [l3s4c0,l3s4c1,l3s4c2,l3s4c3,l3s4c4,l3s4c5,l3s4c6,l3s4c7,l3s4c8]
+    var l3s4 = new screen(cb,l3s4cs)
+    //#endregion
+    // 5 - Cage and box
+    //#region 
+    // c0 - Closed box
+    // c1-c3 - Cage bars
+    // c4 - Box lid
+    // c5 - Box interior
+    // c6 - Box bottom
+    // c7 - Mailbox key
+    // c8 - Back
+    var l3s5c0 = new cuadro(100,250,400,250,"#ff8000",u,u,u,[openBox],["There's a box inside the cage."])
+    var l3s5c1 = new cuadro(50,0,100,550,"#808080")
+    var l3s5c2 = new cuadro(250,0,100,550,"#808080")
+    var l3s5c3 = new cuadro(450,0,100,550,"#808080")
+    var l3s5c4 = new cuadro(100,100,400,200,"#ff8000",u,u,false,u,["The box wasn't locked."])
+    var l3s5c5 = new cuadro(100,300,400,150,"#804000",u,u,false,u,["The box wasn't locked."])
+    var l3s5c6 = new cuadro(100,450,400,50,"#ff8000",u,u,false,u,["The box wasn't locked."])
+    var l3s5c7 = new cuadro(200,350,200,50,"#ff0080","#ff80c0",u,false,[simpleItemTake,[7,3.08,"Mailbox key"]],["It's a key."])
+    var l3s5c8 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,1],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s5cs = [l3s5c0,l3s5c1,l3s5c2,l3s5c3,l3s5c4,l3s5c5,l3s5c6,l3s5c7,l3s5c8]
+    var l3s5 = new screen(cb,l3s5cs)
+    //#endregion
 
-    var l3ss = [l3s0,l3s1,l3s2]
+    var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5]
 
     function activateSpin(){ // Activates the function for growing the acorn.
         console.log("holi")
     }
     function greaseLever(){ // Makes the lever work, moving the cage.
+        console.log("holi")
+    }
+    function openBox(){ // Opens the box.
+        console.log("holi")
+    }
+    function openDoor(){ // Opens the red door and shows the level clear screen.
+        console.log("holi")
+    }
+    function takeBall(){ // Takes the ball out of the bottle.
         console.log("holi")
     }
     function useKnife(){ // Cuts the poster, showing the code and the poster shard.
