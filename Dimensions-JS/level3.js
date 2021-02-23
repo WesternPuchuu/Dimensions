@@ -14,6 +14,10 @@ function level3(){
     // 3.06 - Magnet
     // 3.07 - Door key
     // 3.08 - Mailbox key
+    // 3.09 - Silicon card
+    // 3.10 - Metal ball
+    // 3.11 - Chisel
+    // 3.12 - Megagloves!
 
     // 0 - Temporary "Thank You" screen
 	// c0 - Big thanks
@@ -162,8 +166,129 @@ function level3(){
     var l3s5cs = [l3s5c0,l3s5c1,l3s5c2,l3s5c3,l3s5c4,l3s5c5,l3s5c6,l3s5c7,l3s5c8]
     var l3s5 = new screen(cb,l3s5cs)
     //#endregion
+    // 6 - Table with brochures
+    //#region 
+    // c0 - Table
+    // c1 - Fertilizer brochure
+    // c2 - Megagloves brochure
+    // c3 - Back
+    var l3s6c0 = new cuadro(100,100,400,400,"#ffc000")
+    var l3s6c1 = new cuadro(150,200,100,200,"#008000","#00c000",u,u,u,["It's a brochure. It says:","Get your fruits faster","with Spin! Fertilizer.","Just turn around and see","the results!"],"Spin!",["50px Gill Sans MT","#00ffff"])
+    var l3s6c2 = new cuadro(350,200,100,200,"#c00060","#ff20a0",u,u,u,["It's a brochure. It says:","Want to feel real strength? With","Megagloves, you'll move heavy","things in one touch!!"],"Megagloves!",["15px Forte","#c0c0c0"])
+    var l3s6c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s6cs = [l3s6c0,l3s6c1,l3s6c2,l3s6c3]
+    var l3s6 = new screen(cb,l3s6cs)
+    //#endregion
+    // 7 - Behind pillar
+    //#region 
+    // c0 - Pillar
+    // c1 - Silicon card
+    // c2 - Back
+    var l3s7c0 = new cuadro(0,0,550,550,"#c0c0c0")
+    var l3s7c1 = new cuadro(550,450,20,100,"#c0c0c0","#e0e0e0",true,u,[simpleItemTake,[1,3.09,"Silicon card"]],["What's this?"])
+    var l3s7c2 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,2],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s7cs = [l3s7c0,l3s7c1,l3s7c2]
+    var l3s7 = new screen(cb,l3s7cs)
+    //#endregion
+    // 8 - Wardrobe
+    //#region 
+    // c0 - Wardrobe body
+    // c1 - Weight 1
+    // c2 - Image 1
+    // c3 - Door 1
+    // c4 - Handle 1
+    // c5 - Poster in place
+    // c6 - Opened door 1
+    // c7 - Bottom 1
+    // c8 - Weight 2
+    // c9 - Image 2
+    // c10 - Door 2
+    // c11 - Handle 2
+    // c12 - Acorn in place
+    // c13 - Opened door 2
+    // c14 - Bottom 2
+    // c15 - Magnet
+    // c16 - Silicon card
+    // c17 - Weight 3
+    // c18 - Image 3
+    // c19 - Door 3
+    // c20 - Handle 3
+    // c21 - Iron ball in place
+    // c22 - Opened door 3
+    // c23 - Bottom 3
+    // c24 - Button
+    // c25 - Back
+    var l3s8c0 = new cuadro(100,50,400,500,"#c0c040")
+    var l3s8c1 = new cuadro(150,120,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.02,unlock1]],["It's a weight."])
+    var l3s8c2 = new cuadro(150,100,100,20,"#008080","#00c0c0",u,u,u,["It's the image of a feather."])
+    var l3s8c3 = new cuadro(250,100,200,100,"#c04040")
+    var l3s8c4 = new cuadro(270,130,40,40,"#ff0000","#ff4040",u,u,[openShelf,[3,4,6,7,u]],["It's locked."])
+    var l3s8c5 = new cuadro(155,180,90,20,"#c0c0c0",u,u,false,u,["It seems that the poster had","the right weight."])
+    var l3s8c6 = new cuadro(450,100,149,100,"#c04040",u,u,false)
+    var l3s8c7 = new cuadro(250,100,200,100,"#c00000",u,u,false,u,["There is something written."],"37",["80px Arial","#000000"])
+    var l3s8c8 = new cuadro(150,270,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.05,unlock2]],["It's a weight."])
+    var l3s8c9 = new cuadro(150,250,100,20,"#008080","#00c0c0",u,u,u,["It's the image of an apple."])
+    var l3s8c10 = new cuadro(250,250,200,100,"#c04040")
+    var l3s8c11 = new cuadro(270,280,40,40,"#ff0000","#ff4040",u,u,[openShelf,[10,11,13,14,15]],["It's locked."])
+    var l3s8c12 = new cuadro(170,290,60,60,"#804000",u,u,false,u,["It seems that the acorn had","the right weight."])
+    var l3s8c13 = new cuadro(450,250,149,100,"#c04040",u,u,false)
+    var l3s8c14 = new cuadro(250,250,200,100,"#c00000",u,u,false)
+    var l3s8c15 = new cuadro(310,270,80,70,"#a0a0a0","#e0e0e0",u,false,[simpleItemUse,[3.09,unstickMagnet]],["It's a magnet. It is stuck to the","wardrobe."])
+    var l3s8c16 = new cuadro(300,340,100,10,"#c0c0c0",u,u,false)
+    var l3s8c17 = new cuadro(150,420,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.10,unlock3]],["It's a weight."])
+    var l3s8c18 = new cuadro(150,400,100,20,"#008080","#00c0c0",u,u,u,["It's the image of an anvil."])
+    var l3s8c19 = new cuadro(250,400,200,100,"#c04040")
+    var l3s8c20 = new cuadro(270,430,40,40,"#ff0000","#ff4040",u,u,[openShelf,[19,20,22,23,24]],["It's locked."])
+    var l3s8c21 = new cuadro(160,420,80,80,"#808080",u,u,false,u,["It seems that the ball had","the right weight."])
+    var l3s8c22 = new cuadro(450,400,149,100,"#c04040",u,u,false)
+    var l3s8c23 = new cuadro(250,400,200,100,"#c00000",u,u,false)
+    var l3s8c24 = new cuadro(350,425,50,50,"#400080","#8000ff",u,false,[openI],["It's a button. Shall I press it?"])
+    var l3s8c25 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s8cs = [l3s8c0,l3s8c1,l3s8c2,l3s8c3,l3s8c4,l3s8c5,l3s8c6,l3s8c7,l3s8c8,l3s8c9,
+        l3s8c10,l3s8c11,l3s8c12,l3s8c13,l3s8c14,l3s8c15,l3s8c16,l3s8c17,l3s8c18,l3s8c19,
+        l3s8c20,l3s8c21,l3s8c22,l3s8c23,l3s8c24,l3s8c25]
+    var l3s8 = new screen(cb,l3s8cs)
+    //#endregion
+    // 9 - Behind wardrobe
+    //#region 
+    // c0 - Wardrobe
+    // c1 - Door
+    // c2 - Chisel
+    // c3 - Punching mark 1
+    // c4 - Punching mark 2
+    // c5 - Moved wardrobe
+    // c6 - Back
+    var l3s9c0 = new cuadro(150,0,400,550,"#c0c040")
+    var l3s9c1 = new cuadro(575,0,24,550,"#ff0000",u,u,u,u,["There's a door behind the wardrobe!"])
+    var l3s9c2 = new cuadro(560,535,15,15,"#000000","#404040",true,u,[simpleItemTake,[2,3.11,"Chisel"]],["What's that?"])
+    var l3s9c3 = new cuadro(200,150,100,100,"#c0c080","#ffff80",true,u,[simpleItemUse,[3.12,pushWardrobe]],["There are some...", "punching marks?"])
+    var l3s9c4 = new cuadro(400,150,100,100,"#c0c080","#ffff80",true,u,[simpleItemUse,[3.12,pushWardrobe]],["There are some...", "punching marks?"])
+    var l3s9c5 = new cuadro(250,0,200,400,"#c0c040",u,u,false)
+    var l3s9c6 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s9cs = [l3s9c0,l3s9c1,l3s9c2,l3s9c3,l3s9c4,l3s9c5,l3s9c6]
+    var l3s9 = new screen(cb,l3s9cs)
+    //#endregion
+    // 10 - Orange mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2 - Grip
+    // c3 - Inner part
+    // c4 - Opened door
+    // c5 - Knife
+    // c6 - Back
+    var l3s10c0 = new cuadro(50,150,500,300,"#ff8000")
+    var l3s10c1 = new cuadro(100,200,400,200,"#ff8000",u,true,u,u,["It seems it doesn't have any lock."])
+    var l3s10c2 = new cuadro(125,250,100,100,"#808080","#c0c0c0",true,u,[openMB,[1,2,3,4,5]])
+    var l3s10c3 = new cuadro(100,200,400,200,"#804000",u,u,false)
+    var l3s10c4 = new cuadro(500,200,99,200,"#c08040",u,u,false)
+    var l3s10c5 = new cuadro(200,300,200,50,"#404040","#606060",u,false,[simpleItemTake,[5,3.01,"Knife"]],["It's a knife."])
+    var l3s10c6 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s10cs = [l3s10c0,l3s10c1,l3s10c2,l3s10c3,l3s10c4,l3s10c5,l3s10c6]
+    var l3s10 = new screen(cb,l3s10cs)
+    //#endregion
 
-    var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5]
+    var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5,l3s6,l3s7,l3s8,l3s9,l3s10]
 
     function activateSpin(){ // Activates the function for growing the acorn.
         console.log("holi")
@@ -177,7 +302,31 @@ function level3(){
     function openDoor(){ // Opens the red door and shows the level clear screen.
         console.log("holi")
     }
+    function openI(){ // Unlocks the violet mailbox.
+        console.log("holi")
+    }
+    function openMB(cuads){ // Opens the mailboxes.
+        console.log("holi")
+    }
+    function openShelf(cuads){ // Opens the shelves.
+        console.log("holi")
+    }
+    function pushWardrobe(){ // Pushes the wardrobe and reveals the door.
+        console.log("holi")
+    }
     function takeBall(){ // Takes the ball out of the bottle.
+        console.log("holi")
+    }
+    function unlock1(){ // Unlocks the first shelf of the wardrobe.
+        console.log("holi")
+    }
+    function unlock2(){ // Unlocks the second shelf of the wardrobe.
+        console.log("holi")
+    }
+    function unlock3(){ // Unlocks the third shelf of the wardrobe.
+        console.log("holi")
+    }
+    function unstickMagnet(){ // Separates the magnet from the wardrobe, and takes the magnet.
         console.log("holi")
     }
     function useKnife(){ // Cuts the poster, showing the code and the poster shard.
