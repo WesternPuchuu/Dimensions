@@ -279,7 +279,7 @@ function level3(){
     // c6 - Back
     var l3s10c0 = new cuadro(50,150,500,300,"#ff8000")
     var l3s10c1 = new cuadro(100,200,400,200,"#ff8000",u,true,u,u,["It seems it doesn't have any lock."])
-    var l3s10c2 = new cuadro(125,250,100,100,"#808080","#c0c0c0",true,u,[openMB,[1,2,3,4,5]])
+    var l3s10c2 = new cuadro(125,250,100,100,"#808080","#c0c0c0",true,u,[openMB,[[1,3,4],[2,5]]])
     var l3s10c3 = new cuadro(100,200,400,200,"#804000",u,u,false)
     var l3s10c4 = new cuadro(500,200,99,200,"#c08040",u,u,false)
     var l3s10c5 = new cuadro(200,300,200,50,"#404040","#606060",u,false,[simpleItemTake,[5,3.01,"Knife"]],["It's a knife."])
@@ -287,10 +287,153 @@ function level3(){
     var l3s10cs = [l3s10c0,l3s10c1,l3s10c2,l3s10c3,l3s10c4,l3s10c5,l3s10c6]
     var l3s10 = new screen(cb,l3s10cs)
     //#endregion
+    // 11 - Lime mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2-c5 - Number displayers
+    // c6-c9 - Minus buttons
+    // c10-c13 - Plus buttons
+    // c14 - Grip
+    // c15 - Inner part
+    // c16 - Opened door
+    // c17 - Grease
+    // c18 - Back 
+    var l3s11c0 = new cuadro(50,150,500,300,"#80ff00")
+    var l3s11c1 = new cuadro(100,200,400,200,"#80ff00",u,u,u,u,["I wonder what's the code."])
+    var l3s11c2 = new cuadro(125,275,50,50,"#808080",u,u,u,u,u,"0",["50px Courier New","#404040"])
+    var l3s11c3 = new cuadro(225,275,50,50,"#808080",u,u,u,u,u,"0",["50px Courier New","#404040"])
+    var l3s11c4 = new cuadro(325,275,50,50,"#808080",u,u,u,u,u,"0",["50px Courier New","#404040"])
+    var l3s11c5 = new cuadro(425,275,50,50,"#808080",u,u,u,u,u,"0",["50px Courier New","#404040"])
+    var l3s11c6 = new cuadro(125,250,50,25,"#408000","#80c040",true,u,[changeNum,[2,-1]],u,"-",["25px Arial","#000000"])
+    var l3s11c7 = new cuadro(225,250,50,25,"#408000","#80c040",true,u,[changeNum,[3,-1]],u,"-",["25px Arial","#000000"])
+    var l3s11c8 = new cuadro(325,250,50,25,"#408000","#80c040",true,u,[changeNum,[4,-1]],u,"-",["25px Arial","#000000"])
+    var l3s11c9 = new cuadro(425,250,50,25,"#408000","#80c040",true,u,[changeNum,[5,-1]],u,"-",["25px Arial","#000000"])
+    var l3s11c10 = new cuadro(125,325,50,25,"#408000","#80c040",true,u,[changeNum,[2,1]],u,"+",["25px Arial","#000000"])
+    var l3s11c11 = new cuadro(225,325,50,25,"#408000","#80c040",true,u,[changeNum,[3,1]],u,"+",["25px Arial","#000000"])
+    var l3s11c12 = new cuadro(325,325,50,25,"#408000","#80c040",true,u,[changeNum,[4,1]],u,"+",["25px Arial","#000000"])
+    var l3s11c13 = new cuadro(425,325,50,25,"#408000","#80c040",true,u,[changeNum,[5,1]],u,"+",["25px Arial","#000000"])
+    var l3s11c14 = new cuadro(200,375,200,25,"#808080","#c0c0c0",true,u,[checkPass],["It's locked."])
+    var l3s11c15 = new cuadro(100,200,400,200,"#408000",u,u,false)
+    var l3s11c16 = new cuadro(100,0,400,200,"#80c040",u,u,false)
+    var l3s11c17 = new cuadro(250,300,100,100,"#402000","#604020",u,false,[simpleItemTake,[17,3.03,"Grease"]],["It's a can of grease."])
+    var l3s11c18 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s11cs = [l3s11c0,l3s11c1,l3s11c2,l3s11c3,l3s11c4,l3s11c5,l3s11c6,l3s11c7,l3s11c8,l3s11c9,
+        l3s11c10,l3s11c11,l3s11c12,l3s11c13,l3s11c14,l3s11c15,l3s11c16,l3s11c17,l3s11c18]
+    var l3s11 = new screen(cb,l3s11cs)
+    //#endregion
+    // 12 - Fuchsia mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2 - Keyhole
+    // c3 - Inner part
+    // c4 - Opened door
+    // c5 - Fertilizer
+    // c6 - Back
+    var l3s12c0 = new cuadro(50,150,500,300,"#ff0080")
+    var l3s12c1 = new cuadro(100,200,400,200,"#ff0080")
+    var l3s12c2 = new cuadro(275,325,50,50,"#c0c0c0","#e0e0e0",true,u,[simpleItemUse,[3.08,openF]],["It's a keyhole."])
+    var l3s12c3 = new cuadro(100,200,400,200,"#800040",u,u,false)
+    var l3s12c4 = new cuadro(100,0,400,200,"#c04080",u,u,false)
+    var l3s12c5 = new cuadro(125,225,350,150,"#a08080","#c08080",u,false,[simpleItemTake,[5,3.04,"Spin! fertilizer"]],["It's a big bag of...","fertilizer?"])
+    var l3s12c6 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s12cs = [l3s12c0,l3s12c1,l3s12c2,l3s12c3,l3s12c4,l3s12c5,l3s12c6]
+    var l3s12 = new screen(cb,l3s12cs)
+    //#endregion
+    // 13 - Gypsum brick
+    //#region 
+    // c0 - Unchiseled brick
+    // c1 - First number
+    // c2 - Second number
+    // c3 - Back
+    var l3s13c0 = new cuadro(50,150,500,300,"#ffffff",u,true,u,[simpleItemUse,[3.11,chiselB]],["This is not a mailbox but some","kind of soft gypsum."])
+    var l3s13c1 = new cuadro(100,200,200,200,"#600000",u,u,false,u,["What are those numbers for?"],"2",["200px Comic Sans MS","#000000"])
+    var l3s13c2 = new cuadro(300,200,200,200,"#600000",u,u,false,u,["What are those numbers for?"],"1",["200px Comic Sans MS","#ffffff"])
+    var l3s13c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s13cs = [l3s13c0,l3s13c1,l3s13c2,l3s13c3]
+    var l3s13 = new screen(cb,l3s13cs)
+    //#endregion
+    // 14 - Turquoise mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2 - Inner part
+    // c3 - Back
+    var l3s14c0 = new cuadro(50,150,500,300,"#00ff80")
+    var l3s14c1 = new cuadro(100,200,400,200,"#00ff80",u,true,u,[breakK],["It says 'Fragile'.","Maybe I can break it with","my bare hands."],"Fragile",["80px Courier New","#000000"])
+    var l3s14c2 = new cuadro(100,200,400,200,"#008040",u,u,false,u,["What!? Is it really empty!?"])
+    var l3s14c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s14cs = [l3s14c0,l3s14c1,l3s14c2,l3s14c3]
+    var l3s14 = new screen(cb,l3s14cs)
+    //#endregion
+    // 15 - Violet mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2 - Grip
+    // c3 - Inner part
+    // c4 - Opened door
+    // c5 - Door key
+    // c6 - Back
+    var l3s15c0 = new cuadro(50,150,500,300,"#8000ff")
+    var l3s15c1 = new cuadro(100,200,400,200,"#8000ff",u,u,u,u,["It's locked."])
+    var l3s15c2 = new cuadro(125,250,100,100,"#ff0000","#ff8080",u,u,[openMB,[[1,3,4],[2,5]]],["The grip has red lights."])
+    var l3s15c3 = new cuadro(100,200,400,200,"#400080",u,u,false)
+    var l3s15c4 = new cuadro(500,200,99,200,"#8040c0",u,u,false)
+    var l3s15c5 = new cuadro(200,300,200,50,"#800000","#ff4040",u,false,[simpleItemTake,[5,3.07,"Door key"]],["It's a key."])
+    var l3s15c6 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s15cs = [l3s15c0,l3s15c1,l3s15c2,l3s15c3,l3s15c4,l3s15c5,l3s15c6]
+    var l3s15 = new screen(cb,l3s15cs)
+    //#endregion
+    // 16 - Azure mailbox
+    //#region 
+    // c0 - Outer part
+    // c1 - Door
+    // c2-c6 - Displays
+    // c7 - Grip
+    // c8 - Inner part
+    // c9 - Opened door
+    // c10 - Glove 1
+    // c11 - Glove 2
+    // c12 - Back 
+    var l3s16c0 = new cuadro(50,150,500,300,"#0080ff")
+    var l3s16c1 = new cuadro(100,200,400,200,"#0080ff",u,u,u,u,["It's locked."])
+    var l3s16c2 = new cuadro(125,250,50,100,"#000000",u,u,u,u,["It's some kind of display."])
+    var l3s16c3 = new cuadro(175,250,50,100,"#000000",u,u,u,u,["It's some kind of display."])
+    var l3s16c4 = new cuadro(225,250,50,100,"#000000",u,u,u,u,["It's some kind of display."])
+    var l3s16c5 = new cuadro(275,250,50,100,"#000000",u,u,u,u,["It's some kind of display."])
+    var l3s16c6 = new cuadro(325,250,50,100,"#000000",u,u,u,u,["It's some kind of display."])
+    var l3s16c7 = new cuadro(425,250,50,100,"#ff0000","#ff8080",u,u,[openMB,[[1,2,3,4,5,6,8,9],[7,10,11]]],["The grip glows red."])
+    var l3s16c8 = new cuadro(100,200,400,200,"#004080",u,u,false)
+    var l3s16c9 = new cuadro(0,200,100,200,"#4080c0",u,u,false)
+    var l3s16c10 = new cuadro(150,300,100,50,"#ff0080","#ff80c0",u,false,[grabAnyGlove],["They are some weird gloves."])
+    var l3s16c11 = new cuadro(350,300,100,50,"#ff0080","#ff80c0",u,false,[grabAnyGlove],["They are some weird gloves."])
+    var l3s16c12 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
+    var l3s16cs = [l3s16c0,l3s16c1,l3s16c2,l3s16c3,l3s16c4,l3s16c5,l3s16c6,l3s16c7,l3s16c8,l3s16c9,
+        l3s16c10,l3s16c11,l3s16c12]
+    var l3s16 = new screen(cb,l3s16cs)
+    //#endregion
 
-    var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5,l3s6,l3s7,l3s8,l3s9,l3s10]
+    var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5,l3s6,l3s7,l3s8,l3s9,
+        l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16]
 
     function activateSpin(){ // Activates the function for growing the acorn.
+        console.log("holi")
+    }
+    function breakK(){ // Breaks the door of the turquoise mailbox.
+        console.log("holi")
+    }
+    function changeNum(twon){ // Changes the numbers displayed in the lime mailbox.
+        console.log("holi")
+    }
+    function checkPass(){ // Checks if the cheatblocks are removed, then checks for password, and opens the lime mailbox.
+        console.log("holi")
+    }
+    function chiselB(){ // Uses the chisel to reveal the numbers, and reduces the corresponding cheatblock.
+        console.log("holi")
+    }
+    function grabAnyGlove(){ // Grabs the gloves, regardless of the one clicked.
         console.log("holi")
     }
     function greaseLever(){ // Makes the lever work, moving the cage.
@@ -300,6 +443,9 @@ function level3(){
         console.log("holi")
     }
     function openDoor(){ // Opens the red door and shows the level clear screen.
+        console.log("holi")
+    }
+    function openF(){ // Opens the fuchsia mailbox.
         console.log("holi")
     }
     function openI(){ // Unlocks the violet mailbox.
@@ -335,6 +481,6 @@ function level3(){
 
     return{
         screens: l3ss,
-        cheatblock: [true]
+        cheatblock: [3]
     }
 }
