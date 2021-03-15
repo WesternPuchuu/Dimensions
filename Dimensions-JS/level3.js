@@ -58,7 +58,7 @@ function level3(){
     // c8 - Box
     // c9 - To wall 4
     // c10 - To wall 2
-    var l3s1c0 = new cuadro(250,200,100,200,"#ff8000","#ffc080",true,u,[simpleItemUse,[3.01,useKnife]],["Is that a poster?","Where's the door?"])
+    var l3s1c0 = new cuadro(250,200,100,200,"#ff8000","#ffc080",true,u,[useKnife],["Is that a poster?","Where's the door?"])
     var l3s1c1 = new cuadro(250,200,100,50,cb,u,u,false,u,["There's something written in","the wall. No signs","of the door, though."],"84",["50px Arial Black","#ffffff"])
     var l3s1c2 = new cuadro(250,250,100,150,"#ff8000","#ffc080",u,false,u,["Is that a poster?","Where's the door?"])
     var l3s1c3 = new cuadro(350,200,25,50,"#c0c0c0","#ffffff",u,false,[simpleItemTake,[3,3.02,"Poster shard"]],["There's a piece of the poster."])
@@ -88,8 +88,8 @@ function level3(){
     var l3s2c1 = new cuadro(250,0,100,50,"#000080","#8080ff",u,u,u,["It's a blue trapdoor.","It seems closed."])
     var l3s2c2 = new cuadro(50,250,100,150,"#ffc000","#ffff40",true,u,[changescr,6],["The crafting table is now a","regular table."])
     var l3s2c3 = new cuadro(450,300,50,100,"#c0c0c0",u,u,u,u,["It's a marble pillar."])
-    var l3s2c4 = new cuadro(425,200,100,100,"#c04000","#ff8040",u,u,u,["Where did that tree come from?"])
-    var l3s2c5 = new cuadro(450,100,50,100,"#008000","#00c000",true,u,[simpleItemUse,[3.04,activateSpin]],["It's a small pine."])
+    var l3s2c4 = new cuadro(425,200,100,100,"#c04000","#ff8040",true,u,[simpleItemUse,[3.04,activateSpin]],["Where did that tree come from?"])
+    var l3s2c5 = new cuadro(450,100,50,100,"#008000","#00c000",u,u,u,["It's a small pine."])
     var l3s2c6 = new cuadro(435,120,30,30,"#804000","#c08040",u,false,[simpleItemTake,[6,3.05,"Acorn"]],["There's an acorn on the pine!"])
     var l3s2c7 = new cuadro(500,300,20,100,cb,"#808080",true,u,[changescr,7],["There's something behind the pillar."])
     var l3s2c8 = new cuadro(0,0,50,600,cb,"#808080",true,u,[changescr,1])
@@ -222,14 +222,14 @@ function level3(){
     var l3s8c1 = new cuadro(150,120,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.02,unlock1]],["It's a weight."])
     var l3s8c2 = new cuadro(150,100,100,20,"#008080","#00c0c0",u,u,u,["It's the image of a feather."])
     var l3s8c3 = new cuadro(250,100,200,100,"#c04040")
-    var l3s8c4 = new cuadro(270,130,40,40,"#ff0000","#ff4040",u,u,[openShelf,[3,4,6,7,u]],["It's locked."])
+    var l3s8c4 = new cuadro(270,130,40,40,"#ff0000","#ff4040",u,u,[openShelf,[[3,4,6,7],u]],["It's locked."])
     var l3s8c5 = new cuadro(155,180,90,20,"#c0c0c0",u,u,false,u,["It seems that the poster had","the right weight."])
     var l3s8c6 = new cuadro(450,100,149,100,"#c04040",u,u,false)
     var l3s8c7 = new cuadro(250,100,200,100,"#c00000",u,u,false,u,["There is something written."],"37",["80px Arial","#000000"])
     var l3s8c8 = new cuadro(150,270,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.05,unlock2]],["It's a weight."])
     var l3s8c9 = new cuadro(150,250,100,20,"#008080","#00c0c0",u,u,u,["It's the image of an apple."])
     var l3s8c10 = new cuadro(250,250,200,100,"#c04040")
-    var l3s8c11 = new cuadro(270,280,40,40,"#ff0000","#ff4040",u,u,[openShelf,[10,11,13,14,15]],["It's locked."])
+    var l3s8c11 = new cuadro(270,280,40,40,"#ff0000","#ff4040",u,u,[openShelf,[[10,11,13,14],[15]]],["It's locked."])
     var l3s8c12 = new cuadro(170,290,60,60,"#804000",u,u,false,u,["It seems that the acorn had","the right weight."])
     var l3s8c13 = new cuadro(450,250,149,100,"#c04040",u,u,false)
     var l3s8c14 = new cuadro(250,250,200,100,"#c00000",u,u,false)
@@ -238,7 +238,7 @@ function level3(){
     var l3s8c17 = new cuadro(150,420,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.10,unlock3]],["It's a weight."])
     var l3s8c18 = new cuadro(150,400,100,20,"#008080","#00c0c0",u,u,u,["It's the image of an anvil."])
     var l3s8c19 = new cuadro(250,400,200,100,"#c04040")
-    var l3s8c20 = new cuadro(270,430,40,40,"#ff0000","#ff4040",u,u,[openShelf,[19,20,22,23,24]],["It's locked."])
+    var l3s8c20 = new cuadro(270,430,40,40,"#ff0000","#ff4040",u,u,[openShelf,[[19,20,22,23],[24]]],["It's locked."])
     var l3s8c21 = new cuadro(160,420,80,80,"#808080",u,u,false,u,["It seems that the ball had","the right weight."])
     var l3s8c22 = new cuadro(450,400,149,100,"#c04040",u,u,false)
     var l3s8c23 = new cuadro(250,400,200,100,"#c00000",u,u,false)
@@ -347,9 +347,9 @@ function level3(){
     // c1 - First number
     // c2 - Second number
     // c3 - Back
-    var l3s13c0 = new cuadro(50,150,500,300,"#ffffff",u,true,u,[simpleItemUse,[3.11,chiselB]],["This is not a mailbox but some","kind of soft gypsum."])
-    var l3s13c1 = new cuadro(100,200,200,200,"#600000",u,u,false,u,["What are those numbers for?"],"2",["200px Comic Sans MS","#000000"])
-    var l3s13c2 = new cuadro(300,200,200,200,"#600000",u,u,false,u,["What are those numbers for?"],"1",["200px Comic Sans MS","#ffffff"])
+    var l3s13c0 = new cuadro(50,150,500,300,"#ffffff",u,true,u,[chiselB],["This is not a mailbox but some","kind of soft gypsum."])
+    var l3s13c1 = new cuadro(100,200,200,200,"#606060",u,u,false,u,["What are those numbers for?"],"2",["180px Comic Sans MS","#000000"])
+    var l3s13c2 = new cuadro(300,200,200,200,"#606060",u,u,false,u,["What are those numbers for?"],"1",["180px Comic Sans MS","#ffffff"])
     var l3s13c3 = new cuadro(0,550,599,50,cb,"#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#ffffff"])
     var l3s13cs = [l3s13c0,l3s13c1,l3s13c2,l3s13c3]
     var l3s13 = new screen(cb,l3s13cs)
@@ -419,43 +419,96 @@ function level3(){
         l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16]
 
     function activateSpin(){ // Activates the function for growing the acorn.
-        console.log("holi")
+        l3s2c5.c = "#008040"
+        l3s2c5.high = "#00c060"
+        l3s2c5.think = ["I've fertilized the tree.","Now what?"]
+        l3s2c4.think = ["I've fertilized the tree.","Now what?"]
+        l3s1c9.dofx = function(){appearAcorn()}
+        l3s3c9.dofx = function(){appearAcorn()}
+    }
+    function appearAcorn(){ // Makes the acorn appear when facing away from the tree.
+        l3s2c6.isVis = true
+        l3s2c6.isClick = true
+        changescr(4)
+        l3s1c9.dofx = function(){changescr(4)}
+        l3s3c9.dofx = function(){changescr(4)}
     }
     function breakK(){ // Breaks the door of the turquoise mailbox.
-        console.log("holi")
+        const colcode = ["#40ffa0","#80ffc0","#c0ffe0","#ffffff"]
+        const currcb = this.currlev.cheatblock[2]
+        if (currcb < 4){
+            l3s14c1.c = colcode[currcb]
+            l3s14c1.high = colcode[currcb]
+            this.currlev.cheatblock[2] += 1
+        } else {
+            openMB([[1,2],u])
+        }
     }
     function changeNum(twon){ // Changes the numbers displayed in the lime mailbox.
-        console.log("holi")
+        var moved = this.buts[twon[0]]
+    	var sense = twon[1]
+    	var ninc = parseInt(moved.text)
+    	ninc = ninc + sense
+    	if (ninc == -1){
+    		ninc = 9
+    	} else if (ninc == 10){
+    		ninc = 0
+    	}
+    	moved.text = String(ninc)
     }
     function checkPass(){ // Checks if the cheatblocks are removed, then checks for password, and opens the lime mailbox.
-        console.log("holi")
+        if (this.currlev.cheatblock[0] == 0){
+            if (l3s11c2.text == "8" && l3s11c3.text == "4" && l3s11c4.text == "3" && l3s11c5.text == "7"){
+                openMB([[1,15,16],[6,7,8,9,10,11,12,13,14,17]])
+            }
+        }
     }
     function chiselB(){ // Uses the chisel to reveal the numbers, and reduces the corresponding cheatblock.
-        console.log("holi")
+        var loccb = true
+        simpleItemUse([3.11,function(){
+            quickTurn(u,u,[1,2]) // s13
+            loccb = false
+        }])
+        if (loccb == false){
+            this.currlev.cheatblock[0] -= 1
+        }    
     }
     function grabAnyGlove(){ // Grabs the gloves, regardless of the one clicked.
         console.log("holi")
     }
-    function greaseLever(){ // Makes the lever work, moving the cage.
-        console.log("holi")
+    function greaseLever(){ // Makes the lever work.
+        l3s1c5.c = "#c0a000"
+        l3s1c5.high = "#c0c020"
+        l3s1c5.think = ["The lever is now greased."]
+        l3s1c5.dofx = function(){workLever()}
     }
     function openBox(){ // Opens the box.
-        console.log("holi")
+        quickTurn([0,7],u,[4,5,6]) // s5
     }
     function openDoor(){ // Opens the red door and shows the level clear screen.
         console.log("holi")
     }
     function openF(){ // Opens the fuchsia mailbox.
-        console.log("holi")
+        openMB([[1,3,4],[2,5]])
     }
     function openI(){ // Unlocks the violet mailbox.
         console.log("holi")
     }
-    function openMB(cuads){ // Opens the mailboxes.
-        console.log("holi")
+    function openMB(cuads){ // Opens the mailboxes and activates the azure mailbox.
+        quickTurn(cuads[1],u,cuads[0])
+        if (this.currlev.cheatblock[1] < 6){
+            const cblo = this.currlev.cheatblock[1]
+            l3s16cs[cblo+2].c = "#ffff00"
+            l3s16cs[cblo+2].high = "#ffff00"
+            l3s16cs[cblo+2].think = ["This part of the display","is lit."]
+            this.currlev.cheatblock[1] += 1
+        }
     }
     function openShelf(cuads){ // Opens the shelves.
-        console.log("holi")
+        quickTurn(cuads[1],u,cuads[0]) // s8
+        if (cuads[1] == u){
+            this.currlev.cheatblock[0] -= 1
+        }
     }
     function pushWardrobe(){ // Pushes the wardrobe and reveals the door.
         console.log("holi")
@@ -464,23 +517,77 @@ function level3(){
         console.log("holi")
     }
     function unlock1(){ // Unlocks the first shelf of the wardrobe.
-        console.log("holi")
+        quickTurn(u,[1,4],[5]) //s8
+        l3s8c4.c = "#00ff00"
+        l3s8c4.high = "#40ff40"
+        l3s8c4.think = ["The handle is now green."]
     }
     function unlock2(){ // Unlocks the second shelf of the wardrobe.
-        console.log("holi")
+        quickTurn(u,[8,11],[12]) //s8
+        l3s8c11.c = "#00ff00"
+        l3s8c11.high = "#40ff40"
+        l3s8c11.think = ["The handle is now green."]
     }
     function unlock3(){ // Unlocks the third shelf of the wardrobe.
-        console.log("holi")
+        quickTurn(u,[17,20],[21]) //s8
+        l3s8c20.c = "#00ff00"
+        l3s8c20.high = "#40ff40"
+        l3s8c20.think = ["The handle is now green."]
     }
     function unstickMagnet(){ // Separates the magnet from the wardrobe, and takes the magnet.
         console.log("holi")
     }
     function useKnife(){ // Cuts the poster, showing the code and the poster shard.
-        console.log("holi")
+        var loccb = true
+        simpleItemUse([3.01,function(){
+            quickTurn([3],u,[0,1,2]) // s1
+            loccb = false
+        }])
+        if (loccb == false){
+            this.currlev.cheatblock[0] -= 1
+        }        
+    }
+    function workLever(){
+        animate = true
+        setTimeout(function(){
+            l3s1c5.x0 = 160
+			l3s1c5.y0 = 215
+			l3s1c5.wi = 30
+			l3s1c5.he = 120
+            l3s1c6.y0 = 175
+            l3s1c7.he = 175
+            l3s1c8.isVis = true
+        },500)
+        setTimeout(function(){
+            l3s1c5.x0 = 115
+			l3s1c5.y0 = 260
+			l3s1c5.wi = 120
+			l3s1c5.he = 30
+            l3s1c6.y0 = 50
+            l3s1c7.he = 50
+        },1000)
+        setTimeout(function(){
+            l3s1c8.isClick = true
+            l3s5c1.isVis = false
+            l3s5c2.isVis = false
+            l3s5c3.isVis = false
+            l3s5c0.isClick = true
+            l3s5c0.think = ["Now I can reach the box!"]
+            l3s1c7.ymax -= 250
+            l3s1c6.ymin -= 250
+            l3s1c6.ymax -= 250
+            l3s1c6.think = ["The cage is hanging from a chain."]
+        },1001)
+        setTimeout(function(){
+            animate = false
+        },1002)
     }
 
     return{
         screens: l3ss,
-        cheatblock: [3]
+        cheatblock: [3,0,0]
+        // 0 - Parts of code remaining.
+        // 1 - Number of displays lit.
+        // 2 - State of smashed door.
     }
 }
