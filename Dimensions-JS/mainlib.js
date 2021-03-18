@@ -307,7 +307,6 @@ function player(n,it,r){
 	var cn
 	var zn
 	var chunk
-	var part1 = ""
 	var pswrd
 	coder.push("abcdefghijklmnopqrstuvwxyz0",
 		       "qwertyuiopasdfghjklzxcvbnm0")
@@ -323,14 +322,16 @@ function player(n,it,r){
 		name: n,
 		cname: cn,
 		itera: it,
-		route: r,
-		crPass: function(rpass, mixer){
-            chunk = cn.match(/.{1,2}/g)
-            for (var i = 0; i < 5; i++) {
-            	part1 = part1.concat(chunk[mixer[i]]).concat(rpass[i]).concat("-")
-            }
-            pswrd = part1.slice(0,19)
-            return pswrd
-		}
+		route: r            
 	}
+}
+
+function crPass(nam, rpass, mixer){
+	var part1 = ""
+	chunk = nam.match(/.{1,2}/g)
+    for (var i = 0; i < 5; i++) {
+        part1 = part1.concat(chunk[mixer[i]]).concat(rpass[i]).concat("-")
+    }
+    pswrd = part1.slice(0,19)
+    return pswrd
 }

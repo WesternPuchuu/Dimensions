@@ -411,7 +411,7 @@ function level1(){
 		quickTurn([2,3],u,[5]) //s9
 	}
     function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l1s13c2.text = actp.crPass("f4768",[0,1,4,3,2])
+        l1s13c2.text = crPass(actp.cname,"f4768",[0,1,4,3,2])
         quickTurn([4],[1],[2,3]) //s13
     }
 	function spinToy(vals){ // Spins the toy, checks for the right positions, and opens the hidden space.
