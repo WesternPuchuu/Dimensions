@@ -1,10 +1,6 @@
 function level3(){
     var cb = "#600000"
 
-    //var l3s0cs = Array()
-    //var l3s0
-    //var l3ss = Array()
-
     // ITEM LIST
     // 3.01 - Knife
     // 3.02 - Poster shard
@@ -15,20 +11,9 @@ function level3(){
     // 3.07 - Door key
     // 3.08 - Mailbox key
     // 3.09 - Silicon card
-    // 3.10 - Metal ball
+    // 3.10 - Iron ball
     // 3.11 - Chisel
     // 3.12 - Megagloves!
-
-    // 0 - Temporary "Thank You" screen
-	// c0 - Big thanks
-	// c1 - More levels soon
-	// c2 - Feel free to
-	// var l3s0c0 = new cuadro(20,20,760,40,"#000000",u,u,u,u,u,"Thanks for playing!!",["38px Arial","#00ff00"])
-	// var l3s0c1 = new cuadro(0,80,800,20,cb,u,u,u,u,u,"More levels coming soon!",["20px Times New Roman","#ffffff"])
-	// var l3s0c2 = new cuadro(0,120,800,20,cb,u,u,u,u,u,"If you liked the game, feel free to check the code and suggest optimizations :D",["20px Arial","#ffffff"])
-	// l3s0cs.push(l3s0c0,l3s0c1,l3s0c2)
-    // l3s0 = new screen(cb, l3s0cs, false)
-    // l3ss.push(l3s0)
 
     // 0 - TD Machine
     //#region 
@@ -233,7 +218,7 @@ function level3(){
     var l3s8c12 = new cuadro(170,290,60,60,"#804000",u,u,false,u,["It seems that the acorn had","the right weight."])
     var l3s8c13 = new cuadro(450,250,149,100,"#c04040",u,u,false)
     var l3s8c14 = new cuadro(250,250,200,100,"#c00000",u,u,false)
-    var l3s8c15 = new cuadro(310,270,80,70,"#a0a0a0","#e0e0e0",u,false,[simpleItemUse,[3.09,unstickMagnet]],["It's a magnet. It is stuck to the","wardrobe."])
+    var l3s8c15 = new cuadro(310,280,80,70,"#a0a0a0","#e0e0e0",u,false,[simpleItemUse,[3.09,unstickMagnet]],["It's a magnet. It is stuck to the","wardrobe."])
     var l3s8c16 = new cuadro(300,340,100,10,"#c0c0c0",u,u,false)
     var l3s8c17 = new cuadro(150,420,100,80,"#400000","#800000",true,u,[simpleItemUse,[3.10,unlock3]],["It's a weight."])
     var l3s8c18 = new cuadro(150,400,100,20,"#008080","#00c0c0",u,u,u,["It's the image of an anvil."])
@@ -414,9 +399,26 @@ function level3(){
         l3s16c10,l3s16c11,l3s16c12]
     var l3s16 = new screen(cb,l3s16cs)
     //#endregion
+    // 17 - Level Clear Screen!
+	//#region 
+    // c0 - Level Clear text
+    // c1 - "Click for your password" button
+    // c2 - Password
+    // c3 - Warning
+    // c4 - Load level 2
+    // c5 - Go to level 2
+    var l3s17c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
+    var l3s17c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
+    var l3s17c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
+    var l3s17c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
+    var l3s17c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev4],u,"Next",["30px Arial Black","#404040"])
+    var l3s17c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev4],u,"Go!",["30px Arial Black","#000000"])
+    l3s17cs = [l3s17c0, l3s17c1, l3s17c2, l3s17c3, l3s17c4, l3s17c5]
+    l3s17 = new screen("#000000", l3s17cs, false)
+	//#endregion
 
     var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5,l3s6,l3s7,l3s8,l3s9,
-        l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16]
+        l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16,l3s17]
 
     function activateSpin(){ // Activates the function for growing the acorn.
         l3s2c5.c = "#008040"
@@ -473,8 +475,13 @@ function level3(){
             this.currlev.cheatblock[0] -= 1
         }    
     }
+    function goToLev4(){ // Level clear function. Sends to level 4 (Room 11).
+        currlev = new level(4, level4)
+        currscr = 0
+    }
     function grabAnyGlove(){ // Grabs the gloves, regardless of the one clicked.
-        console.log("holi")
+        quickTurn([10,11]) // s16
+        inve.placeIn([3.12,"Megagloves!"])
     }
     function greaseLever(){ // Makes the lever work.
         l3s1c5.c = "#c0a000"
@@ -482,26 +489,50 @@ function level3(){
         l3s1c5.think = ["The lever is now greased."]
         l3s1c5.dofx = function(){workLever()}
     }
+    function loadLev4(){ // Loads information for level 4.
+    	var nl = document.createElement("script");
+        nl.src = "level4.js";
+        document.head.appendChild(nl);
+        quickTurn([5],[4])
+    }
     function openBox(){ // Opens the box.
         quickTurn([0,7],u,[4,5,6]) // s5
     }
     function openDoor(){ // Opens the red door and shows the level clear screen.
-        console.log("holi")
+        changescr(17)
     }
     function openF(){ // Opens the fuchsia mailbox.
         openMB([[1,3,4],[2,5]])
     }
     function openI(){ // Unlocks the violet mailbox.
-        console.log("holi")
+        animate = true
+        setTimeout(function(){currscr = 4},500)
+        setTimeout(function(){l3s4c5.c = "#c080ff"},1000)
+        setTimeout(function(){l3s4c5.c = "#8000ff"},1500)
+        setTimeout(function(){currscr = 8},2000)
+        setTimeout(function(){
+            l3s15c2.c = "#00ff00"
+            l3s15c2.high = "#80ff80"
+            l3s15c2.think = ["The grip now glows green."]
+            l3s15c2.isClick = true
+            l3s8c24.isClick = false
+        },2001)
+        setTimeout(function(){animate = false},2002)
     }
     function openMB(cuads){ // Opens the mailboxes and activates the azure mailbox.
         quickTurn(cuads[1],u,cuads[0])
-        if (this.currlev.cheatblock[1] < 6){
+        if (this.currlev.cheatblock[1] < 5){
             const cblo = this.currlev.cheatblock[1]
             l3s16cs[cblo+2].c = "#ffff00"
             l3s16cs[cblo+2].high = "#ffff00"
             l3s16cs[cblo+2].think = ["This part of the display","is lit."]
             this.currlev.cheatblock[1] += 1
+        }
+        if (this.currlev.cheatblock[1] == 5){
+            l3s16c7.c = "#00ff00"
+            l3s16c7.high = "#80ff80"
+            l3s16c7.think = ["The grip glows green."]
+            l3s16c7.isClick = true
         }
     }
     function openShelf(cuads){ // Opens the shelves.
@@ -511,10 +542,54 @@ function level3(){
         }
     }
     function pushWardrobe(){ // Pushes the wardrobe and reveals the door.
-        console.log("holi")
+        animate = true
+        setTimeout(function(){
+            quickTurn([3,4],u,[0,5]) //s9
+        },250)
+        setTimeout(function(){currscr = 3},500)
+        setTimeout(function(){
+            quickTurn([1,7],[0]) // s3
+            l3s3c0.x0 -= 100
+            l3s3c0.xmin -= 100
+            l3s3c0.xmax -= 100
+        },750)
+        setTimeout(function(){animate = false},751)
+    }
+    function showPassword(){ // Creates and makes the password visible. Shows the next level button.
+        l3s17c2.text = actp.crPass("324rz",[2,1,0,4,3])
+        quickTurn([4],[1],[2,3]) //s17
     }
     function takeBall(){ // Takes the ball out of the bottle.
-        console.log("holi")
+        animate = true
+        setTimeout(function(){
+            quickTurn([5],u,[6]) // s3
+        },400)
+        setTimeout(function(){
+            l3s3c4.x0 = 490
+        },650)
+        setTimeout(function(){
+            l3s3c4.y0 -= 30
+            l3s3c6.y0 -= 30
+        },1150)
+        setTimeout(function(){
+            l3s3c4.y0 -= 30
+            l3s3c6.y0 -= 30
+            l3s3c4.x0 += 15
+            l3s3c6.x0 += 15
+        },1650)
+        setTimeout(function(){
+            l3s3c4.y0 -= 30
+            l3s3c6.y0 -= 30
+        },2150)
+        setTimeout(function(){
+            l3s3c4.y0 -= 30
+            l3s3c6.y0 -= 30
+        },2650)
+        setTimeout(function(){
+            quickTurn(u,u,[4,6]) // s3
+            inve.placeIn([3.10,"Iron ball"])
+        },3150)
+        setTimeout(function(){animate = false},3152)
     }
     function unlock1(){ // Unlocks the first shelf of the wardrobe.
         quickTurn(u,[1,4],[5]) //s8
@@ -535,7 +610,16 @@ function level3(){
         l3s8c20.think = ["The handle is now green."]
     }
     function unstickMagnet(){ // Separates the magnet from the wardrobe, and takes the magnet.
-        console.log("holi")
+        animate = true
+        setTimeout(function(){
+            l3s8c15.y0 -= 10
+            l3s8c16.isVis = true
+        },500)
+        setTimeout(function(){
+            quickTurn([15],u,[16]) // s8
+            inve.placeIn([3.06, "Magnet"])
+        },1000)
+        setTimeout(function(){animate = false},1001)
     }
     function useKnife(){ // Cuts the poster, showing the code and the poster shard.
         var loccb = true
