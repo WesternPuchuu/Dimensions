@@ -604,7 +604,7 @@ function level2(){
 		}
 	}
 	function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l2s16c2.text = actp.crPass("4950b",[1,0,2,3,4])
+        l2s16c2.text = crPass(actp.cname,"4950b",[1,0,2,3,4])
         quickTurn([4],[1],[2,3]) //s16
     }
 	function smashBrick(){ // Breaks the white brick.
