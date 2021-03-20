@@ -7,6 +7,9 @@ function level4(){
     // 4.01 - G Book
     // 4.02 - Hammer
     // 4.03 - Bucket
+    // 4.04 - Bucket with sand
+    // 4.05 - Knob
+    // 4.06 - Crowbar
 
     //0 - Temporary "Thank You" screen
 	//c0 - Big thanks
@@ -154,8 +157,84 @@ function level4(){
     l4s6cs = [l4s6c0,l4s6c1,l4s6c2,l4s6c3,l4s6c4,l4s6c5,l4s6c6,l4s6c7]
     l4s6 = new screen(cb2,l4s6cs)
     //#endregion
+    // 7 - Room 12 - Wall 3
+    //#region 
+    // c0 - Green door
+    // c1 - TD machine to Sand Dimension
+    // c2 - Faucet
+    // c3 - Small sand
+    // c4 - Big sand
+    // c5 - Temporal bucket
+    // c6 - To wall 2 (12)
+    // c7 - To wall 4 (12)
+    l4s7c0 = new cuadro(250,200,100,200,"#00ff00","#80ff80",true,u,[changescr,2],["The green door is open."])
+    l4s7c1 = new cuadro(400,250,100,150,"#404040","#c0c0c0",true,u,[changescr,23],["Another of those machines."])
+    l4s7c2 = new cuadro(100,250,100,50,"#00c0c0","#00e0e0",true,u,[changescr,24],["What's that?"])
+    l4s7c3 = new cuadro(125,300,50,50,"#c0c000","#e0e000",u,false,[simpleItemUse,[4.03,takeSand]],["This sand came from the faucet!"])
+    l4s7c4 = new cuadro(100,350,100,50,"#c0c000","#e0e000",u,false,[simpleItemUse,[4.03,takeSand]],["This sand came from the faucet!"])
+    l4s7c5 = new cuadro(100,300,100,100,"#0000ff",u,u,false)
+    l4s7c6 = new cuadro(0,0,50,600,cb2,"#808080",true,u,[changescr,6])
+    l4s7c7 = new cuadro(550,0,49,600,cb2,"#808080",true,u,[changescr,8])
+    l4s7cs = [l4s7c0,l4s7c1,l4s7c2,l4s7c3,l4s7c4,l4s7c5,l4s7c6,l4s7c7]
+    l4s7 = new screen(cb2,l4s7cs)
+    //#endregion
+    // 8 - Room 12 - Wall 4
+    //#region 
+    // c0 - Door
+    // c1 - Knob over door
+    // c2 - Fallen knob
+    // c3 - Pillar
+    // c4 - Book
+    // c5 - Graffiti, part 1
+    // c6 - Graffiti, part 2
+    // c7 - Removable wood
+    // c8 - Static wood
+    // c9 - To wall 3 (12)
+    // c10 - To wall 1 (12)
+    l4s8c0 = new cuadro(250,200,100,200,"#ff0000","#ff8080",true,u,[smashDoor],["It's a red door. It's closed."])
+    l4s8c1 = new cuadro(260,190,20,10,"#e0e0e0","#ffffff",u,u,u,["There's something over the door","threshold. Would it fall","if I smash the door?"])
+    l4s8c2 = new cuadro(220,390,20,10,"#e0e0e0","#ffffff",u,false,[simpleItemTake,[2,4.05,"Knob"]],["I finally made this thing","fall."])
+    l4s8c3 = new cuadro(120,300,60,100,"#c0c0c0",u,u,u,u,["It's a small pillar."])
+    l4s8c4 = new cuadro(120,280,60,20,"#0080ff","#80c0ff",true,u,[changescr,25],["There's a book over the pillar."])
+    l4s8c5 = new cuadro(350,300,200,50,cb2,u,u,u,u,["Who is this talking about?"],"Her name is",["30px Comic Sans MS","#ff4000"])
+    l4s8c6 = new cuadro(350,350,200,50,cb2,u,u,u,u,["I need the full name."],"Persephonia",["30px Comic Sans MS","#ff4000"])
+    l4s8c7 = new cuadro(350,350,100,50,"#808000",u,true,u,[simpleItemUse,[4.06,takeWoodOut]],["A piece of wood is","covering the wall"])
+    l4s8c8 = new cuadro(450,350,100,50,"#808000",u,u,u,u,["A piece of wood is","covering the wall"])
+    l4s8c9 = new cuadro(0,0,50,600,cb2,"#808080",true,u,[changescr,7])
+    l4s8c10 = new cuadro(550,0,49,600,cb2,"#808080",true,u,[changescr,5])
+    l4s8cs = [l4s8c0,l4s8c1,l4s8c2,l4s8c3,l4s8c4,l4s8c5,l4s8c6,l4s8c7,l4s8c8,l4s8c9,
+            l4s8c10]
+    l4s8 = new screen(cb2,l4s8cs)
+    //#endregion
+    // 9 - Room 16 - Wall 1
+    //#region 
+    // c0 - Door
+    // c1 - Open trapdoor
+    // c2 - Cd player table
+    // c3 - CD player
+    // c4-c11 - Painted spaces
+    // c12 - To wall 4 (16)
+    // c13 - To wall 2 (16)
+    l4s9c0 = new cuadro(250,200,100,200,"#00ff00","#80ff80",u,u,u,["It's a green door. It's locked."])
+    l4s9c1 = new cuadro(250,550,100,50,"#0000ff","#8080ff",true,u,[changescr,4],["The trapdoor is open."])
+    l4s9c2 = new cuadro(400,350,100,50,"#804000")
+    l4s9c3 = new cuadro(400,220,100,130,"#808080","#a0a0a0",true,u,[changescr,26],["It's some kind of CD player."])
+    l4s9c4 = new cuadro(100,50,50,100,"#ff0000",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c5 = new cuadro(150,50,50,100,"#ffffff",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c6 = new cuadro(200,50,50,100,"#00ffff",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c7 = new cuadro(250,50,50,100,"#ff00ff",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c8 = new cuadro(300,50,50,100,"#000000",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c9 = new cuadro(350,50,50,100,"#00ff00",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c10 = new cuadro(400,50,50,100,"#ffff00",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c11 = new cuadro(450,50,50,100,"#0000ff",u,u,u,u,["The wall is painted in many colors."])
+    l4s9c12 = new cuadro(0,0,50,600,cb3,"#808080",true,u,[changescr,12])
+    l4s9c13 = new cuadro(550,0,49,600,cb3,"#808080",true,u,[changescr,10])
+    l4s9cs = [l4s9c0,l4s9c1,l4s9c2,l4s9c3,l4s9c4,l4s9c5,l4s9c6,l4s9c7,l4s9c8,l4s9c9,
+        l4s9c10,l4s9c11,l4s9c12,l4s9c13]
+    l4s9 = new screen(cb3,l4s9cs)
+    //#endregion
 
-    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6]
+    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9]
 
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
         console.log("holi")
@@ -163,13 +242,24 @@ function level4(){
     function openPaha(){ // Opens the cristal tube and releases Paha.
         console.log("holi")
     }
+    function smashDoor(){ // Smashes the door until the knob falls.
+        console.log("holi")
+    }
     function takeNailOut(){ // Removes the side of the carpet, shows password and removes cheatblock.
         console.log("holi")
     }
-
-
+    function takeSand(){ // Takes sand using the bucket.
+        console.log("holi")
+    }
+    function takeWoodOut(){ // Partially removes the wood from the wall, and removes cheatblock.
+        console.log("holi")
+    }
+    
     return{
         screens: l4ss,
-        cheatblock: []
+        // 0 - Numeric password
+        // 1 - Times door is smashed
+        // 2 - Missing parts of Persephonia's name
+        cheatblock: [2,0,2]
     }
 }
