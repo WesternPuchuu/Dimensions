@@ -652,6 +652,7 @@ function level3(){
         },1000)
         setTimeout(function(){
             l3s1c8.isClick = true
+            l3s1c5.isClick = false
             l3s5c1.isVis = false
             l3s5c2.isVis = false
             l3s5c3.isVis = false
