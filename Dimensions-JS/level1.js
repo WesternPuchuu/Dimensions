@@ -23,13 +23,12 @@ function level1(){
     var l1s10cs = Array();
     var l1s11cs = Array();
     var l1s12cs = Array();
-    var l1s13cs = Array();
 	var l1s0, l1s1, l1s2, l1s3, l1s4, l1s5, l1s6, l1s7, l1s8, l1s9,
-	    l1s10, l1s11, l1s12, l1s13;
+	    l1s10, l1s11, l1s12;
 	var l1ss = Array();
 	//WIP screen! It will be deleted soon!
-	var l1s14cs = Array();
-	var l1s14
+	var l1s13cs = Array();
+	var l1s13
 
 	// 0 - Wake-up text
 	// c0 - Continue button
@@ -41,8 +40,8 @@ function level1(){
     // c1 - Blue trapdoor
     // c2 - To wall 2
     // c3 = To wall 4
-	var l1s1c0 = new cuadro(250,200,100,200,"#008000","#80FF80",u,u,[changescr,14],["It's a green door. It's closed."]);
-	var l1s1c1 = new cuadro(250,0,100,50,"#000080","#8080FF",u,u,[changescr,14],["It's a blue trapdoor. It's closed."]);
+	var l1s1c0 = new cuadro(250,200,100,200,"#008000","#80FF80",u,u,[changescr,13],["It's a green door. It's closed."]);
+	var l1s1c1 = new cuadro(250,0,100,50,"#000080","#8080FF",u,u,[changescr,13],["It's a blue trapdoor. It's closed."]);
 	var l1s1c2 = new cuadro(550,0,49,600,"#000000","#808080",true,u,[changescr, 2]);
 	var l1s1c3 = new cuadro(0,0,50,600,"#000000","#808080",true,u,[changescr, 4]);
 	l1s1cs.push(l1s1c0,l1s1c1,l1s1c2,l1s1c3);
@@ -55,7 +54,7 @@ function level1(){
     // c4 - Gap
     // c5 - To wall 1
     // c6 - To wall 3
-	var l1s2c0 = new cuadro(250,200,100,200,"#800000", "#FF8080",u,u,[changescr,13],["It's a red door. It's closed."]);
+	var l1s2c0 = new cuadro(250,200,100,200,"#800000", "#FF8080",u,u,[winLevel],["It's a red door. It's closed."]);
 	var l1s2c1 = new cuadro(400,300,30,100,"#FF8000",u,u,u,u,["Those are the legs of a table."]);
 	var l1s2c2 = new cuadro(470,300,30,100,"#FF8000",u,u,u,u,["Those are the legs of a table."]);
 	var l1s2c3 = new cuadro(400,250,100,50,"#FF8000","#FFC080",true,u,[changescr, 5],["There's something on the table."]);
@@ -277,32 +276,17 @@ function level1(){
     var l1s12c5 = new cuadro(0,550,599,50,"#000000","#808080",true,u,[changescr,4],u,"Back",["20px Arial Black","#FFFFFF"]);
     l1s12cs.push(l1s12c0, l1s12c1, l1s12c2, l1s12c3, l1s12c4, l1s12c5);
     l1s12 = new screen(cb, l1s12cs);
-    // 13 - Level Clear Screen!
-    // c0 - Level Clear text
-    // c1 - "Click for your password" button
-    // c2 - Password
-    // c3 - Warning
-    // c4 - Load level 2
-    // c5 - Go to level 2
-    var l1s13c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
-    var l1s13c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
-    var l1s13c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
-    var l1s13c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l1s13c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev2],u,"Next",["30px Arial Black","#404040"])
-    var l1s13c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev2],u,"Go!",["30px Arial Black","#000000"])
-    l1s13cs.push(l1s13c0, l1s13c1, l1s13c2, l1s13c3, l1s13c4, l1s13c5)
-    l1s13 = new screen("#000000", l1s13cs, false)
-    // 14 - WIP Screen...Hopely to be deleted
+    // 13 - WIP Screen...Hopely to be deleted
     // c0 - WIP text
     // c1 - "Please" text
     // c2 - Back to wall 1
-    var l1s14c0 = new cuadro(100,100,600,200,"#FFFF00",u,u,u,u,u,"Work In Progress!!",["58px Arial Black", "#000000"])
-    var l1s14c1 = new cuadro(200,350,400,50,"#000000",u,u,u,u,u,"Please leave by the red door.",["40px Times New Roman", "#FFFF80"])
-    var l1s14c2 = new cuadro(300,450,200,100,"#00FF00",u,true,u,[changescr,1],u,"Back",["80px Comic Sans MS", "#000000"])
-    l1s14cs.push(l1s14c0, l1s14c1, l1s14c2);
-    l1s14 = new screen(cb, l1s14cs, false)
+    var l1s13c0 = new cuadro(100,100,600,200,"#FFFF00",u,u,u,u,u,"Work In Progress!!",["58px Arial Black", "#000000"])
+    var l1s13c1 = new cuadro(200,350,400,50,"#000000",u,u,u,u,u,"Please leave by the red door.",["40px Times New Roman", "#FFFF80"])
+    var l1s13c2 = new cuadro(300,450,200,100,"#00FF00",u,true,u,[changescr,1],u,"Back",["80px Comic Sans MS", "#000000"])
+    l1s13cs.push(l1s13c0, l1s13c1, l1s13c2);
+    l1s13 = new screen(cb, l1s13cs, false)
 
-	l1ss.push(l1s0,l1s1,l1s2,l1s3,l1s4,l1s5,l1s6,l1s7,l1s8,l1s9,l1s10,l1s11,l1s12,l1s13,l1s14);
+	l1ss.push(l1s0,l1s1,l1s2,l1s3,l1s4,l1s5,l1s6,l1s7,l1s8,l1s9,l1s10,l1s11,l1s12,l1s13);
 
     function changeNumber(vals){ // Changes the numbers in the suitcase.
     	var moved = this.buts[vals[0]]
@@ -325,11 +309,6 @@ function level1(){
     		quickTurn([2,3]) //s11
     	}
     }
-    function goToLev2(){ // Level clear function. Sends to level 2 (Room N1).
-        actp.route = "R"
-        currlev = new level(2, level2)
-        currscr = 0
-    }
     function lbsPlace(){ // Places the dark lightbulb in the socket, or the regular lightbulb back.
     	if (inve.sack.some(par => par[0] == 1.01) == true){
     		inve.sack.splice(inve.sack.findIndex(par => par[0] == 1.01),1);
@@ -346,12 +325,6 @@ function level1(){
     	quickTurn([3],[1]) //s12
     	l1s12c1.think = ["It won't turn on without a lightbulb."]
 
-    }
-    function loadLev2(){ // Loads information for level 2.
-    	var nl = document.createElement("script");
-        nl.src = "level2.js";
-        document.head.appendChild(nl);
-        quickTurn([5],[4])
     }
     function moveSuitcase(){ // Moves the suitcase out of under the bed.
     	animate = true
@@ -410,10 +383,6 @@ function level1(){
 	function putLegs(){ // Places the bottom part of the toy and allows the placement of the middle part.
 		quickTurn([2,3],u,[5]) //s9
 	}
-    function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l1s13c2.text = crPass(actp.cname,"f4768",[0,1,4,3,2])
-        quickTurn([4],[1],[2,3]) //s13
-    }
 	function spinToy(vals){ // Spins the toy, checks for the right positions, and opens the hidden space.
 		var moved = this.buts[vals[0]];
 		var sense = vals[1];
@@ -511,6 +480,10 @@ function level1(){
 	}
 	function turnRedOn(){ // Wrapper for red light in table.
 		turnAnyOn(l1s5c4,"#FF0000",l1s5c7,"#FF8080","red");
+	}
+	function winLevel(){ // Goes to Level Clear screen.
+		currlev = new interlude("f4768",[0,1,4,3,2],"#200000",["level2.js",2,"level2"],"R")
+		currscr = 0
 	}
 	
 	

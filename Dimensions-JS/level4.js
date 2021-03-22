@@ -10,6 +10,7 @@ function level4(){
     // 4.04 - Bucket with sand
     // 4.05 - Knob
     // 4.06 - Crowbar
+    // 4.07 - Faucet handle
 
     //0 - Temporary "Thank You" screen
 	//c0 - Big thanks
@@ -25,7 +26,7 @@ function level4(){
     // 0 - Intro screen
     //#region 
     // c0 - Continue
-    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,1],u,"Continue",["20px Arial","#000000"])
+    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,9],u,"Continue",["20px Arial","#000000"])
     l4s0cs = [l4s0c0]
     l4s0 = new screen("#000000",l4s0cs,false,true,"text11ini.json")
     //#endregion
@@ -233,8 +234,46 @@ function level4(){
         l4s9c10,l4s9c11,l4s9c12,l4s9c13]
     l4s9 = new screen(cb3,l4s9cs)
     //#endregion
+    // 10 - Room 16 - Wall 2
+    //#region 
+    // c0 - Door
+    // c1 - Trash can
+    // c2-c9 - Garbage
+    // c10 - Faucet handle
+    // c11-c20 - More garbage
+    // c21 - To wall 1 (16)
+    // c22 - To wall 3 (16)
+    l4s10c0 = new cuadro(250,200,100,200,"#ff0000","#ff8080",u,u,u,["It's a red door. It's locked."])
+    l4s10c1 = new cuadro(100,320,100,80,"#ff00ff","#ff80ff",true,u,[changescr,27],["It's a trash can."])
+    l4s10c2 = new cuadro(400,440,30,30,"#c04000",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c3 = new cuadro(430,440,30,30,"#c00040",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c4 = new cuadro(460,440,30,30,"#00c040",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c5 = new cuadro(385,470,30,30,"#4000c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c6 = new cuadro(415,470,30,30,"#0040c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c7 = new cuadro(445,470,30,30,"#00c040",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c8 = new cuadro(475,470,30,30,"#4000c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c9 = new cuadro(375,500,30,30,"#0040c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c10 = new cuadro(405,500,30,30,"#c0c0c0",u,true,u,[simpleItemTake,[10,4.07,"Faucet handle"]],["There's something metallic here."])
+    l4s10c11 = new cuadro(435,500,30,30,"#40c000",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c12 = new cuadro(465,500,30,30,"#00c040",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c13 = new cuadro(100,430,30,30,"#40c000",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c14 = new cuadro(80,460,30,30,"#00c040",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c15 = new cuadro(110,460,30,30,"#4000c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c16 = new cuadro(90,490,30,30,"#c0c0c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c17 = new cuadro(120,490,30,30,"#c04000",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c18 = new cuadro(95,520,30,30,"#40c000",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c19 = new cuadro(125,520,30,30,"#4000c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c20 = new cuadro(155,520,30,30,"#c0c0c0",u,u,u,u,["There's a lot of garbage","in the floor."])
+    l4s10c21 = new cuadro(0,0,50,600,cb3,"#808080",true,u,[changescr,9])
+    l4s10c22 = new cuadro(550,0,49,600,cb3,"#808080",true,u,[changescr,11])
+    l4s10cs = [l4s10c0,l4s10c1,l4s10c2,l4s10c3,l4s10c4,l4s10c5,l4s10c6,l4s10c7,l4s10c8,l4s10c9,
+        l4s10c10,l4s10c11,l4s10c12,l4s10c13,l4s10c14,l4s10c15,l4s10c16,l4s10c17,l4s10c18,l4s10c19,
+        l4s10c20,l4s10c21,l4s10c22]
+    l4s10 = new screen(cb3,l4s10cs)
+    //#endregion
 
-    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9]
+
+    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,l4s10]
 
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
         console.log("holi")
