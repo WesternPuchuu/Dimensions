@@ -399,26 +399,9 @@ function level3(){
         l3s16c10,l3s16c11,l3s16c12]
     var l3s16 = new screen(cb,l3s16cs)
     //#endregion
-    // 17 - Level Clear Screen!
-	//#region 
-    // c0 - Level Clear text
-    // c1 - "Click for your password" button
-    // c2 - Password
-    // c3 - Warning
-    // c4 - Load level 2
-    // c5 - Go to level 2
-    var l3s17c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
-    var l3s17c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
-    var l3s17c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
-    var l3s17c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l3s17c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev4],u,"Next",["30px Arial Black","#404040"])
-    var l3s17c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev4],u,"Go!",["30px Arial Black","#000000"])
-    l3s17cs = [l3s17c0, l3s17c1, l3s17c2, l3s17c3, l3s17c4, l3s17c5]
-    l3s17 = new screen("#000000", l3s17cs, false)
-	//#endregion
 
     var l3ss = [l3s0,l3s1,l3s2,l3s3,l3s4,l3s5,l3s6,l3s7,l3s8,l3s9,
-        l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16,l3s17]
+        l3s10,l3s11,l3s12,l3s13,l3s14,l3s15,l3s16]
 
     function activateSpin(){ // Activates the function for growing the acorn.
         l3s2c5.c = "#008040"
@@ -475,10 +458,6 @@ function level3(){
             this.currlev.cheatblock[0] -= 1
         }    
     }
-    function goToLev4(){ // Level clear function. Sends to level 4 (Room 11).
-        currlev = new level(4, level4)
-        currscr = 0
-    }
     function grabAnyGlove(){ // Grabs the gloves, regardless of the one clicked.
         quickTurn([10,11]) // s16
         inve.placeIn([3.12,"Megagloves!"])
@@ -489,17 +468,12 @@ function level3(){
         l3s1c5.think = ["The lever is now greased."]
         l3s1c5.dofx = function(){workLever()}
     }
-    function loadLev4(){ // Loads information for level 4.
-    	var nl = document.createElement("script");
-        nl.src = "level4.js";
-        document.head.appendChild(nl);
-        quickTurn([5],[4])
-    }
     function openBox(){ // Opens the box.
         quickTurn([0,7],u,[4,5,6]) // s5
     }
     function openDoor(){ // Opens the red door and shows the level clear screen.
-        changescr(17)
+        currlev = new interlude("324rz",[2,1,0,4,3],"#800000")
+		currscr = 0
     }
     function openF(){ // Opens the fuchsia mailbox.
         openMB([[1,3,4],[2,5]])
@@ -652,6 +626,7 @@ function level3(){
         },1000)
         setTimeout(function(){
             l3s1c8.isClick = true
+            l3s1c5.isClick = false
             l3s5c1.isVis = false
             l3s5c2.isVis = false
             l3s5c3.isVis = false

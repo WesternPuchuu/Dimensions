@@ -36,9 +36,8 @@ function level2(){
 	var l2s13cs = Array()
 	var l2s14cs = Array()
 	var l2s15cs = Array()
-	var l2s16cs = Array()
 	var l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
-	l2s10,l2s11,l2s12,l2s13,l2s14,l2s15,l2s16
+	l2s10,l2s11,l2s12,l2s13,l2s14,l2s15
 	var l2ss = Array()
 
 	// 0 - Room N1 - Wall 1
@@ -382,29 +381,12 @@ function level2(){
 	// 15 - TD machine info
 	//#region 
 	// c0 - Continue
-	var l2s15c0 = new cuadro(700,580,100,20,"#00FF00","#80FF80",u,false,[changescr,16],u,"Continue",["20px Arial","#000000"]);
+	var l2s15c0 = new cuadro(700,580,100,20,"#00FF00","#80FF80",u,false,[winLevel],u,"Continue",["20px Arial","#000000"]);
 	l2s15cs.push(l2s15c0)
 	l2s15 = new screen("#000000", l2s15cs, false, true, "text002.json")
 	//#endregion
-	// 16 - Level Clear Screen!
-	//#region 
-    // c0 - Level Clear text
-    // c1 - "Click for your password" button
-    // c2 - Password
-    // c3 - Warning
-    // c4 - Load level 2
-    // c5 - Go to level 2
-    var l2s16c0 = new cuadro(100,100,600,150,"#ffff00",u,u,u,u,u,"Level Clear!!",["80px Arial Black", "#404040"])
-    var l2s16c1 = new cuadro(100,300,400,50,"#00c000","#80c080",true,u,[showPassword],u,"Click for password",["40px Arial","#ffffff"])
-    var l2s16c2 = new cuadro(100,400,400,50,"#000000",u,u,false,u,u,"",["20px Monospace","#00c000"])
-    var l2s16c3 = new cuadro(100,500,400,50,"#000000",u,u,false,u,u,"Don't forget to write it down!",["15px Arial","#ffffff"])
-    var l2s16c4 = new cuadro(550,300,150,100,"#c02020","#ff4040",u,false,[loadLev3],u,"Next",["30px Arial Black","#404040"])
-    var l2s16c5 = new cuadro(550,400,150,100,"#00ff00","#60ff60",u,false,[goToLev3],u,"Go!",["30px Arial Black","#000000"])
-    l2s16cs.push(l2s16c0, l2s16c1, l2s16c2, l2s16c3, l2s16c4, l2s16c5)
-    l2s16 = new screen("#000000", l2s16cs, false)
-	//#endregion
 	l2ss.push(l2s0,l2s1,l2s2,l2s3,l2s4,l2s5,l2s6,l2s7,l2s8,l2s9,
-		l2s10,l2s11,l2s12,l2s13,l2s14,l2s15,l2s16)
+		l2s10,l2s11,l2s12,l2s13,l2s14,l2s15)
 
 	function activateBricks(){ // Checks if the missing bricks are placed, and activates the bricks if so.
 		if (l2s7c0.c == "#ff8000" & l2s7c6.c == "#0080ff"){
@@ -485,20 +467,10 @@ function level2(){
 		l2s11c4.think = ["The orange brick is fixed!"]
 		l2s11c6.think = ["The orange brick is fixed!"]
 	}
-	function goToLev3(){ // Level clear function. Sends to level 3 (Room 1N).
-        currlev = new level(3, level3)
-        currscr = 0
-    }
 	function grabAsWhole(){ // Takes the orange brick from the crafting table, regardless of the clicked rect.
 		quickTurn([4,5,6,7,8,9,10]) // s11
 		inve.placeIn([2.15,"Orange brick"])
 	}
-	function loadLev3(){ // Loads information for level 3.
-    	var nl = document.createElement("script");
-        nl.src = "level3.js";
-        document.head.appendChild(nl);
-        quickTurn([5],[4])
-    }
 	function magnify(){ // Uses the magnifying glass, and removes one cheat block
 		var loccb = true
 		simpleItemUse([2.09,function(){
@@ -603,10 +575,6 @@ function level2(){
 			},1401)
 		}
 	}
-	function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l2s16c2.text = crPass(actp.cname,"4950b",[1,0,2,3,4])
-        quickTurn([4],[1],[2,3]) //s16
-    }
 	function smashBrick(){ // Breaks the white brick.
 		quickTurn([13],[11],[12]) // s11
 	}
@@ -634,6 +602,10 @@ function level2(){
 			placa.high = "#80ffff"
 			this.currlev.cheatblock[3] -= val
 		}
+	}
+	function winLevel(){ // Goes to Level Clear screen.
+		currlev = new interlude("4950b",[1,0,2,3,4],"#600000",["level3.js",3,"level3"])
+		currscr = 0
 	}
 	function workLever(){ // Moves lever, moves box down, and moves tiny key to its final place.
 		animate = true
