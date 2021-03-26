@@ -529,10 +529,6 @@ function level3(){
         },750)
         setTimeout(function(){animate = false},751)
     }
-    function showPassword(){ // Creates and makes the password visible. Shows the next level button.
-        l3s17c2.text = crPass(actp.cname,"324rz",[2,1,0,4,3])
-        quickTurn([4],[1],[2,3]) //s17
-    }
     function takeBall(){ // Takes the ball out of the bottle.
         animate = true
         setTimeout(function(){

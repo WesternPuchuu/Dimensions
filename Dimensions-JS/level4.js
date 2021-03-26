@@ -11,6 +11,7 @@ function level4(){
     // 4.05 - Knob
     // 4.06 - Crowbar
     // 4.07 - Faucet handle
+    // 4.08 - C Cable
 
     //0 - Temporary "Thank You" screen
 	//c0 - Big thanks
@@ -26,7 +27,7 @@ function level4(){
     // 0 - Intro screen
     //#region 
     // c0 - Continue
-    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,9],u,"Continue",["20px Arial","#000000"])
+    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,1],u,"Continue",["20px Arial","#000000"])
     l4s0cs = [l4s0c0]
     l4s0 = new screen("#000000",l4s0cs,false,true,"text11ini.json")
     //#endregion
@@ -271,14 +272,110 @@ function level4(){
         l4s10c20,l4s10c21,l4s10c22]
     l4s10 = new screen(cb3,l4s10cs)
     //#endregion
+    // 11 - Room 16 - Wall 3
+    //#region 
+    // c0 - TD machine to Poison Dimension
+    // c1 - CD shelf
+    // c2 - Electrified hammer
+    // c3 - Box with colors
+    // c4 - To wall 2 (16)
+    // c5 - To wall 4 (16)
+    l4s11c0 = new cuadro(100,250,100,150,"#404040","#c0c0c0",true,u,[changescr,28],["Another of those machines."])
+    l4s11c1 = new cuadro(400,200,100,50,"#c08000","#ffc040",true,u,[changescr,29],["It's a shelf."])
+    l4s11c2 = new cuadro(400,350,100,50,"#808080","#c0c0c0",true,u,[changescr,30],["It looks like a hammer, but","has something next to it."])
+    l4s11c3 = new cuadro(250,350,100,50,"#80ff00","#c0ff80",true,u,[changescr,31],["It's some kind of box."])
+    l4s11c4 = new cuadro(0,0,50,600,cb3,"#808080",true,u,[changescr,10])
+    l4s11c5 = new cuadro(550,0,49,600,cb3,"#808080",true,u,[changescr,12])
+    l4s11cs = [l4s11c0,l4s11c1,l4s11c2,l4s11c3,l4s11c4,l4s11c5]
+    l4s11 = new screen(cb3,l4s11cs)
+    //#endregion
+    // 12 - Room 16 - Wall 4
+    //#region 
+    // c0 - Door
+    // c1 - Crafting table
+    // c2 - Recycling bin
+    // c3-c7 - Trash
+    // c8-c13 - Trash in recycling bin
+    // c14 - C Cable
+    // c15 - Broken spot in bin
+    // c16 - To wall 3 (16)
+    // c17 - To wall 1 (16)
+    l4s12c0 = new cuadro(250,200,100,200,"#ff0000","#ff8080",u,u,u,["It's a red door. It's locked."])
+    l4s12c1 = new cuadro(100,250,100,150,"#ff8000","#ffc080",true,u,[changescr,32],["It's a crafting table."])
+    l4s12c2 = new cuadro(400,270,90,130,"#ffff00","#ffff80",true,u,[changescr,33],["It's a recycling bin."])
+    l4s12c3 = new cuadro(160,420,30,30,"#c04000",u,u,u,u,["There's trash all over","the place."])
+    l4s12c4 = new cuadro(310,425,30,30,"#4000c0",u,u,u,u,["There's trash all over","the place."])
+    l4s12c5 = new cuadro(105,505,30,30,"#00c040",u,u,u,u,["There's trash all over","the place."])
+    l4s12c6 = new cuadro(210,500,30,30,"#0040c0",u,u,u,u,["There's trash all over","the place."])
+    l4s12c7 = new cuadro(305,510,30,30,"#40c000",u,u,u,u,["There's trash all over","the place."])
+    l4s12c8 = new cuadro(390,420,20,20,"#40c000",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c9 = new cuadro(490,410,20,20,"#00c040",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c10 = new cuadro(380,450,20,20,"#00c040",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c11 = new cuadro(480,445,20,20,"#40c000",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c12 = new cuadro(410,465,20,20,"#40c000",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c13 = new cuadro(440,460,20,20,"#00c040",u,u,false,u,["Trash came out from the broken","bin."])
+    l4s12c14 = new cuadro(430,415,10,20,"#808080","#c0c0c0",u,false,[simpleItemTake,[14,4.08,"C Cable"]],["It's a cable."])
+    l4s12c15 = new cuadro(410,370,70,30,"#000000",u,u,false,u,["The bin broke."])
+    l4s12c16 = new cuadro(0,0,50,600,cb3,"#808080",true,u,[changescr,11])
+    l4s12c17 = new cuadro(550,0,49,600,cb3,"#808080",true,u,[changescr,9])
+    l4s12cs = [l4s12c0,l4s12c1,l4s12c2,l4s12c3,l4s12c4,l4s12c5,l4s12c6,l4s12c7,l4s12c8,l4s12c9,
+        l4s12c10,l4s12c11,l4s12c12,l4s12c13,l4s12c14,l4s12c15,l4s12c16,l4s12c17]
+    l4s12 = new screen(cb3,l4s12cs)
+    //#endregion
+    // 13 - Password computer
+    //#region 
+    // c0 - Computer body
+    // c1 - Upper screen
+    // c2 - Lower screen
+    // c3-c18 - Buttons
+    // c19 - Big cover
+    // c20 - Small cover
+    // c21 - Enter button
+    // c22 - Indicator light
+    // c23 - Back
+    l4s13c0 = new cuadro(50,0,500,550,"#808080")
+    l4s13c1 = new cuadro(100,50,400,100,"#000000",u,u,u,u,["I wonder what's the password."],"Insert password",["30px Courier New","#00ff00"])
+    l4s13c2 = new cuadro(100,150,400,100,"#000000",u,u,u,u,["I wonder what's the password."],"****",["30px Courier New","#00ff00"])
+    l4s13c3 = new cuadro(200,300,50,50,"#008080","#80ffff",true,u,[pressButton,"1"],u,"1",["50px Arial","#00ff00"])
+    l4s13c4 = new cuadro(250,300,50,50,"#008080","#80ffff",true,u,[pressButton,"2"],u,"2",["50px Arial","#00ff00"])
+    l4s13c5 = new cuadro(300,300,50,50,"#008080","#80ffff",true,u,[pressButton,"3"],u,"3",["50px Arial","#00ff00"])
+    l4s13c6 = new cuadro(350,300,50,50,"#008080","#80ffff",true,u,[pressButton,"4"],u,"4",["50px Arial","#00ff00"])
+    l4s13c7 = new cuadro(200,350,50,50,"#008080","#80ffff",u,false,[pressButton,"5"],u,"5",["50px Arial","#00ff00"])
+    l4s13c8 = new cuadro(250,350,50,50,"#008080","#80ffff",u,false,[pressButton,"6"],u,"6",["50px Arial","#00ff00"])
+    l4s13c9 = new cuadro(300,350,50,50,"#008080","#80ffff",u,false,[pressButton,"7"],u,"7",["50px Arial","#00ff00"])
+    l4s13c10 = new cuadro(350,350,50,50,"#008080","#80ffff",u,false,[pressButton,"8"],u,"8",["50px Arial","#00ff00"])
+    l4s13c11 = new cuadro(200,400,50,50,"#008080","#80ffff",u,false,[pressButton,"9"],u,"9",["50px Arial","#00ff00"])
+    l4s13c12 = new cuadro(250,400,50,50,"#008080","#80ffff",u,false,[pressButton,"A"],u,"A",["50px Arial","#00ff00"])
+    l4s13c13 = new cuadro(300,400,50,50,"#008080","#80ffff",u,false,[pressButton,"B"],u,"B",["50px Arial","#00ff00"])
+    l4s13c14 = new cuadro(350,400,50,50,"#008080","#80ffff",u,false,[pressButton,"C"],u,"C",["50px Arial","#00ff00"])
+    l4s13c15 = new cuadro(200,450,50,50,"#008080","#80ffff",u,false,[pressButton,"D"],u,"D",["50px Arial","#00ff00"])
+    l4s13c16 = new cuadro(250,450,50,50,"#008080","#80ffff",u,false,[pressButton,"E"],u,"E",["50px Arial","#00ff00"])
+    l4s13c17 = new cuadro(300,450,50,50,"#008080","#80ffff",u,false,[pressButton,"F"],u,"F",["50px Arial","#00ff00"])
+    l4s13c18 = new cuadro(350,450,50,50,"#008080","#80ffff",u,false,[pressButton,"0"],u,"0",["50px Arial","#00ff00"])
+    l4s13c19 = new cuadro(200,350,200,150,"#008080")
+    l4s13c20 = new cuadro(200,400,200,100,"#008080",u,u,false)
+    l4s13c21 = new cuadro(425,350,100,100,"#808000",u,u,u,[checkPass],["It's a big button."])
+    l4s13c22 = new cuadro(75,325,100,200,"#ff0000",u,u,u,u,["It's a red light."])
+    l4s13c23 = new cuadro(0,550,599,50,cb1,"#808080",true,u,[changescr,1],u,"Back",["20px Arial Black","#ffffff"])
+    l4s13cs = [l4s13c0,l4s13c1,l4s13c2,l4s13c3,l4s13c4,l4s13c5,l4s13c6,l4s13c7,l4s13c8,l4s13c9,
+        l4s13c10,l4s13c11,l4s13c12,l4s13c13,l4s13c14,l4s13c15,l4s13c16,l4s13c17,l4s13c18,l4s13c19,
+        l4s13c20,l4s13c21,l4s13c22]
+    l4s13 = new screen(cb3,l4s13cs)
+    //#endregion
 
+    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,
+        l4s10,l4s11,l4s12,l4s13]
 
-    l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,l4s10]
-
-    function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
+    function checkPass(){ // Checks if the password is right. Activates the light or resets the password screen.
+        console.log("holi")
+    }
+        function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
         console.log("holi")
     }
     function openPaha(){ // Opens the cristal tube and releases Paha.
+        console.log("holi")
+    }
+    function pressButton(str){ // Adds the current symbol to the password. Activates big button when password is full.
         console.log("holi")
     }
     function smashDoor(){ // Smashes the door until the knob falls.
@@ -299,6 +396,7 @@ function level4(){
         // 0 - Numeric password
         // 1 - Times door is smashed
         // 2 - Missing parts of Persephonia's name
-        cheatblock: [2,0,2]
+        // 3 - Number of current password
+        cheatblock: [2,0,2,1]
     }
 }
