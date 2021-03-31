@@ -29,6 +29,9 @@ function level4(){
     // 4.23 - CD 3
     // 4.24 - DVD
     // 4.25 - Music CD
+    // 4.26 - Rubber shards
+    // 4.27 - Silicon glue
+    // 4.28 - Rubber gloves
 
     // 0 - Intro screen
     //#region 
@@ -764,11 +767,158 @@ function level4(){
         l4s29c10,l4s29c11]
     l4s29 = new screen(cb3,l4s29cs)
     //#endregion
-
+    // 30 - Electrified hammer
+    //#region 
+    // c0 - Hammer head
+    // c1 - Hammer handle
+    // c2-c4 - Electrified wires
+    // c5 - Generator
+    // c6 - Yellow screen
+    // c7 - Back
+    l4s30c0 = new cuadro(50,200,100,200,"#808080","#c0c0c0",true,u,[takeHammer],["It's a hammer."])
+    l4s30c1 = new cuadro(150,250,350,100,"#808000","#c0c000",true,u,[takeHammer],["It's a hammer."])
+    l4s30c2 = new cuadro(200,225,50,150,"#0000ff",u,u,u,u,["There are some wires around","the hammer."])
+    l4s30c3 = new cuadro(300,225,50,150,"#0000ff",u,u,u,u,["There are some wires around","the hammer."])
+    l4s30c4 = new cuadro(400,225,50,150,"#0000ff",u,u,u,u,["There are some wires around","the hammer."])
+    l4s30c5 = new cuadro(200,375,250,75,"#0000ff","#4040ff",u,u,u,["It's some kind of generator."],"X X X",["60px Arial Black","#000000"])
+    l4s30c6 = new cuadro(0,0,599,600,"#ffff00",u,u,false)
+    l4s30c7 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,11],u,"Back",["20px Arial Black","#ffffff"])
+    l4s30cs = [l4s30c0,l4s30c1,l4s30c2,l4s30c3,l4s30c4,l4s30c5,l4s30c6,l4s30c7]
+    l4s30 = new screen(cb3,l4s30cs)
+    //#endregion
+    // 31 - Box with colors
+    //#region 
+    // c0 - Box body
+    // c1-c8 - Values
+    // c9-16 - Minus buttons
+    // c17-c24 - Plus buttons
+    // c25 - Back
+    l4s31c0 = new cuadro(20,150,560,300,"#00ff00")
+    l4s31c1 = new cuadro(20,265,70,70,"#808080",u,u,u,u,u,"A",["70px Arial","#00ff00"])
+    l4s31c2 = new cuadro(90,265,70,70,"#808080",u,u,u,u,u,"0",["70px Arial","#ffffff"])
+    l4s31c3 = new cuadro(160,265,70,70,"#808080",u,u,u,u,u,"A",["70px Arial","#00ffff"])
+    l4s31c4 = new cuadro(230,265,70,70,"#808080",u,u,u,u,u,"0",["70px Arial","#ff0000"])
+    l4s31c5 = new cuadro(300,265,70,70,"#808080",u,u,u,u,u,"A",["70px Arial","#ff00ff"])
+    l4s31c6 = new cuadro(370,265,70,70,"#808080",u,u,u,u,u,"1",["70px Arial","#0000ff"])
+    l4s31c7 = new cuadro(440,265,70,70,"#808080",u,u,u,u,u,"A",["70px Arial","#00ffff"])
+    l4s31c8 = new cuadro(510,265,70,70,"#808080",u,u,u,u,u,"1",["70px Arial","#ffffff"])
+    l4s31c9 = new cuadro(20,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[1,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c10 = new cuadro(90,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[2,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c11 = new cuadro(160,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[3,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c12 = new cuadro(230,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[4,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c13 = new cuadro(300,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[5,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c14 = new cuadro(370,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[6,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c15 = new cuadro(440,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[7,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c16 = new cuadro(510,196,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[8,-1]],["I wonder what's this box for."],"-",["23px Arial","#000000"])
+    l4s31c17 = new cuadro(20,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[1,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c18 = new cuadro(90,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[2,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c19 = new cuadro(160,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[3,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c20 = new cuadro(230,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[4,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c21 = new cuadro(300,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[5,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c22 = new cuadro(370,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[6,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c23 = new cuadro(440,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[7,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c24 = new cuadro(510,399,70,23,"#ff00ff","#ff80ff",true,u,[changeNumber,[8,1]],["I wonder what's this box for."],"+",["23px Arial","#000000"])
+    l4s31c25 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,11],u,"Back",["20px Arial Black","#ffffff"])
+    l4s31cs = [l4s31c0,l4s31c1,l4s31c2,l4s31c3,l4s31c4,l4s31c5,l4s31c6,l4s31c7,l4s31c8,l4s31c9,
+        l4s31c10,l4s31c11,l4s31c12,l4s31c13,l4s31c14,l4s31c15,l4s31c16,l4s31c17,l4s31c18,l4s31c19,
+        l4s31c20,l4s31c21,l4s31c22,l4s31c23,l4s31c24,l4s31c25]
+    l4s31 = new screen(cb3,l4s31cs)
+    //#endregion
+    // 32 - Crafting table
+    //#region 
+    // c0 - Body
+    // c1 - Workspace
+    // c2-c7 - Rubber shards
+    // c8 - Rubber gloves
+    // c9 - Separator
+    // c10-c12 - Scene covers
+    // c13 - Back
+    l4s32c0 = new cuadro(50,100,500,400,"#ff8000")
+    l4s32c1 = new cuadro(100,200,400,200,"#ffc080","#ffe0c0",true,u,[simpleItemUse,[4.26,placeShards]],["The crafting table looks clean."])
+    l4s32c2 = new cuadro(120,220,60,160,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c3 = new cuadro(220,220,60,60,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c4 = new cuadro(200,340,60,60,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c5 = new cuadro(320,220,160,60,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c6 = new cuadro(320,320,60,60,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c7 = new cuadro(400,300,60,60,"#ffc0c0","ffe0e0",u,false,[simpleItemUse,[4.27,makeGloves]],["Now I have the rubber shards here,","what should I do with them?"])
+    l4s32c8 = new cuadro(150,250,300,100,"#ffc0c0","#ffe0e0",u,false,[simpleItemTake,[8,4.28,"Rubber gloves"]],["It took me a while, but managed","to make this gloves."])
+    l4s32c9 = new cuadro(250,250,100,100,"#ffc080",u,u,false)
+    l4s32c10 = new cuadro(0,0,599,200,"#000000",u,u,false)
+    l4s32c11 = new cuadro(0,200,599,200,"#000000",u,u,false)
+    l4s32c12 = new cuadro(0,400,599,200,"#000000",u,u,false)
+    l4s32c13 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,12],u,"Back",["20px Arial Black","#ffffff"])
+    l4s32cs = [l4s32c0,l4s32c1,l4s32c2,l4s32c3,l4s32c4,l4s32c5,l4s32c6,l4s32c7,l4s32c8,l4s32c9,
+        l4s32c10,l4s32c11,l4s32c12,l4s32c13]
+    l4s32 = new screen(cb3,l4s32cs)
+    //#endregion
+    // 33 - Recycling bin
+    //#region 
+    // c0 - Body
+    // c1 - Empty slot
+    // c2 - Full slot
+    // c3 - Back
+    l4s33c0 = new cuadro(100,100,400,400,"#ffff00")
+    l4s33c1 = new cuadro(200,295,200,10,"#000000","#404040",true,u,[putCDs],["The bin has a narrow gap above."])
+    l4s33c2 = new cuadro(195,290,210,20,"#c0ffff",u,u,false,[crashBin])
+    l4s33c3 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,12],u,"Back",["20px Arial Black","#ffffff"])
+    l4s33cs = [l4s33c0,l4s33c1,l4s33c2,l4s33c3]
+    l4s33 = new screen(cb3,l4s33cs)
+    //#endregion
+    // 34 - Cable computer side
+    //#region 
+    // c0 - Computer
+    // c1 - Open panel
+    // c2-c4 - Letters A to C
+    // c5-c7 - Plugs
+    // c8-c10 - Cables
+    // c11-c13 - Endings
+    // c14 - Base
+    // c15 - Back
+    l4s34c0 = new cuadro(0,0,500,500,"#808080")
+    l4s34c1 = new cuadro(100,100,300,300,"#404040")
+    l4s34c2 = new cuadro(125,100,50,50,"#404040",u,u,u,u,u,"A",["50px Arial Black","#000000"])
+    l4s34c3 = new cuadro(225,100,50,50,"#404040",u,u,u,u,u,"B",["50px Arial Black","#000000"])
+    l4s34c4 = new cuadro(325,100,50,50,"#404040",u,u,u,u,u,"C",["50px Arial Black","#000000"])
+    l4s34c5 = new cuadro(130,160,40,40,"#ff8000","#ffc080",true,u,[simpleItemUse,[4.16,placeCableA]],["Looks like something is missing."])
+    l4s34c6 = new cuadro(230,160,40,40,"#ff8000","#ffc080",true,u,[simpleItemUse,[4.19,placeCableB]],["Looks like something is missing."])
+    l4s34c7 = new cuadro(330,160,40,40,"#ff8000","#ffc080",true,u,[simpleItemUse,[4.08,placeCableC]],["Looks like something is missing."])
+    l4s34c8 = new cuadro(140,180,20,160,"#c0c0c0","#e0e0e0",u,false,u,["The cable fits well."])
+    l4s34c9 = new cuadro(240,180,20,160,"#c0c0c0","#e0e0e0",u,false,u,["The cable fits well."])
+    l4s34c10 = new cuadro(340,180,20,160,"#c0c0c0","#e0e0e0",u,false,u,["The cable fits well."])
+    l4s34c11 = new cuadro(140,340,20,10,"#ff8000","#ffc080",u,u,u,["I wonder what goes here."])
+    l4s34c12 = new cuadro(240,340,20,10,"#ff8000","#ffc080",u,u,u,["I wonder what goes here."])
+    l4s34c13 = new cuadro(340,340,20,10,"#ff8000","#ffc080",u,u,u,["I wonder what goes here."])
+    l4s34c14 = new cuadro(130,350,240,25,"#ff8000","#ffc080",u,u,u,["Seems like a connection port."])
+    l4s34c15 = new cuadro(0,550,599,50,cb1,"#808080",true,u,[changescr,18],u,"Back",["20px Arial Black","#ffffff"])
+    l4s34cs = [l4s34c0,l4s34c1,l4s34c2,l4s34c3,l4s34c4,l4s34c5,l4s34c6,l4s34c7,l4s34c8,l4s34c9,
+        l4s34c10,l4s34c11,l4s34c12,l4s34c13,l4s34c14,l4s34c15]
+    l4s34 = new screen(cb1,l4s34cs)
+    //#endregion
+    // 35 - Furniture side
+    //#region 
+    // c0 - Body
+    // c1 - Magenta code
+    // c2 - Silicone glue
+    // c3 - Back
+    l4s35c0 = new cuadro(0,0,550,550,"#008080")
+    l4s35c1 = new cuadro(0,400,500,100,"#008080",u,u,u,u,["Do those scratches mean something?"],"|---||-",["100px Arial","#ff00ff"])
+    l4s35c2 = new cuadro(550,400,49,150,"#408080","#60e0e0",true,u,[simpleItemTake,[2,4.27,"Silicon glue"]],["What's over there?"])
+    l4s35c3 = new cuadro(0,550,599,50,cb1,"#808080",true,u,[changescr,20],u,"Back",["20px Arial Black","#ffffff"])
+    l4s35cs = [l4s35c0,l4s35c1,l4s35c2,l4s35c3]
+    l4s35 = new screen(cb1,l4s35cs)
+    //#endregion
+    // 36 - Persephonia dialogue (before)
+    //#region 
+    // c0 - Continue
+    l4s36c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,22],u,"Continue",["20px Arial","#000000"])
+    l4s36cs = [l4s36c0]
+    l4s36 = new screen("#000000",l4s36cs,false,true,"textPerseA.json")
+    //#endregion
 
     l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,
         l4s10,l4s11,l4s12,l4s13,l4s14,l4s15,l4s16,l4s17,l4s18,l4s19,
-        l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26,l4s27,l4s28,l4s29]
+        l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26,l4s27,l4s28,l4s29,
+        l4s30,l4s31,l4s32,l4s33,l4s34,l4s35,l4s36]
 
     function acceptCD(){ // Accepts software CD in the corresponding computer.
         console.log("holi")
@@ -776,7 +926,13 @@ function level4(){
     function activateCPC(){ // Activates light related to cable computer.
         console.log("holi")
     }
+    function changeNumber(){ // Changes the numbers displayed on the colored box.
+        console.log("holi")
+    }
     function checkPass(){ // Checks if the password is right. Activates the light or resets the password screen.
+        console.log("holi")
+    }
+    function crashBin(){ // Forces the second CD in the bin, breaking it.
         console.log("holi")
     }
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
@@ -789,6 +945,9 @@ function level4(){
         console.log("holi")
     }
     function hitDoBo(){ // Hits double bottom until broken.
+        console.log("holi")
+    }
+    function makeGloves(){ // Makes gloves out of the rubber shards.
         console.log("holi")
     }
     function mysteryCD(){ // Plays the CDs based on the cheatblock rather than on the played CD.
@@ -812,10 +971,25 @@ function level4(){
     function openPaha(){ // Opens the cristal tube and releases Paha.
         console.log("holi")
     }
+    function placeCableA(){ // Places A cable in its spot.
+        console.log("holi")
+    }
+    function placeCableB(){ // Places B cable in its spot.
+        console.log("holi")
+    }
+    function placeCableC(){ // Places C cable in its spot.
+        console.log("holi")
+    }    
+    function placeShards(){ // Places the rubber shards on the crafting table.
+        console.log("holi")
+    }
     function pressButton(str){ // Adds the current symbol to the password. Activates big button when password is full.
         console.log("holi")
     }
     function putBook(){ // Places the current book on the shelf. Checks the order and allows to place the final book.
+        console.log("holi")
+    }
+    function putCDs(){ // Puts music CD and DVD in the recycling bin.
         console.log("holi")
     }
     function putHandle(){ // Places handle on faucet.
@@ -836,7 +1010,9 @@ function level4(){
         }
     }
     function sa35(){ // Special access to screen 35. Removes magenta knobs cheatblock.
-        console.log("holi")
+        this.currlev.cheatblock[8] = false
+        changescr(35)
+        l4s20c2.dofx = function(){changescr(35)}
     }
     function shakePainting(){ // Shakes painting, shows password, and removes cheatblock.
         console.log("holi")
@@ -845,6 +1021,9 @@ function level4(){
         console.log("holi")
     }
     function takeBook(ccn){ // Takes a single book from shelf, blocks the other books, and unblocks the free spaces.
+        console.log("holi")
+    }
+    function takeHammer(){ // Takes hammer if rubber gloves are in inventory, and electrifies otherwise.
         console.log("holi")
     }
     function takeNailOut(){ // Removes the side of the carpet, shows password and removes cheatblock.
@@ -878,7 +1057,11 @@ function level4(){
         console.log("holi")
     }
     function whetDial(){ // Goes to screens 36 or 37, depending on cheatblock.
-        console.log("holi")
+        if (this.currlev.cheatblock[2] == 0){
+            console.log("holi")
+        } else {
+            changescr(36)
+        }
     }
     function writeInstrs(){ // Writes instructions from the page.
         console.log("holi")
@@ -897,8 +1080,10 @@ function level4(){
         // 8 - Magenta code
         // 9 - Times double bottom is hit
         // 10 - Number of played CDs
+        // 11 - CD in recycling bin
+        // 12 - Number of placed cables
         cheatblock: [2,0,2,1,true,
             [1,1,1,1,1,1,1],[1,1,1,1,1,1,1],
-            true,true,0,0]
+            true,true,0,0,false,0]
     }
 }

@@ -177,7 +177,7 @@ function screen(color,buttons, iI = true, iT=false, txt = null){
 	  	    }
 	  	    setTimeout(function(){
 	  	    	quickTurn([0])
-	  	    	FT = false
+	  	    	currlev.screens[currscr].FT = false
 	  	    },750*(fitilen + 1))
 		}
 	}
