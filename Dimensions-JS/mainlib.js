@@ -130,9 +130,11 @@ function writext(){
     ctx.textAlign = "left";
 	ctx.textBaseline = "alphabetical"
 	var txtscr = currlev.screens[currscr]
+	var upname = actp.name[0].toUpperCase() + actp.name.slice(1)
 	var j = 0
 	while (j < txtscr.txtCont.length){
-		ctx.fillText(txtscr.txtCont[j],5,25+20*j);
+		var currline = txtscr.txtCont[j].replace("#",upname)
+		ctx.fillText(currline,5,25+20*j);
 		j++
 	}
 }

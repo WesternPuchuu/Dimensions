@@ -36,7 +36,7 @@ function level4(){
     // 0 - Intro screen
     //#region 
     // c0 - Continue
-    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,1],u,"Continue",["20px Arial","#000000"])
+    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,38],u,"Continue",["20px Arial","#000000"])
     l4s0cs = [l4s0c0]
     l4s0 = new screen("#000000",l4s0cs,false,true,"text11ini.json")
     //#endregion
@@ -914,11 +914,76 @@ function level4(){
     l4s36cs = [l4s36c0]
     l4s36 = new screen("#000000",l4s36cs,false,true,"textPerseA.json")
     //#endregion
+    // 37 - Persephonia dialogue (after)
+    //#region 
+    // c0 - Continue
+    l4s37c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,22],u,"Continue",["20px Arial","#000000"])
+    l4s37cs = [l4s37c0]
+    l4s37 = new screen("#000000",l4s37cs,false,true,"textPerseB.json")
+    //#endregion
+    // 38 - Paha dialogue 1
+    //#region 
+    // c0 - Continue
+    l4s38c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,39],u,"Continue",["20px Arial","#000000"])
+    l4s38cs = [l4s38c0]
+    l4s38 = new screen("#000000",l4s38cs,false,true,"textPaha1.json")
+    //#endregion
+    // 39 - Choose your name
+    //#region 
+    // c0 - Banner
+    // c1 - Name display
+    // c2-c27 - Letter buttons
+    // c28 - Erase
+    // c29 - Confirm
+    l4s39c0 = new cuadro(50,50,700,100,"#e08020",u,u,u,u,u,"Choose your name!",["50px Arial Black","#c0c000"])
+    l4s39c1 = new cuadro(150,150,500,100,"#000000",u,u,u,u,u,"",["80px Arial","#ffffff"])
+    l4s39c2 = new cuadro(50,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"q"],u,"q",["50px Monospace","#0000c0"])
+    l4s39c3 = new cuadro(120,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"w"],u,"w",["50px Monospace","#0000c0"])
+    l4s39c4 = new cuadro(190,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"e"],u,"e",["50px Monospace","#0000c0"])
+    l4s39c5 = new cuadro(260,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"r"],u,"r",["50px Monospace","#0000c0"])
+    l4s39c6 = new cuadro(330,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"t"],u,"t",["50px Monospace","#0000c0"])
+    l4s39c7 = new cuadro(400,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"y"],u,"y",["50px Monospace","#0000c0"])
+    l4s39c8 = new cuadro(470,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"u"],u,"u",["50px Monospace","#0000c0"])
+    l4s39c9 = new cuadro(540,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"i"],u,"i",["50px Monospace","#0000c0"])
+    l4s39c10 = new cuadro(610,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"o"],u,"o",["50px Monospace","#0000c0"])
+    l4s39c11 = new cuadro(680,300,70,70,"#808080","#c0c0c0",true,u,[writeName,"p"],u,"p",["50px Monospace","#0000c0"])
+    l4s39c12 = new cuadro(85,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"a"],u,"a",["50px Monospace","#0000c0"])
+    l4s39c13 = new cuadro(155,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"s"],u,"s",["50px Monospace","#0000c0"])
+    l4s39c14 = new cuadro(225,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"d"],u,"d",["50px Monospace","#0000c0"])
+    l4s39c15 = new cuadro(295,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"f"],u,"f",["50px Monospace","#0000c0"])
+    l4s39c16 = new cuadro(365,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"g"],u,"g",["50px Monospace","#0000c0"])
+    l4s39c17 = new cuadro(435,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"h"],u,"h",["50px Monospace","#0000c0"])
+    l4s39c18 = new cuadro(505,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"j"],u,"j",["50px Monospace","#0000c0"])
+    l4s39c19 = new cuadro(575,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"k"],u,"k",["50px Monospace","#0000c0"])
+    l4s39c20 = new cuadro(645,370,70,70,"#808080","#c0c0c0",true,u,[writeName,"l"],u,"l",["50px Monospace","#0000c0"])
+    l4s39c21 = new cuadro(155,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"z"],u,"z",["50px Monospace","#0000c0"])
+    l4s39c22 = new cuadro(225,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"x"],u,"x",["50px Monospace","#0000c0"])
+    l4s39c23 = new cuadro(295,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"c"],u,"c",["50px Monospace","#0000c0"])
+    l4s39c24 = new cuadro(365,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"v"],u,"v",["50px Monospace","#0000c0"])
+    l4s39c25 = new cuadro(435,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"b"],u,"b",["50px Monospace","#0000c0"])
+    l4s39c26 = new cuadro(505,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"n"],u,"n",["50px Monospace","#0000c0"])
+    l4s39c27 = new cuadro(575,440,70,70,"#808080","#c0c0c0",true,u,[writeName,"m"],u,"m",["50px Monospace","#0000c0"])
+    l4s39c28 = new cuadro(200,510,150,50,"#a00000","#c02020",true,u,[eraseName],u,"Erase",["30px Arial","#000000"])
+    l4s39c29 = new cuadro(450,510,150,50,"#00a000","#20e020",true,u,[confirmName],u,"Confirm",["30px Arial","#000000"])
+    l4s39cs = [l4s39c0,l4s39c1,l4s39c2,l4s39c3,l4s39c4,l4s39c5,l4s39c6,l4s39c7,l4s39c8,l4s39c9,
+        l4s39c10,l4s39c11,l4s39c12,l4s39c13,l4s39c14,l4s39c15,l4s39c16,l4s39c17,l4s39c18,l4s39c19,
+        l4s39c20,l4s39c21,l4s39c22,l4s39c23,l4s39c24,l4s39c25,l4s39c26,l4s39c27,l4s39c28,l4s39c29]
+    l4s39 = new screen("#000000",l4s39cs,false)
+    //#endregion
+    // 40 - Paha dialogue 2
+    //#region 
+    // c0 - Continue
+    l4s40c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[giveHB],u,"Continue",["20px Arial","#000000"])
+    l4s40cs = [l4s40c0]
+    l4s40 = new screen("#000000",l4s40cs,false,true,"textPaha2.json")
+    //#endregion
+
 
     l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,
         l4s10,l4s11,l4s12,l4s13,l4s14,l4s15,l4s16,l4s17,l4s18,l4s19,
         l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26,l4s27,l4s28,l4s29,
-        l4s30,l4s31,l4s32,l4s33,l4s34,l4s35,l4s36]
+        l4s30,l4s31,l4s32,l4s33,l4s34,l4s35,l4s36,l4s37,l4s38,l4s39,
+        l4s40]
 
     function acceptCD(){ // Accepts software CD in the corresponding computer.
         console.log("holi")
@@ -932,10 +997,19 @@ function level4(){
     function checkPass(){ // Checks if the password is right. Activates the light or resets the password screen.
         console.log("holi")
     }
+    function confirmName(){ // Confirms new name for player.
+        console.log("holi")
+    }
     function crashBin(){ // Forces the second CD in the bin, breaking it.
         console.log("holi")
     }
+    function eraseName(){ // Erases one letter from name.
+        console.log("holi")
+    }
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
+        console.log("holi")
+    }
+    function giveHB(){ // Gives hacking badge and returns to game.
         console.log("holi")
     }
     function goWIP(){ // Checks if hacking badge is in inventory, and sends to WIP screen if so. Hopely to be deleted.
@@ -1064,6 +1138,9 @@ function level4(){
         }
     }
     function writeInstrs(){ // Writes instructions from the page.
+        console.log("holi")
+    }
+    function writeName(lett){ // Writes name on display.
         console.log("holi")
     }
     
