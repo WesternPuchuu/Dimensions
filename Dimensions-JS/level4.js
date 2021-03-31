@@ -688,10 +688,87 @@ function level4(){
     l4s26cs = [l4s26c0,l4s26c1,l4s26c2,l4s26c3,l4s26c4,l4s26c5,l4s26c6,l4s26c7,l4s26c8,l4s26c9]
     l4s26 = new screen(cb3,l4s26cs)
     //#endregion
+    // 27 - Trash can
+    //#region 
+    // c0 - Can body
+    // c1-c4 - Depth
+    // c5 - Persephonia text 1
+    // c6 - Persephonia text 2
+    // c7 - Persephonia text cover
+    // c8-c16 - Trash
+    // c17 - Back
+    l4s27c0 = new cuadro(50,50,500,500,"#ff00ff")
+    l4s27c1 = new cuadro(75,75,450,450,"#e000e0")
+    l4s27c2 = new cuadro(100,100,400,400,"#c000c0")
+    l4s27c3 = new cuadro(125,125,350,350,"#a000a0")
+    l4s27c4 = new cuadro(150,150,300,300,"#800080")
+    l4s27c5 = new cuadro(170,270,260,30,"#e0e020",u,u,u,u,["There's something at the bottom","of the can."],"Introducing our brand new doll...",["18px Times New Roman","#000000"])
+    l4s27c6 = new cuadro(170,300,260,60,"#e0e020",u,u,u,u,["There's something at the bottom","of the can."],"Persephonia",["46px Arial","#a0c0c0"])
+    l4s27c7 = new cuadro(170,300,130,60,"#800080")
+    l4s27c8 = new cuadro(310,310,80,80,"#008000",u,u,u,[removeTrash,[[8],-1]],["There's a lot of trash."])
+    l4s27c9 = new cuadro(370,330,80,80,"#40c040",u,u,u,[removeTrash,[[9],[8]]],["There's a lot of trash."])
+    l4s27c10 = new cuadro(350,280,80,80,"#60ff60",u,u,u,[removeTrash,[[10],[9]]],["There's a lot of trash."])
+    l4s27c11 = new cuadro(290,250,80,80,"#406040",u,u,u,[removeTrash,[[11],[10]]],["There's a lot of trash."])
+    l4s27c12 = new cuadro(230,280,80,80,"#a0e0a0",u,u,u,[removeTrash,[[12],[11]]],["There's a lot of trash."])
+    l4s27c13 = new cuadro(150,260,100,100,"#00a000",u,u,u,[removeTrash,[[13],[12]]],["There's a lot of trash."])
+    l4s27c14 = new cuadro(130,290,120,120,"#60a060",u,u,u,[removeTrash,[[14],[13]]],["There's a lot of trash."])
+    l4s27c15 = new cuadro(190,190,140,140,"#80e080",u,u,u,[removeTrash,[[15],[14]]],["There's a lot of trash."])
+    l4s27c16 = new cuadro(230,210,160,160,"#20e020",u,true,u,[removeTrash,[[16],[15]]],["There's a lot of trash."])
+    l4s27c17 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,10],u,"Back",["20px Arial Black","#ffffff"])
+    l4s27cs = [l4s27c0,l4s27c1,l4s27c2,l4s27c3,l4s27c4,l4s27c5,l4s27c6,l4s27c7,l4s27c8,l4s27c9,
+        l4s27c10,l4s27c11,l4s27c12,l4s27c13,l4s27c14,l4s27c15,l4s27c16,l4s27c17]
+    l4s27 = new screen(cb3,l4s27cs)
+    //#endregion
+    // 28 - TD to Poison Dimension
+    //#region 
+    // c0 - Body
+    // c1 - Screen 1
+    // c2 - Screen 2
+    // c3 - Active site - Hopely to change function in the future.
+    // c4 - Back
+    l4s28c0 = new cuadro(50,50,500,500,"#808080",u,u,u,u,["Another of those machines?"])
+    l4s28c1 = new cuadro(100,100,400,100,"#000000",u,u,u,u,["Where could I find this badge?."],"Please show a",["35px Courier New","#ffffff"])
+    l4s28c2 = new cuadro(100,200,400,100,"#000000",u,u,u,u,["Where could I find this badge?."],"dark magenta badge",["35px Courier New","#ffffff"])
+    l4s28c3 = new cuadro(250,400,100,100,"#000000","#404040",true,u,[goWIP],["I suppose I have to show it here."])
+    l4s28c4 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,11],u,"Back",["20px Arial Black","#ffffff"])
+    l4s28cs = [l4s28c0,l4s28c1,l4s28c2,l4s28c3,l4s28c4]
+    l4s28 = new screen(cb3,l4s28cs)
+    //#endregion
+    // 29 - CD Shelf
+    //#region 
+    // c0 - Shelf body
+    // c1 - CD 1
+    // c2 - Handle of horizontal door
+    // c3 - Empty space
+    // c4 - Empty space door
+    // c5 - Handle of vertical door
+    // c6 - Space with CD
+    // c7 - CD 2
+    // c8 - Vertical door
+    // c9 - Sticker tip
+    // c10 - CD 3
+    // c11 - Back
+    l4s29c0 = new cuadro(50,175,500,250,"#ff8000")
+    l4s29c1 = new cuadro(75,155,200,20,"#c0ffff","#e0ffff",true,u,[simpleItemTake,[1,4.21,"CD 1"]],["There's a CD over there."])
+    l4s29c2 = new cuadro(245,270,30,30,"#c06000","#ffe020",true,u,[open29a],["The shelf has two doors."])
+    l4s29c3 = new cuadro(75,200,200,200,"#804000",u,u,false,u,["It seems empty."])
+    l4s29c4 = new cuadro(0,200,75,200,"#808000",u,u,false)
+    l4s29c5 = new cuadro(415,370,30,30,"#c06000","#ffe020",true,u,[open29b],["The shelf has two doors."])
+    l4s29c6 = new cuadro(325,200,200,200,"#804000",u,u,false)
+    l4s29c7 = new cuadro(505,220,20,180,"#c0ffff","#e0ffff",u,false,[simpleItemTake,[7,4.22,"CD 2"]],["There's a CD in the shelf."])
+    l4s29c8 = new cuadro(325,0,200,200,"#808000",u,u,false)
+    l4s29c9 = new cuadro(335,10,15,15,"#808040","#c0c080",u,false,[unsticker],["Looks like the corner of a sticker."])
+    l4s29c10 = new cuadro(350,25,80,80,"#c0ffff","#e0ffff",u,false,[simpleItemTake,[10,4.23,"CD 3"]],["There was a CD behind that sticker!"])
+    l4s29c11 = new cuadro(0,550,599,50,cb3,"#808080",true,u,[changescr,11],u,"Back",["20px Arial Black","#ffffff"])
+    l4s29cs = [l4s29c0,l4s29c1,l4s29c2,l4s29c3,l4s29c4,l4s29c5,l4s29c6,l4s29c7,l4s29c8,l4s29c9,
+        l4s29c10,l4s29c11]
+    l4s29 = new screen(cb3,l4s29cs)
+    //#endregion
+
 
     l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,
         l4s10,l4s11,l4s12,l4s13,l4s14,l4s15,l4s16,l4s17,l4s18,l4s19,
-        l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26]
+        l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26,l4s27,l4s28,l4s29]
 
     function acceptCD(){ // Accepts software CD in the corresponding computer.
         console.log("holi")
@@ -703,6 +780,9 @@ function level4(){
         console.log("holi")
     }
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
+        console.log("holi")
+    }
+    function goWIP(){ // Checks if hacking badge is in inventory, and sends to WIP screen if so. Hopely to be deleted.
         console.log("holi")
     }
     function hackTD(){ // Hacks Sand Dimension TD.
@@ -718,6 +798,12 @@ function level4(){
         console.log("holi")
     }
     function open16(){ // Opens the trapdoor to room 16.
+        console.log("holi")
+    }
+    function open29a(){ // Opens the first CD shelf door.
+        console.log("holi")
+    }
+    function open29b(){ // Opens the second CD shelf door.
         console.log("holi")
     }
     function openFurni(){ // Opens the furniture.
@@ -740,6 +826,14 @@ function level4(){
     }
     function recInstrs(){ // Records instructions on clean CD.
         console.log("holi")
+    }
+    function removeTrash(cuads){ // Removes trash from the can.
+        if (cuads[1] == -1){
+            quickTurn(cuads[0]) // s27
+            this.currlev.cheatblock[2] -= 1
+        } else {
+            quickTurn(cuads[0],cuads[1]) // s27
+        }
     }
     function sa35(){ // Special access to screen 35. Removes magenta knobs cheatblock.
         console.log("holi")
@@ -779,6 +873,9 @@ function level4(){
     }
     function turnPage(cuads){ // Turns the pages of the book.
         quickTurn(cuads[0],u,cuads[1]) // s25
+    }
+    function unsticker(){ // Pulls the sticker off the shelf.
+        console.log("holi")
     }
     function whetDial(){ // Goes to screens 36 or 37, depending on cheatblock.
         console.log("holi")
