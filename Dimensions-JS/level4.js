@@ -36,7 +36,7 @@ function level4(){
     // 0 - Intro screen
     //#region 
     // c0 - Continue
-    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,38],u,"Continue",["20px Arial","#000000"])
+    l4s0c0 = new cuadro(700,580,100,20,"#00ff00","#80ff80",u,false,[changescr,1],u,"Continue",["20px Arial","#000000"])
     l4s0cs = [l4s0c0]
     l4s0 = new screen("#000000",l4s0cs,false,true,"text11ini.json")
     //#endregion
@@ -452,7 +452,7 @@ function level4(){
     l4s17c5 = new cuadro(255,200,75,200,"#ffff00","#ffff80",true,u,[takeBook,[5,4.10,"A Book"]],["There are several books here."],"A",["75px Times New Roman","#000000"])
     l4s17c6 = new cuadro(330,200,75,200,"#00ff80","#80ffc0",true,u,[takeBook,[6,4.13,"D Book"]],["There are several books here."],"D",["75px Times New Roman","#000000"])
     l4s17c7 = new cuadro(405,200,75,200,"#80ff00","#c0ff80",true,u,[takeBook,[7,4.11,"B Book"]],["There are several books here."],"B",["75px Times New Roman","#000000"])
-    l4s17c8 = new cuadro(480,200,75,200,"#800000",u,u,u,[putBook],["There are several books here."]," ",["75px Times New Roman","#000000"])
+    l4s17c8 = new cuadro(480,200,75,200,cb1,u,u,u,[putBook],["There are several books here."]," ",["75px Times New Roman","#000000"])
     l4s17c9 = new cuadro(0,550,599,50,cb1,"#808080",true,u,[changescr,3],u,"Back",["20px Arial Black","#ffffff"])
     l4s17cs = [l4s17c0,l4s17c1,l4s17c2,l4s17c3,l4s17c4,l4s17c5,l4s17c6,l4s17c7,l4s17c8,l4s17c9]
     l4s17 = new screen(cb1,l4s17cs)
@@ -977,13 +977,24 @@ function level4(){
     l4s40cs = [l4s40c0]
     l4s40 = new screen("#000000",l4s40cs,false,true,"textPaha2.json")
     //#endregion
+    // 41 - WIP screeen, hopely to be deleted.
+    //#region 
+    // c0 - WIP text
+    // c1 - "Please" text
+    // c2 - Back to TD Machine
+    l4s41c0 = new cuadro(100,100,600,200,"#FFFF00",u,u,u,u,u,"Work In Progress!!",["58px Arial Black","#000000"])
+    l4s41c1 = new cuadro(200,350,400,50,"#000000",u,u,u,u,u,"Please use the other machine.",["40px Times New Roman","#FFFF80"])
+    l4s41c2 = new cuadro(300,450,200,100,"#00FF00",u,true,u,[changescr,28],u,"Back",["80px Comic Sans MS","#000000"])
+    l4s41cs = [l4s41c0, l4s41c1, l4s41c2]
+    l4s41 = new screen("#000000", l4s41cs, false)
+    //#endregion
 
 
     l4ss = [l4s0,l4s1,l4s2,l4s3,l4s4,l4s5,l4s6,l4s7,l4s8,l4s9,
         l4s10,l4s11,l4s12,l4s13,l4s14,l4s15,l4s16,l4s17,l4s18,l4s19,
         l4s20,l4s21,l4s22,l4s23,l4s24,l4s2,l4s26,l4s27,l4s28,l4s29,
         l4s30,l4s31,l4s32,l4s33,l4s34,l4s35,l4s36,l4s37,l4s38,l4s39,
-        l4s40]
+        l4s40,l4s41]
 
     function acceptCD(){ // Accepts software CD in the corresponding computer.
         console.log("holi")
@@ -1053,6 +1064,9 @@ function level4(){
     }
     function placeCableC(){ // Places C cable in its spot.
         console.log("holi")
+    }
+    function placeGbook(){ // Places G book in place and unlocks the furniture.
+        console.log("holi")
     }    
     function placeShards(){ // Places the rubber shards on the crafting table.
         console.log("holi")
@@ -1061,7 +1075,41 @@ function level4(){
         console.log("holi")
     }
     function putBook(){ // Places the current book on the shelf. Checks the order and allows to place the final book.
-        console.log("holi")
+        const codes =[4.10,4.11,4.12,4.13,4.14,4.15]
+        const bookinfo = [["A","#ffff00","#ffff80"],
+                          ["B","#80ff00","#c0ff80"],
+                          ["C","#00ff00","#80ff80"],
+                          ["D","#00ff80","#80ffc0"],
+                          ["E","#00ffff","#80ffff"],
+                          ["F","#0080ff","#80c0ff"]]
+        let refc = this.buts[currb]
+        inve.sack.forEach(e => {
+            if (e[0] >= 4.10 && e[0] <= 4.15){
+                inve.sack.splice(inve.sack.indexOf(e),1)
+                let codval = codes.indexOf(e[0])
+                refc.text = bookinfo[codval][0]
+                refc.c = bookinfo[codval][1]
+                refc.high = bookinfo[codval][2]
+                refc.dofx = function(){takeBook([currb,e[0],e[1]])}
+                let order = ""
+                for (let i = 2; i < 9; i++) {
+                    if (this.buts[i].c == cb1){
+                        this.buts[i].isClick = false
+                        order = order.concat(" ")
+                    } else {
+                        this.buts[i].isClick = true
+                        order = order.concat(this.buts[i].text)
+                    }                    
+                }
+                if (order == "ABCDEF "){
+                    for (let i = 2; i < 8; i++) {
+                        this.buts[i].isClick = false                    
+                    }
+                    this.buts[8].dofx = function(){simpleItemUse([4.01,placeGbook])}
+                    this.buts[8].isClick = true 
+                }
+            }            
+        })
     }
     function putCDs(){ // Puts music CD and DVD in the recycling bin.
         console.log("holi")
@@ -1095,7 +1143,18 @@ function level4(){
         console.log("holi")
     }
     function takeBook(ccn){ // Takes a single book from shelf, blocks the other books, and unblocks the free spaces.
-        console.log("holi")
+        this.buts[ccn[0]].c = cb1
+        this.buts[ccn[0]].high = cb1
+        this.buts[ccn[0]].text = ""
+        inve.placeIn([ccn[1],ccn[2]])
+        for (let i = 2; i < 9; i++) {
+            if (this.buts[i].c == cb1){
+                this.buts[i].isClick = true
+                this.buts[i].dofx = function(){putBook()}
+            } else {
+                this.buts[i].isClick = false
+            }            
+        }
     }
     function takeHammer(){ // Takes hammer if rubber gloves are in inventory, and electrifies otherwise.
         console.log("holi")
