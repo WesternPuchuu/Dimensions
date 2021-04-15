@@ -144,7 +144,8 @@ function level4(){
     const l4s5c7 = new cuadro(250,150,100,100,"#606060","#a0a0a0",true,u,[changescr,21],["There's a laptop on the desk."])
     const l4s5c8 = new cuadro(0,0,50,600,cb2,"#808080",true,u,[changescr,8])
     const l4s5c9 = new cuadro(550,0,49,600,cb2,"#808080",true,u,[changescr,6])
-    const l4s5cs = [l4s5c0,l4s5c1,l4s5c2,l4s5c3,l4s5c4,l4s5c5,l4s5c6,l4s5c7,l4s5c8,l4s5c9]
+    //const dummy = new cuadro(0,0,50,50,"#80e0ff",u,true,u,[simpleItemTake,[10,4.06,"la barrita"]])
+    const l4s5cs = [l4s5c0,l4s5c1,l4s5c2,l4s5c3,l4s5c4,l4s5c5,l4s5c6,l4s5c7,l4s5c8,l4s5c9]//,dummy]
     const l4s5 = new screen(cb2,l4s5cs)
     //#endregion
     // 6 - Room 12 - Wall 2
@@ -209,7 +210,7 @@ function level4(){
     const l4s8c4 = new cuadro(125,280,50,20,"#0080ff","#80c0ff",true,u,[changescr,25],["There's a book over the pillar."])
     const l4s8c5 = new cuadro(350,300,200,50,cb2,u,u,u,u,["Who is this talking about?"],"Her name is",["30px Comic Sans MS","#ff4000"])
     const l4s8c6 = new cuadro(350,350,200,50,cb2,u,u,u,u,["I need the full name."],"Persephonia",["30px Comic Sans MS","#ff4000"])
-    const l4s8c7 = new cuadro(350,350,100,50,"#808000",u,true,u,[simpleItemUse,[4.06,takeWoodOut]],["A piece of wood is","covering the wall"])
+    const l4s8c7 = new cuadro(350,350,100,50,"#808000",u,true,u,[takeWoodOut],["A piece of wood is","covering the wall"])
     const l4s8c8 = new cuadro(450,350,100,50,"#808000",u,u,u,u,["A piece of wood is","covering the wall"])
     const l4s8c9 = new cuadro(0,0,50,600,cb2,"#808080",true,u,[changescr,7])
     const l4s8c10 = new cuadro(550,0,49,600,cb2,"#808080",true,u,[changescr,5])
@@ -549,7 +550,7 @@ function level4(){
     const l4s21c3 = new cuadro(110,360,280,130,"#e0e0e0","#ffffff",true,u,[simpleItemUse,[4.17,writeInstrs]],["It's the keyboard."])
     const l4s21c4 = new cuadro(105,155,290,190,"#000000")
     const l4s21c5 = new cuadro(105,155,290,70,"#000000",u,u,u,u,["Instructions?","Instructions for what?"],"Please write instructions",["15px Courier New","#00ff00"])
-    const l4s21c6 = new cuadro(105,210,290,70,"#000000",u,u,false,u,u,"Writing                  "["15px Courier New","#00ff00"])
+    const l4s21c6 = new cuadro(105,210,290,70,"#000000",u,u,false,u,u,"Writing                  ",["15px Courier New","#00ff00"])
     const l4s21c7 = new cuadro(105,275,290,70,"#000000",u,u,false,u,["Now I need a disc."],"Please insert disc       ",["15px Courier New","#00ff00"])
     const l4s21c8 = new cuadro(400,350,75,150,"#000000",u,u,false)
     const l4s21c9 = new cuadro(400,355,70,140,"#c0ffff",u,u,false)
@@ -1018,7 +1019,9 @@ function level4(){
         console.log("holi")
     }
     function getBucket(){ // Takes the bucket, shows password and removes cheatblock.
-        console.log("holi")
+        simpleItemTake([5,4.03,"Bucket"])
+        this.currlev.cheatblock[0] -= 1
+        l4s6c4.isVis = true
     }
     function giveHB(){ // Gives hacking badge and returns to game.
         console.log("holi")
@@ -1063,6 +1066,7 @@ function level4(){
                 setTimeout(function(){
                     l4s4c0.think = ["The door is open!"]
                     l4s4c0.isClick = true
+                    l4s19c8.isClick = false
                     l4s19c8.think = ["It seems the button did something."]
                     animate = false
                 },2001)
@@ -1070,7 +1074,25 @@ function level4(){
         }
     }
     function open16(){ // Opens the trapdoor to room 16.
-        console.log("holi")
+        if (this.currlev.cheatblock[8] == false){
+            var tc = this.currlev.cheatblock[5]
+            if(tc[2]+tc[3]+tc[4]+tc[6] == 0 && tc[0]*tc[1]*tc[5] == 1){
+                this.buts[8].c = "#60ff60"
+                this.buts[8].high = "#60ff60"
+                animate = true
+                setTimeout(function(){currscr = 4},500)
+                setTimeout(function(){l4s4c1.c = "#c0c0ff"},1000)
+                setTimeout(function(){l4s4c1.c = "#0000ff"},1500)
+                setTimeout(function(){currscr = 15},2000)
+                setTimeout(function(){
+                    l4s4c1.think = ["A ladder fell from the trapdoor!"]
+                    l4s4c1.isClick = true
+                    l4s15c8.isClick = false
+                    l4s15c8.think = ["It seems the button did something."]
+                    animate = false
+                },2001)
+            }
+        }
     }
     function open29a(){ // Opens the first CD shelf door.
         console.log("holi")
@@ -1163,7 +1185,7 @@ function level4(){
         console.log("holi")
     }
     function putKnob(){ // Places the missing knob.
-        console.log("holi")
+       quickTurn([5,9]) // s15
     }
     function recInstrs(){ // Records instructions on clean CD.
         console.log("holi")
@@ -1185,7 +1207,28 @@ function level4(){
         console.log("holi")
     }
     function smashDoor(){ // Smashes the door until the knob falls.
-        console.log("holi")
+        const movvals = [-3,6,-6,6,-6,6,-3]
+        animate = true
+        let tim = 1
+        movvals.forEach(val => {
+            setTimeout(function(){
+                this.buts[0].x0 += val
+            },50*tim)
+            tim += 1
+        })
+        if (this.currlev.cheatblock[1] < 2){
+            setTimeout(function(){
+            this.buts[1].x0 -= 5
+            this.buts[1].xmax -= 5
+            this.buts[1].xmin -= 5
+            this.currlev.cheatblock[1] += 1
+            },200)
+        } else {
+            setTimeout(function(){
+                quickTurn([2],[0],[1]) // s8
+            },200)
+        }
+        setTimeout(function(){animate = false},351)
     }
     function takeBook(ccn){ // Takes a single book from shelf, blocks the other books, and unblocks the free spaces.
         this.buts[ccn[0]].c = cb1
@@ -1214,10 +1257,19 @@ function level4(){
         console.log("holi")
     }
     function takeWoodOut(){ // Partially removes the wood from the wall, and removes cheatblock.
-        console.log("holi")
+         var loccb = true
+        simpleItemUse([4.06,function(){
+            quickTurn([7]) // s8
+            l4s8c8.think = ["The piece of wood broke. I can't","take the rest out."]
+            loccb = false
+        }])
+        if (loccb == false){
+            this.currlev.cheatblock[2] -= 1
+        }
     }
     function tearPage(){ // tears the software instructions out of the book, and locks book movement.
-        console.log("holi")
+        inve.placeIn([4.17,"Software instructions"])
+        quickTurn([15,16],[22],[7,8,9,13,14]) // s25
     }
     function throwSand(){ // Throws sand to the white painting.
         console.log("holi")
@@ -1267,7 +1319,20 @@ function level4(){
         }
     }
     function writeInstrs(){ // Writes instructions from the page.
-        console.log("holi")
+        animate = true
+        l4s21c6.isVis = true
+        setTimeout(function(){l4s21c6.text = "Writing.                 "},250)
+        setTimeout(function(){l4s21c6.text = "Writing..                "},750)
+        setTimeout(function(){l4s21c6.text = "Writing...               "},1250)
+        setTimeout(function(){l4s21c6.text = "Writing....              "},1750)
+        setTimeout(function(){
+            l4s21c6.isVis = false
+            l4s21c5.text = "Instructions ready       "
+        },2250)
+        setTimeout(function(){l4s21c7.isVis = true},2500)
+        setTimeout(function(){quickTurn(u,u,[8])},2750) // s21
+        setTimeout(function(){quickTurn([10],u,[8])},3000) // s21
+        setTimeout(function(){animate = false},3001)
     }
     function writeName(lett){ // Writes name on display.
         console.log("holi")
